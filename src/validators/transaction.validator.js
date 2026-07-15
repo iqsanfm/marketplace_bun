@@ -1,0 +1,26 @@
+import { z } from "zod";
+
+export const createTransactionSchema = z.object({
+  items: z
+    .array(
+      z.object({
+        productId: z.string().uuid("Product ID tidak valid"),
+        quantity: z.number().int().positive("Quantity harus lebih dari 0"),
+      }),
+    )
+    .min(1, "Minimal 1 produk dalam transaksi"),
+});
+
+export const updateTransactionStatusSchema = z.object({
+  status: z.enum(["paid", "cancelled"], "Status tidak valid"),
+});
+
+export const transactionIdParamSchema = z.object({
+  id: z.string().uuid("Transaction ID tidak valid"),
+});
+
+export const getTransactionsQuerySchema = z.object({
+  status: z.enum(["pending", "paid", "cancelled"]).optional(),
+  page: z.coerce.number().int().positive().default(1),
+  limit: z.coerce.number().int().positive().max(100).default(10),
+});
