@@ -12,18 +12,25 @@ import {
   createTransaction,
   updateTransactionStatus,
   getAllTransactions,
-  deleteTransactionById,
+  getTransactionsSummary,
+  getTransactionById,
 } from "../controllers/transaction.controllers.js";
 
 const transactionRoute = new Hono();
+
+transactionRoute.get(
+  "/:id",
+  zValidator("param", transactionIdParamSchema, handleValidation),
+  getTransactionById,
+);
+
+transactionRoute.get("/summary", getTransactionsSummary);
 
 transactionRoute.get(
   "/",
   zValidator("query", getTransactionsQuerySchema, handleValidation),
   getAllTransactions,
 );
-
-transactionRoute.delete("/:id", deleteTransactionById);
 
 transactionRoute.use("*", authMiddleware);
 

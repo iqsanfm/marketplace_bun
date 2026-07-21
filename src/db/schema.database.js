@@ -16,6 +16,8 @@ export const transactionStatusEnum = pgEnum("transaction_status", [
   "cancelled",
 ]);
 
+export const paymentMethodEnum = pgEnum("payment_method", ["cash", "transfer"]);
+
 export const usersTable = pgTable("users", {
   id: uuid().primaryKey().defaultRandom(),
   name: varchar({ length: 255 }).notNull(),
@@ -65,5 +67,7 @@ export const transactionsTable = pgTable("transactions", {
     .references(() => usersTable.id),
   status: transactionStatusEnum().notNull().default("pending"),
   totalAmount: numeric().notNull(),
+  paymentMethod: paymentMethodEnum(),
+  paidAt: timestamp(),
   createdAt: timestamp().notNull().defaultNow(),
 });

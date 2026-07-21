@@ -1,4 +1,4 @@
-import { eq, and, gte, lte, ilike } from "drizzle-orm";
+import { eq, and, gte, lte, ilike, sql, count } from "drizzle-orm";
 import { db } from "../db/database.connection";
 import { productTable } from "../db/schema.database";
 import { parseDbError } from "../utils/db-error";
@@ -42,7 +42,9 @@ export const getAllProducts = async ({
     if (maxPrice !== undefined)
       conditions.push(lte(productTable.price, maxPrice));
 
-    let query = db
+    const whereClause = conditions.length > 0 ? and(...conditions) : undefined;
+
+    let dataQuery = db
       .select({
         id: productTable.id,
         product_name: productTable.product_name,
@@ -54,10 +56,28 @@ export const getAllProducts = async ({
       })
       .from(productTable);
 
-    if (conditions.length > 0) query = query.where(and(...conditions));
+    let countQuery = db
+      .select({ count: sql`count(*)::int` })
+      .from(productTable);
 
-    const product = await query.limit(limit).offset(offset);
-    return product;
+    if (whereClause) {
+      dataQuery = dataQuery.where(whereClause);
+      countQuery = countQuery.where(whereClause);
+    }
+
+    const [items, countResult] = await Promise.all([
+      dataQuery.limit(limit).offset(offset),
+      countQuery,
+    ]);
+
+    const total = countResult[0].count;
+    return {
+      items,
+      total,
+      page,
+      limit,
+      totalPages: Math.ceil(total / limit),
+    };
   } catch (err) {
     throw parseDbError(err);
   }

@@ -1,10 +1,12 @@
-import { eq, inArray } from "drizzle-orm";
+import { eq, inArray, sql } from "drizzle-orm";
+
 import { db } from "../db/database.connection";
 
 import {
   transactionsTable,
   transactionItemsTable,
   productTable,
+  paymentMethodEnum,
 } from "../db/schema.database";
 import { parseDbError } from "../utils/db-error";
 import { AppError, NotFoundError } from "../utils/errors";
@@ -69,6 +71,7 @@ export const getAllTransactions = async ({ status, page, limit }) => {
         userId: transactionsTable.userId,
         status: transactionsTable.status,
         totalAmount: transactionsTable.totalAmount,
+        paymentMethod: transactionsTable.paymentMethod,
         createdAt: transactionsTable.createdAt,
       })
       .from(transactionsTable);
@@ -83,7 +86,38 @@ export const getAllTransactions = async ({ status, page, limit }) => {
   }
 };
 
-export const updateTransactionStatus = async (id, status) => {
+export const getTransactionById = async (id) => {
+  try {
+    const [transaction] = await db
+      .select()
+      .from(transactionsTable)
+      .where(eq(transactionsTable.id, id));
+
+    if (!transaction.length === 0)
+      throw new NotFoundError("Transaksi tidak ditemukan");
+    const items = await db
+      .select({
+        id: transactionItemsTable.id,
+        productId: transactionItemsTable.productId,
+        productName: productTable.product_name,
+        quantity: transactionItemsTable.quantity,
+        priceAtPurchase: transactionItemsTable.priceAtPurchase,
+      })
+      .from(transactionItemsTable)
+      .innerJoin(
+        productTable,
+        eq(transactionItemsTable.productId, productTable.id),
+      )
+      .where(eq(transactionItemsTable.transactionId, id));
+
+    return { ...transaction, items };
+  } catch (err) {
+    if (err instanceof NotFoundError) throw err;
+    throw parseDbError(err);
+  }
+};
+
+export const updateTransactionStatus = async (id, status, paymentMethod) => {
   try {
     const transaction = await db.transaction(async (tx) => {
       const [current] = await tx
@@ -97,9 +131,15 @@ export const updateTransactionStatus = async (id, status) => {
           400,
         );
       }
+
+      const updateData = { status };
+      if (status === "paid") {
+        updateData.paymentMethod = paymentMethod;
+        updateData.paidAt = new Date();
+      }
       const [updated] = await tx
         .update(transactionsTable)
-        .set({ status })
+        .set(updateData)
         .where(eq(transactionsTable.id, id))
         .returning();
 
@@ -130,15 +170,17 @@ export const updateTransactionStatus = async (id, status) => {
   }
 };
 
-export const deleteTransactionById = async (id) => {
+export const getTransactionsSummary = async () => {
   try {
-    const transaction = await db
-      .delete(transactionsTable)
-      .where(eq(transactionsTable.id, id))
-      .returning();
-    if (transaction.length === 0)
-      throw new NotFoundError("Transaksi tidak ditemukan");
-    return transaction;
+    const summary = await db
+      .select({
+        status: transactionsTable.status,
+        count: sql`count(*)::int`,
+        total: sql`coalesce(sum(${transactionsTable.totalAmount}), 0)`,
+      })
+      .from(transactionsTable)
+      .groupBy(transactionsTable.status);
+    return summary;
   } catch (err) {
     throw parseDbError(err);
   }

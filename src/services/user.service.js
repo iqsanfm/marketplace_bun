@@ -1,4 +1,5 @@
-import { eq } from "drizzle-orm";
+import { eq, and, ilike, sql, or } from "drizzle-orm";
+
 import { db } from "../db/database.connection";
 import { sessionsTable, usersTable } from "../db/schema.database";
 import { parseDbError } from "../utils/db-error";
@@ -44,11 +45,24 @@ export const loginUser = async ({ email, password }) => {
   return { email: user.email, name: user.name, token, expiresAt };
 };
 
-export const getAllUsers = async ({ role, page, limit }) => {
+export const getAllUsers = async ({ role, page, limit, search }) => {
   try {
     const offset = (page - 1) * limit;
+    const conditions = [];
 
-    let query = db
+    if (role) conditions.push(eq(usersTable.role, role));
+    if (search)
+      conditions.push(
+        or(
+          ilike(usersTable.name, `%${search}%`),
+          ilike(usersTable.email, `%${search}%`),
+          ilike(usersTable.phone, `%${search}%`),
+        ),
+      );
+
+    const whereClause = conditions.length > 0 ? and(...conditions) : undefined;
+
+    let dataQuery = db
       .select({
         id: usersTable.id,
         name: usersTable.name,
@@ -60,11 +74,24 @@ export const getAllUsers = async ({ role, page, limit }) => {
       })
       .from(usersTable);
 
-    if (role) query = query.where(eq(usersTable.role, role));
+    let countQuery = db.select({ count: sql`count(*)::int` }).from(usersTable);
+    if (whereClause) {
+      dataQuery = dataQuery.where(whereClause);
+      countQuery = countQuery.where(whereClause);
+    }
+    const [users, countResult] = await Promise.all([
+      dataQuery.limit(limit).offset(offset),
+      countQuery,
+    ]);
 
-    const users = await query.limit(limit).offset(offset);
-
-    return users;
+    const total = countResult[0].count;
+    return {
+      users,
+      total,
+      page,
+      limit,
+      totaPages: Math.ceil(total / limit),
+    };
   } catch (err) {
     throw parseDbError(err);
   }

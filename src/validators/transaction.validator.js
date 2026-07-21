@@ -11,9 +11,15 @@ export const createTransactionSchema = z.object({
     .min(1, "Minimal 1 produk dalam transaksi"),
 });
 
-export const updateTransactionStatusSchema = z.object({
-  status: z.enum(["paid", "cancelled"], "Status tidak valid"),
-});
+export const updateTransactionStatusSchema = z
+  .object({
+    status: z.enum(["paid", "cancelled"], "Status tidak valid"),
+    paymentMethod: z.enum(["cash", "transfer"]).optional(),
+  })
+  .refine((data) => data.status !== "paid" || data.paymentMethod, {
+    message: "paymentMethod wajib diisi kalau status paid",
+    path: ["paymentMethod"],
+  });
 
 export const transactionIdParamSchema = z.object({
   id: z.string().uuid("Transaction ID tidak valid"),
