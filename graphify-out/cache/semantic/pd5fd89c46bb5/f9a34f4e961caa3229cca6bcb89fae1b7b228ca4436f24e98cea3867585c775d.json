@@ -1,0 +1,1 @@
+{"nodes": [{"id": "docker_compose_db_service", "label": "Postgres db service (postgres:16-alpine)", "file_type": "code", "source_file": "docker-compose.yml", "source_location": "services.db", "source_url": null, "captured_at": null, "author": null, "contributor": null}], "edges": [], "hyperedges": []}

@@ -1,4 +1,5 @@
 import { Hono } from "hono";
+import { cors } from "hono/cors";
 
 import { checkConnection } from "./db/database.connection";
 
@@ -10,6 +11,8 @@ const app = new Hono();
 const PORT = Bun.env.PORT;
 
 await checkConnection();
+
+app.use("*", cors());
 
 app.route("/users", userRoute);
 
