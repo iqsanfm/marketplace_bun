@@ -1,27 +1,28 @@
 import {
+  registerUser,
+  loginUser,
   getAllUsers,
-  registerUser as registerUserService,
-  loginUser as loginUserService,
-  editUserById as editUserByIdService,
-  editUserRole as editUserRoleService,
   getUserById,
+  editUserRole,
+  editUserById,
+  changePassword,
 } from "../services/user.service";
 import { success, error } from "../utils/response";
 
-export const registerUser = async (c) => {
+export const handleRegister = async (c) => {
   try {
     const body = c.req.valid("json");
-    const user = await registerUserService(body);
+    const user = await registerUser(body);
     return success(c, user, 201);
   } catch (err) {
     return error(c, err.message);
   }
 };
 
-export const loginUser = async (c) => {
+export const handleLogin = async (c) => {
   try {
     const body = c.req.valid("json");
-    const user = await loginUserService(body);
+    const user = await loginUser(body);
     return success(c, user, 201);
   } catch (err) {
     return error(c, err.message);
@@ -38,6 +39,11 @@ export const listUsers = async (c) => {
   }
 };
 
+export const myProfile = async (c) => {
+  const { password, ...user } = c.get("user");
+  return success(c, user);
+};
+
 export const userById = async (c) => {
   try {
     const id = c.req.param("id");
@@ -48,7 +54,7 @@ export const userById = async (c) => {
   }
 };
 
-export const editUserRole = async (c) => {
+export const updateUserRole = async (c) => {
   try {
     const loggedInUser = c.get("user");
     const id = c.req.param("id");
@@ -58,24 +64,34 @@ export const editUserRole = async (c) => {
     }
 
     const body = c.req.valid("json");
-    const user = await editUserRoleService(id, body);
+    const user = await editUserRole(id, body);
     return success(c, user);
   } catch (err) {
     return error(c, err.message, err.status ?? 400);
   }
 };
 
-export const editUserById = async (c) => {
+export const updateMyProfile = async (c) => {
   try {
     const loggedInUser = c.get("user");
-    const id = c.req.param("id");
-
-    if (loggedInUser.id !== id) {
-      return error(c, "Tidak boleh mengedit user lain", 403);
-    }
     const body = c.req.valid("json");
-    const user = await editUserByIdService(id, body);
+    const user = await editUserById(loggedInUser.id, body);
     return success(c, user);
+  } catch (err) {
+    return error(c, err.message, err.status ?? 400);
+  }
+};
+
+export const handlePasswordChange = async (c) => {
+  try {
+    const loggedInUser = c.get("user");
+    const { currentPassword, newPassword } = c.req.valid("json");
+    const result = await changePassword(
+      loggedInUser.id,
+      currentPassword,
+      newPassword,
+    );
+    return success(c, result);
   } catch (err) {
     return error(c, err.message, err.status ?? 400);
   }

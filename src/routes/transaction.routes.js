@@ -9,42 +9,42 @@ import {
 import { handleValidation } from "../utils/handle-validation.js";
 import { authMiddleware } from "../middlewares/auth.middleware.js";
 import {
-  createTransaction,
-  updateTransactionStatus,
-  getAllTransactions,
-  getTransactionsSummary,
-  getTransactionById,
+  handleCreateTransaction,
+  changeTransactionStatus,
+  listTransactions,
+  transactionsSummary,
+  transactionById,
 } from "../controllers/transaction.controllers.js";
 
 const transactionRoute = new Hono();
 
-transactionRoute.get(
-  "/:id",
-  zValidator("param", transactionIdParamSchema, handleValidation),
-  getTransactionById,
-);
+transactionRoute.use("*", authMiddleware);
 
-transactionRoute.get("/summary", getTransactionsSummary);
+transactionRoute.get("/summary", transactionsSummary);
 
 transactionRoute.get(
   "/",
   zValidator("query", getTransactionsQuerySchema, handleValidation),
-  getAllTransactions,
+  listTransactions,
 );
 
-transactionRoute.use("*", authMiddleware);
+transactionRoute.get(
+  "/:id",
+  zValidator("param", transactionIdParamSchema, handleValidation),
+  transactionById,
+);
 
 transactionRoute.post(
   "/",
   zValidator("json", createTransactionSchema, handleValidation),
-  createTransaction,
+  handleCreateTransaction,
 );
 
 transactionRoute.patch(
   "/:id/status",
   zValidator("param", transactionIdParamSchema, handleValidation),
   zValidator("json", updateTransactionStatusSchema, handleValidation),
-  updateTransactionStatus,
+  changeTransactionStatus,
 );
 
 export default transactionRoute;

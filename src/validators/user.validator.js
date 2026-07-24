@@ -45,3 +45,8 @@ export const getUserQuerySchema = z.object({
   page: z.coerce.number().int().positive().default(1),
   limit: z.coerce.number().int().positive().max(100).default(10),
 });
+
+export const changePasswordSchema = z.object({
+  currentPassword: z.string().min(1, "Password lama belum diisi"),
+  newPassword: z.string().min(8, "Password baru minimal 8 karakter"),
+});

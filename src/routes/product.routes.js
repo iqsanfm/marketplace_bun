@@ -12,48 +12,49 @@ import {
 import { handleValidation } from "../utils/handle-validation.js";
 import { authMiddleware } from "../middlewares/auth.middleware.js";
 import {
-  addNewProduct,
-  editProductById,
-  getAllProducts,
-  getProductById,
-  deleteProductById,
-  getLowStockProducts,
+  createProduct,
+  updateProduct,
+  listProducts,
+  productById,
+  removeProduct,
+  listLowStockProducts,
 } from "../controllers/product.controllers.js";
 
 const productRoute = new Hono();
 
+productRoute.use("*", authMiddleware);
+
 productRoute.post(
   "/",
   zValidator("json", createNewProductSchema, handleValidation),
-  addNewProduct,
+  createProduct,
 );
-productRoute.use("/low-stock", getLowStockProducts);
 
-productRoute.use("*", authMiddleware);
+productRoute.get("/low-stock", listLowStockProducts);
 
 productRoute.get(
   "/",
   zValidator("query", getProductsQuerySchema, handleValidation),
-  getAllProducts,
+  listProducts,
 );
 
 productRoute.get(
   "/:id",
   zValidator("param", productIdSchema, handleValidation),
-  getProductById,
+  productById,
 );
 
 productRoute.delete(
   "/:id",
   zValidator("param", deleteProductByIdSchema, handleValidation),
-  deleteProductById,
+  removeProduct,
 );
 
 productRoute.patch(
   "/:id",
   zValidator("param", productIdSchema, handleValidation),
   zValidator("json", editProductByIdSchema, handleValidation),
-  editProductById,
+  updateProduct,
 );
 
 export default productRoute;

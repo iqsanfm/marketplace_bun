@@ -42,7 +42,14 @@ export const loginUser = async ({ email, password }) => {
 
   await db.insert(sessionsTable).values({ userId: user.id, token, expiresAt });
 
-  return { email: user.email, name: user.name, token, expiresAt };
+  return {
+    id: user.id,
+    email: user.email,
+    name: user.name,
+    role: user.role,
+    token,
+    expiresAt,
+  };
 };
 
 export const getAllUsers = async ({ role, page, limit, search }) => {
@@ -90,7 +97,7 @@ export const getAllUsers = async ({ role, page, limit, search }) => {
       total,
       page,
       limit,
-      totaPages: Math.ceil(total / limit),
+      totalPages: Math.ceil(total / limit),
     };
   } catch (err) {
     throw parseDbError(err);
@@ -153,6 +160,32 @@ export const editUserById = async (id, data) => {
     if (!user) throw new NotFoundError("User tidak ditemukan");
     return user;
   } catch (err) {
+    throw parseDbError(err);
+  }
+};
+
+export const changePassword = async (userId, currentPassword, newPassword) => {
+  try {
+    const [user] = await db
+      .select()
+      .from(usersTable)
+      .where(eq(usersTable.id, userId));
+    if (!user) throw new NotFoundError("User tidak ditemukan");
+
+    const isValid = await Bun.password.verify(currentPassword, user.password);
+    if (!isValid) throw new AppError("Password lama salah", 401);
+
+    const newHash = await Bun.password.hash(newPassword, {
+      algorithm: "argon2id",
+    });
+    await db
+      .update(usersTable)
+      .set({ password: newHash })
+      .where(eq(usersTable.id, userId));
+
+    return { message: "Password berhasil diubah" };
+  } catch (err) {
+    if (err instanceof AppError) throw err;
     throw parseDbError(err);
   }
 };

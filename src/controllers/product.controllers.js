@@ -1,63 +1,63 @@
 import { success, error } from "../utils/response";
 import {
-  addNewProduct as addNewProductService,
-  getAllProducts as getAllProductsService,
-  getProductById as getProductByIdService,
-  editProductById as editProductByIdService,
-  deleteProductById as deleteProductByIdService,
-  getLowStockProducts as getLowStockProductsService,
+  addNewProduct,
+  getAllProducts,
+  getProductById,
+  editProductById,
+  deleteProductById,
+  getLowStockProducts,
 } from "../services/product.service";
 
-export const addNewProduct = async (c) => {
+export const createProduct = async (c) => {
   try {
     const body = c.req.valid("json");
-    const product = await addNewProductService(body);
-    return success(c, product);
+    const product = await addNewProduct(body);
+    return success(c, product, 201);
   } catch (err) {
     return error(c, err.message);
   }
 };
 
-export const getLowStockProducts = async (c) => {
+export const listLowStockProducts = async (c) => {
   try {
-    const product = await getLowStockProductsService();
+    const product = await getLowStockProducts();
     return success(c, product);
   } catch (err) {
     return error(c, err.message);
   }
 };
 
-export const getAllProducts = async (c) => {
+export const listProducts = async (c) => {
   try {
     const query = c.req.valid("query");
-    const product = await getAllProductsService(query);
+    const product = await getAllProducts(query);
     return success(c, product);
   } catch (err) {
     return error(c, err.message);
   }
 };
 
-export const getProductById = async (c) => {
+export const productById = async (c) => {
   try {
     const id = c.req.param("id");
-    const product = await getProductByIdService(id);
+    const product = await getProductById(id);
     return success(c, product);
   } catch (err) {
     return error(c, err.message, err.status ?? 400);
   }
 };
 
-export const deleteProductById = async (c) => {
+export const removeProduct = async (c) => {
   try {
     const id = c.req.param("id");
-    const product = await deleteProductByIdService(id);
+    const product = await deleteProductById(id);
     return success(c, product);
   } catch (err) {
     return error(c, err.message, err.status ?? 400);
   }
 };
 
-export const editProductById = async (c) => {
+export const updateProduct = async (c) => {
   try {
     const loggedInUser = c.get("user");
     const id = c.req.param("id");
@@ -67,7 +67,7 @@ export const editProductById = async (c) => {
     }
 
     const body = c.req.valid("json");
-    const product = await editProductByIdService(id, body);
+    const product = await editProductById(id, body);
     return success(c, product);
   } catch (err) {
     return error(c, err.message, err.status ?? 400);

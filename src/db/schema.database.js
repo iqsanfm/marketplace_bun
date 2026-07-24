@@ -65,9 +65,19 @@ export const transactionsTable = pgTable("transactions", {
   userId: uuid()
     .notNull()
     .references(() => usersTable.id),
+  memberId: uuid().references(() => membersTable.id),
   status: transactionStatusEnum().notNull().default("pending"),
   totalAmount: numeric().notNull(),
   paymentMethod: paymentMethodEnum(),
   paidAt: timestamp(),
+  createdAt: timestamp().notNull().defaultNow(),
+});
+
+export const membersTable = pgTable("members", {
+  id: uuid().primaryKey().defaultRandom(),
+  name: varchar({ length: 255 }).notNull(),
+  phone: varchar({ length: 20 }).notNull().unique(),
+  email: varchar({ length: 255 }),
+  address: varchar({ length: 255 }),
   createdAt: timestamp().notNull().defaultNow(),
 });

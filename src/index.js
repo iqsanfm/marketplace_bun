@@ -6,6 +6,7 @@ import { checkConnection } from "./db/database.connection";
 import userRoute from "./routes/users.routes.js";
 import productRoute from "./routes/product.routes.js";
 import transactionRoute from "./routes/transaction.routes.js";
+import memberRoute from "./routes/members.routes.js";
 
 const app = new Hono();
 const PORT = Bun.env.PORT;
@@ -15,6 +16,8 @@ await checkConnection();
 app.use("*", cors());
 
 app.route("/users", userRoute);
+
+app.route("/member", memberRoute);
 
 app.route("/product", productRoute);
 

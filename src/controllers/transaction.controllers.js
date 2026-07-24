@@ -1,25 +1,24 @@
-import { paymentMethodEnum } from "../db/schema.database";
 import {
-  createTransaction as createTransactionService,
-  updateTransactionStatus as updateTransactionStatusService,
-  getAllTransactions as getAllTransactionsService,
-  getTransactionsSummary as getTransactionsSummaryService,
-  getTransactionById as getTransactionByIdService,
+  createTransaction,
+  updateTransactionStatus,
+  getAllTransactions,
+  getTransactionsSummary,
+  getTransactionById,
 } from "../services/transaction.service";
 import { success, error } from "../utils/response";
 
-export const createTransaction = async (c) => {
+export const handleCreateTransaction = async (c) => {
   try {
     const loggedInUser = c.get("user");
     const { items } = c.req.valid("json");
-    const transaction = await createTransactionService(loggedInUser.id, items);
+    const transaction = await createTransaction(loggedInUser.id, items);
     return success(c, transaction, 201);
   } catch (err) {
     return error(c, err.message, err.status ?? 400);
   }
 };
 
-export const updateTransactionStatus = async (c) => {
+export const changeTransactionStatus = async (c) => {
   try {
     const loggedInUser = c.get("user");
     if (loggedInUser.role !== "admin") {
@@ -27,7 +26,7 @@ export const updateTransactionStatus = async (c) => {
     }
     const { id } = c.req.valid("param");
     const { status, paymentMethod } = c.req.valid("json");
-    const transaction = await updateTransactionStatusService(
+    const transaction = await updateTransactionStatus(
       id,
       status,
       paymentMethod,
@@ -38,29 +37,29 @@ export const updateTransactionStatus = async (c) => {
   }
 };
 
-export const getAllTransactions = async (c) => {
+export const listTransactions = async (c) => {
   try {
     const query = c.req.valid("query");
-    const transaction = await getAllTransactionsService(query);
+    const transaction = await getAllTransactions(query);
     return success(c, transaction);
   } catch (err) {
     return error(c, err.message);
   }
 };
 
-export const getTransactionsSummary = async (c) => {
+export const transactionsSummary = async (c) => {
   try {
-    const summary = await getTransactionsSummaryService();
+    const summary = await getTransactionsSummary();
     return success(c, summary);
   } catch (err) {
     return error(c, err.message, err.status ?? 400);
   }
 };
 
-export const getTransactionById = async (c) => {
+export const transactionById = async (c) => {
   try {
     const id = c.req.param("id");
-    const transaction = await getTransactionByIdService(id);
+    const transaction = await getTransactionById(id);
     return success(c, transaction);
   } catch (err) {
     return error(c, err.message, err.status ?? 400);

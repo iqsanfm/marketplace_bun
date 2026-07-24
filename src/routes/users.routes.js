@@ -7,15 +7,18 @@ import {
   editUserByIdSchema,
   editUserRoleSchema,
   getUserQuerySchema,
+  changePasswordSchema,
 } from "../validators/user.validator.js";
 
 import {
-  editUserById,
-  editUserRole,
+  updateMyProfile,
+  updateUserRole,
   listUsers,
-  loginUser,
-  registerUser,
+  handleLogin,
+  handleRegister,
   userById,
+  handlePasswordChange,
+  myProfile,
 } from "../controllers/user.controllers";
 
 import { handleValidation } from "../utils/handle-validation.js";
@@ -26,13 +29,13 @@ const userRoute = new Hono();
 userRoute.post(
   "/register",
   zValidator("json", createUserSchema, handleValidation),
-  registerUser,
+  handleRegister,
 );
 
 userRoute.post(
   "/login",
   zValidator("json", loginUserSchema, handleValidation),
-  loginUser,
+  handleLogin,
 );
 
 userRoute.use("*", authMiddleware);
@@ -43,18 +46,25 @@ userRoute.get(
   listUsers,
 );
 
+userRoute.get("/me", myProfile);
+
 userRoute.patch(
-  "/:id",
-  zValidator("param", userIdParamSchema, handleValidation),
-  zValidator("json", editUserRoleSchema, handleValidation),
-  editUserRole,
+  "/me/password",
+  zValidator("json", changePasswordSchema, handleValidation),
+  handlePasswordChange,
 );
 
 userRoute.patch(
-  "/:id",
+  "/:id/role",
   zValidator("param", userIdParamSchema, handleValidation),
+  zValidator("json", editUserRoleSchema, handleValidation),
+  updateUserRole,
+);
+
+userRoute.patch(
+  "/me",
   zValidator("json", editUserByIdSchema, handleValidation),
-  editUserById,
+  updateMyProfile,
 );
 
 userRoute.get(
