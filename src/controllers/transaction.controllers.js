@@ -21,11 +21,11 @@ export const handleCreateTransaction = async (c) => {
 export const changeTransactionStatus = async (c) => {
   try {
     const loggedInUser = c.get("user");
-    if (loggedInUser.role !== "admin") {
-      return error(c, "Hanya admin yang boleh mengubah status transaksi", 403);
-    }
     const { id } = c.req.valid("param");
     const { status, paymentMethod } = c.req.valid("json");
+    if (status === "cancelled" && loggedInUser.role !== "admin") {
+      return error(c, "Hanya admin yang boleh membatalkan transaksi", 403);
+    }
     const transaction = await updateTransactionStatus(
       id,
       status,

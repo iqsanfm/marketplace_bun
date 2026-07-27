@@ -64,7 +64,7 @@ export const getAllMembers = async ({ page, limit, search }) => {
 
     const total = countResult[0].count;
     return {
-      members,
+      items: members,
       total,
       page,
       limit,

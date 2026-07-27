@@ -1,4 +1,4 @@
-import { eq, and, gte, lte, ilike, sql, count } from "drizzle-orm";
+import { eq, and, gte, lte, ilike, sql, count, or } from "drizzle-orm";
 import { db } from "../db/database.connection";
 import { productTable } from "../db/schema.database";
 import { parseDbError } from "../utils/db-error";
@@ -36,7 +36,12 @@ export const getAllProducts = async ({
 
     if (category) conditions.push(eq(productTable.category, category));
     if (search)
-      conditions.push(ilike(productTable.product_name, `%${search}%`));
+      conditions.push(
+        or(
+          ilike(productTable.product_name, `%${search}%`),
+          ilike(productTable.sku, `%${search}%`),
+        ),
+      );
     if (minPrice !== undefined)
       conditions.push(gte(productTable.price, minPrice));
     if (maxPrice !== undefined)

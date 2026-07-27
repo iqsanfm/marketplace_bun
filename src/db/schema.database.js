@@ -43,7 +43,7 @@ export const productTable = pgTable("product", {
   product_name: varchar({ length: 255 }).notNull(),
   price: numeric().notNull(),
   stock: integer().notNull(),
-  sku: varchar({ length: 100 }),
+  sku: varchar({ length: 100 }).unique(),
   description: text(),
   category: varchar({ length: 100 }),
 });

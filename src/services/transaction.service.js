@@ -1,4 +1,4 @@
-import { eq, inArray, sql } from "drizzle-orm";
+import { and, eq, gte, inArray, sql } from "drizzle-orm";
 
 import { db } from "../db/database.connection";
 
@@ -24,15 +24,29 @@ export const createTransaction = async (userId, items) => {
       const product = products.find((p) => p.id === item.productId);
       if (!product)
         throw new NotFoundError(`Produk ${item.productId} tidak ditemukan`);
-      if (product.stock < item.quantity) {
-        throw new AppError(`Stock ${product.product_name} tidak cukup`, 400);
-      }
 
       totalAmount += product.price * item.quantity;
       return { ...item, priceAtPurchase: product.price };
     });
 
     const transaction = await db.transaction(async (tx) => {
+      for (const item of itemsWithPrice) {
+        const [updated] = await tx
+          .update(productTable)
+          .set({ stock: sql`${productTable.stock} - ${item.quantity}` })
+          .where(
+            and(
+              eq(productTable.id, item.productId),
+              gte(productTable.stock, item.quantity),
+            ),
+          )
+          .returning();
+        if (!updated) {
+          const product = products.find((p) => p.id === item.productId);
+          throw new AppError(`Stock ${product.product_name} tidak cukup`, 400);
+        }
+      }
+
       const [newTransaction] = await tx
         .insert(transactionsTable)
         .values({ userId, totalAmount })
@@ -45,13 +59,6 @@ export const createTransaction = async (userId, items) => {
           priceAtPurchase: item.priceAtPurchase,
         })),
       );
-      for (const item of itemsWithPrice) {
-        const product = products.find((p) => p.id === item.productId);
-        await tx
-          .update(productTable)
-          .set({ stock: product.stock - item.quantity })
-          .where(eq(productTable.id, item.productId));
-      }
       return newTransaction;
     });
     return transaction;
@@ -64,8 +71,9 @@ export const createTransaction = async (userId, items) => {
 export const getAllTransactions = async ({ status, page, limit }) => {
   try {
     const offset = (page - 1) * limit;
+    const where = status ? eq(transactionsTable.status, status) : undefined;
 
-    let query = db
+    let dataQuery = db
       .select({
         id: transactionsTable.id,
         userId: transactionsTable.userId,
@@ -75,12 +83,27 @@ export const getAllTransactions = async ({ status, page, limit }) => {
         createdAt: transactionsTable.createdAt,
       })
       .from(transactionsTable);
+    let countQuery = db
+      .select({ count: sql`count(*)::int` })
+      .from(transactionsTable);
 
-    if (status) query = query.where(eq(transactionsTable.status, status));
+    if (where) {
+      dataQuery = dataQuery.where(where);
+      countQuery = countQuery.where(where);
+    }
 
-    const transaction = await query.limit(limit).offset(offset);
+    const [items, [{ count: total }]] = await Promise.all([
+      dataQuery.limit(limit).offset(offset),
+      countQuery,
+    ]);
 
-    return transaction;
+    return {
+      items,
+      total,
+      page,
+      limit,
+      totalPages: Math.ceil(total / limit),
+    };
   } catch (err) {
     throw parseDbError(err);
   }
@@ -93,8 +116,7 @@ export const getTransactionById = async (id) => {
       .from(transactionsTable)
       .where(eq(transactionsTable.id, id));
 
-    if (!transaction.length === 0)
-      throw new NotFoundError("Transaksi tidak ditemukan");
+    if (!transaction) throw new NotFoundError("Transaksi tidak ditemukan");
     const items = await db
       .select({
         id: transactionItemsTable.id,
