@@ -43,7 +43,6 @@
       "_origin": "ast",
       "id": "drizzle_config",
       "community": 9,
-      "community_name": "Drizzle Config",
       "norm_label": "drizzle.config.js"
     },
     {
@@ -53,8 +52,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "package",
-      "community": 5,
-      "community_name": "Runtime Dependencies",
+      "community": 6,
       "norm_label": "package.json"
     },
     {
@@ -64,8 +62,7 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "package_name",
-      "community": 5,
-      "community_name": "Runtime Dependencies",
+      "community": 6,
       "norm_label": "name"
     },
     {
@@ -75,8 +72,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "package_scripts",
-      "community": 5,
-      "community_name": "Runtime Dependencies",
+      "community": 6,
       "norm_label": "scripts"
     },
     {
@@ -86,8 +82,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "package_scripts_dev",
-      "community": 5,
-      "community_name": "Runtime Dependencies",
+      "community": 6,
       "norm_label": "dev"
     },
     {
@@ -97,8 +92,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "package_scripts_db_push",
-      "community": 5,
-      "community_name": "Runtime Dependencies",
+      "community": 6,
       "norm_label": "db:push"
     },
     {
@@ -108,8 +102,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "package_scripts_db_generate",
-      "community": 5,
-      "community_name": "Runtime Dependencies",
+      "community": 6,
       "norm_label": "db:generate"
     },
     {
@@ -119,8 +112,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "package_scripts_db_migrate",
-      "community": 5,
-      "community_name": "Runtime Dependencies",
+      "community": 6,
       "norm_label": "db:migrate"
     },
     {
@@ -130,8 +122,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "package_scripts_db_studio",
-      "community": 5,
-      "community_name": "Runtime Dependencies",
+      "community": 6,
       "norm_label": "db:studio"
     },
     {
@@ -142,7 +133,6 @@
       "_origin": "ast",
       "id": "package_dependencies",
       "community": 5,
-      "community_name": "Runtime Dependencies",
       "norm_label": "dependencies"
     },
     {
@@ -153,7 +143,6 @@
       "_origin": "ast",
       "id": "package_dependencies_hono_zod_validator",
       "community": 5,
-      "community_name": "Runtime Dependencies",
       "norm_label": "@hono/zod-validator"
     },
     {
@@ -164,7 +153,6 @@
       "_origin": "ast",
       "id": "hono_zod_validator",
       "community": 5,
-      "community_name": "Runtime Dependencies",
       "norm_label": "@hono/zod-validator"
     },
     {
@@ -175,7 +163,6 @@
       "_origin": "ast",
       "id": "package_dependencies_dotenv",
       "community": 5,
-      "community_name": "Runtime Dependencies",
       "norm_label": "dotenv"
     },
     {
@@ -186,7 +173,6 @@
       "_origin": "ast",
       "id": "dotenv",
       "community": 5,
-      "community_name": "Runtime Dependencies",
       "norm_label": "dotenv"
     },
     {
@@ -197,7 +183,6 @@
       "_origin": "ast",
       "id": "package_dependencies_drizzle_orm",
       "community": 5,
-      "community_name": "Runtime Dependencies",
       "norm_label": "drizzle-orm"
     },
     {
@@ -208,7 +193,6 @@
       "_origin": "ast",
       "id": "drizzle_orm",
       "community": 5,
-      "community_name": "Runtime Dependencies",
       "norm_label": "drizzle-orm"
     },
     {
@@ -219,7 +203,6 @@
       "_origin": "ast",
       "id": "package_dependencies_drizzle_zod",
       "community": 5,
-      "community_name": "Runtime Dependencies",
       "norm_label": "drizzle-zod"
     },
     {
@@ -230,7 +213,6 @@
       "_origin": "ast",
       "id": "drizzle_zod",
       "community": 5,
-      "community_name": "Runtime Dependencies",
       "norm_label": "drizzle-zod"
     },
     {
@@ -241,7 +223,6 @@
       "_origin": "ast",
       "id": "package_dependencies_hono",
       "community": 5,
-      "community_name": "Runtime Dependencies",
       "norm_label": "hono"
     },
     {
@@ -252,7 +233,6 @@
       "_origin": "ast",
       "id": "hono",
       "community": 5,
-      "community_name": "Runtime Dependencies",
       "norm_label": "hono"
     },
     {
@@ -263,7 +243,6 @@
       "_origin": "ast",
       "id": "package_dependencies_pg",
       "community": 5,
-      "community_name": "Runtime Dependencies",
       "norm_label": "pg"
     },
     {
@@ -274,7 +253,6 @@
       "_origin": "ast",
       "id": "pg",
       "community": 5,
-      "community_name": "Runtime Dependencies",
       "norm_label": "pg"
     },
     {
@@ -285,7 +263,6 @@
       "_origin": "ast",
       "id": "package_dependencies_zod",
       "community": 5,
-      "community_name": "Runtime Dependencies",
       "norm_label": "zod"
     },
     {
@@ -296,7 +273,6 @@
       "_origin": "ast",
       "id": "zod",
       "community": 5,
-      "community_name": "Runtime Dependencies",
       "norm_label": "zod"
     },
     {
@@ -306,8 +282,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "package_devdependencies",
-      "community": 5,
-      "community_name": "Runtime Dependencies",
+      "community": 6,
       "norm_label": "devdependencies"
     },
     {
@@ -317,8 +292,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "package_devdependencies_types_bun",
-      "community": 5,
-      "community_name": "Runtime Dependencies",
+      "community": 6,
       "norm_label": "@types/bun"
     },
     {
@@ -328,8 +302,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "types_bun",
-      "community": 5,
-      "community_name": "Runtime Dependencies",
+      "community": 6,
       "norm_label": "@types/bun"
     },
     {
@@ -339,8 +312,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "package_devdependencies_drizzle_kit",
-      "community": 5,
-      "community_name": "Runtime Dependencies",
+      "community": 6,
       "norm_label": "drizzle-kit"
     },
     {
@@ -350,75 +322,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "drizzle_kit",
-      "community": 5,
-      "community_name": "Runtime Dependencies",
+      "community": 6,
       "norm_label": "drizzle-kit"
-    },
-    {
-      "label": "members.controllers.js",
-      "file_type": "code",
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "src_controllers_members_controllers",
-      "community": 2,
-      "community_name": "Controllers Layer",
-      "norm_label": "members.controllers.js"
-    },
-    {
-      "label": "handleRegisterMember()",
-      "file_type": "code",
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L10",
-      "_origin": "ast",
-      "id": "src_controllers_members_controllers_handleregistermember",
-      "community": 2,
-      "community_name": "Controllers Layer",
-      "norm_label": "handleregistermember()"
-    },
-    {
-      "label": "listMembers()",
-      "file_type": "code",
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L20",
-      "_origin": "ast",
-      "id": "src_controllers_members_controllers_listmembers",
-      "community": 2,
-      "community_name": "Controllers Layer",
-      "norm_label": "listmembers()"
-    },
-    {
-      "label": "memberById()",
-      "file_type": "code",
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L30",
-      "_origin": "ast",
-      "id": "src_controllers_members_controllers_memberbyid",
-      "community": 2,
-      "community_name": "Controllers Layer",
-      "norm_label": "memberbyid()"
-    },
-    {
-      "label": "updateMember()",
-      "file_type": "code",
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L40",
-      "_origin": "ast",
-      "id": "src_controllers_members_controllers_updatemember",
-      "community": 2,
-      "community_name": "Controllers Layer",
-      "norm_label": "updatemember()"
-    },
-    {
-      "label": "removeMember()",
-      "file_type": "code",
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L51",
-      "_origin": "ast",
-      "id": "src_controllers_members_controllers_removemember",
-      "community": 2,
-      "community_name": "Controllers Layer",
-      "norm_label": "removemember()"
     },
     {
       "label": "product.controllers.js",
@@ -427,75 +332,68 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_controllers_product_controllers",
-      "community": 1,
-      "community_name": "Routing & App Wiring",
+      "community": 2,
       "norm_label": "product.controllers.js"
     },
     {
-      "label": "createProduct()",
+      "label": "addNewProduct()",
       "file_type": "code",
       "source_file": "src/controllers/product.controllers.js",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "src_controllers_product_controllers_createproduct",
-      "community": 1,
-      "community_name": "Routing & App Wiring",
-      "norm_label": "createproduct()"
+      "id": "src_controllers_product_controllers_addnewproduct",
+      "community": 2,
+      "norm_label": "addnewproduct()"
     },
     {
-      "label": "listLowStockProducts()",
+      "label": "getLowStockProducts()",
       "file_type": "code",
       "source_file": "src/controllers/product.controllers.js",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "src_controllers_product_controllers_listlowstockproducts",
-      "community": 1,
-      "community_name": "Routing & App Wiring",
-      "norm_label": "listlowstockproducts()"
+      "id": "src_controllers_product_controllers_getlowstockproducts",
+      "community": 2,
+      "norm_label": "getlowstockproducts()"
     },
     {
-      "label": "listProducts()",
+      "label": "getAllProducts()",
       "file_type": "code",
       "source_file": "src/controllers/product.controllers.js",
       "source_location": "L30",
       "_origin": "ast",
-      "id": "src_controllers_product_controllers_listproducts",
-      "community": 1,
-      "community_name": "Routing & App Wiring",
-      "norm_label": "listproducts()"
+      "id": "src_controllers_product_controllers_getallproducts",
+      "community": 2,
+      "norm_label": "getallproducts()"
     },
     {
-      "label": "productById()",
+      "label": "getProductById()",
       "file_type": "code",
       "source_file": "src/controllers/product.controllers.js",
       "source_location": "L40",
       "_origin": "ast",
-      "id": "src_controllers_product_controllers_productbyid",
-      "community": 1,
-      "community_name": "Routing & App Wiring",
-      "norm_label": "productbyid()"
+      "id": "src_controllers_product_controllers_getproductbyid",
+      "community": 2,
+      "norm_label": "getproductbyid()"
     },
     {
-      "label": "removeProduct()",
+      "label": "deleteProductById()",
       "file_type": "code",
       "source_file": "src/controllers/product.controllers.js",
       "source_location": "L50",
       "_origin": "ast",
-      "id": "src_controllers_product_controllers_removeproduct",
-      "community": 1,
-      "community_name": "Routing & App Wiring",
-      "norm_label": "removeproduct()"
+      "id": "src_controllers_product_controllers_deleteproductbyid",
+      "community": 2,
+      "norm_label": "deleteproductbyid()"
     },
     {
-      "label": "updateProduct()",
+      "label": "editProductById()",
       "file_type": "code",
       "source_file": "src/controllers/product.controllers.js",
       "source_location": "L60",
       "_origin": "ast",
-      "id": "src_controllers_product_controllers_updateproduct",
-      "community": 1,
-      "community_name": "Routing & App Wiring",
-      "norm_label": "updateproduct()"
+      "id": "src_controllers_product_controllers_editproductbyid",
+      "community": 2,
+      "norm_label": "editproductbyid()"
     },
     {
       "label": "transaction.controllers.js",
@@ -504,75 +402,58 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_controllers_transaction_controllers",
-      "community": 3,
-      "community_name": "User Service & Errors",
+      "community": 0,
       "norm_label": "transaction.controllers.js"
     },
     {
-      "label": "handleCreateTransaction()",
+      "label": "createTransaction()",
       "file_type": "code",
       "source_file": "src/controllers/transaction.controllers.js",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "src_controllers_transaction_controllers_handlecreatetransaction",
-      "community": 3,
-      "community_name": "User Service & Errors",
-      "norm_label": "handlecreatetransaction()"
+      "id": "src_controllers_transaction_controllers_createtransaction",
+      "community": 2,
+      "norm_label": "createtransaction()"
     },
     {
-      "label": "changeTransactionStatus()",
+      "label": "updateTransactionStatus()",
       "file_type": "code",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L27",
+      "source_location": "L22",
       "_origin": "ast",
-      "id": "src_controllers_transaction_controllers_changetransactionstatus",
-      "community": 3,
-      "community_name": "User Service & Errors",
-      "norm_label": "changetransactionstatus()"
+      "id": "src_controllers_transaction_controllers_updatetransactionstatus",
+      "community": 2,
+      "norm_label": "updatetransactionstatus()"
     },
     {
-      "label": "listTransactions()",
+      "label": "getAllTransactions()",
       "file_type": "code",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L46",
+      "source_location": "L41",
       "_origin": "ast",
-      "id": "src_controllers_transaction_controllers_listtransactions",
-      "community": 3,
-      "community_name": "User Service & Errors",
-      "norm_label": "listtransactions()"
+      "id": "src_controllers_transaction_controllers_getalltransactions",
+      "community": 2,
+      "norm_label": "getalltransactions()"
     },
     {
-      "label": "transactionsSummary()",
+      "label": "getTransactionsSummary()",
       "file_type": "code",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L56",
+      "source_location": "L51",
       "_origin": "ast",
-      "id": "src_controllers_transaction_controllers_transactionssummary",
-      "community": 3,
-      "community_name": "User Service & Errors",
-      "norm_label": "transactionssummary()"
+      "id": "src_controllers_transaction_controllers_gettransactionssummary",
+      "community": 2,
+      "norm_label": "gettransactionssummary()"
     },
     {
-      "label": "transactionById()",
+      "label": "getTransactionById()",
       "file_type": "code",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L65",
+      "source_location": "L60",
       "_origin": "ast",
-      "id": "src_controllers_transaction_controllers_transactionbyid",
-      "community": 3,
-      "community_name": "User Service & Errors",
-      "norm_label": "transactionbyid()"
-    },
-    {
-      "label": "transactionInvoice()",
-      "file_type": "code",
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L75",
-      "_origin": "ast",
-      "id": "src_controllers_transaction_controllers_transactioninvoice",
-      "community": 3,
-      "community_name": "User Service & Errors",
-      "norm_label": "transactioninvoice()"
+      "id": "src_controllers_transaction_controllers_gettransactionbyid",
+      "community": 2,
+      "norm_label": "gettransactionbyid()"
     },
     {
       "label": "user.controllers.js",
@@ -581,97 +462,68 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_controllers_user_controllers",
-      "community": 7,
-      "community_name": "User Validators",
+      "community": 3,
       "norm_label": "user.controllers.js"
     },
     {
-      "label": "handleRegister()",
+      "label": "registerUser()",
       "file_type": "code",
       "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L12",
+      "source_location": "L11",
       "_origin": "ast",
-      "id": "src_controllers_user_controllers_handleregister",
-      "community": 7,
-      "community_name": "User Validators",
-      "norm_label": "handleregister()"
+      "id": "src_controllers_user_controllers_registeruser",
+      "community": 2,
+      "norm_label": "registeruser()"
     },
     {
-      "label": "handleLogin()",
+      "label": "loginUser()",
       "file_type": "code",
       "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L22",
+      "source_location": "L21",
       "_origin": "ast",
-      "id": "src_controllers_user_controllers_handlelogin",
-      "community": 7,
-      "community_name": "User Validators",
-      "norm_label": "handlelogin()"
+      "id": "src_controllers_user_controllers_loginuser",
+      "community": 2,
+      "norm_label": "loginuser()"
     },
     {
       "label": "listUsers()",
       "file_type": "code",
       "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L32",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "src_controllers_user_controllers_listusers",
-      "community": 7,
-      "community_name": "User Validators",
+      "community": 3,
       "norm_label": "listusers()"
-    },
-    {
-      "label": "myProfile()",
-      "file_type": "code",
-      "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L42",
-      "_origin": "ast",
-      "id": "src_controllers_user_controllers_myprofile",
-      "community": 7,
-      "community_name": "User Validators",
-      "norm_label": "myprofile()"
     },
     {
       "label": "userById()",
       "file_type": "code",
       "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L47",
+      "source_location": "L41",
       "_origin": "ast",
       "id": "src_controllers_user_controllers_userbyid",
-      "community": 7,
-      "community_name": "User Validators",
+      "community": 3,
       "norm_label": "userbyid()"
     },
     {
-      "label": "updateUserRole()",
+      "label": "editUserRole()",
       "file_type": "code",
       "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L57",
+      "source_location": "L51",
       "_origin": "ast",
-      "id": "src_controllers_user_controllers_updateuserrole",
-      "community": 7,
-      "community_name": "User Validators",
-      "norm_label": "updateuserrole()"
+      "id": "src_controllers_user_controllers_edituserrole",
+      "community": 2,
+      "norm_label": "edituserrole()"
     },
     {
-      "label": "updateMyProfile()",
+      "label": "editUserById()",
       "file_type": "code",
       "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L74",
+      "source_location": "L68",
       "_origin": "ast",
-      "id": "src_controllers_user_controllers_updatemyprofile",
-      "community": 7,
-      "community_name": "User Validators",
-      "norm_label": "updatemyprofile()"
-    },
-    {
-      "label": "handlePasswordChange()",
-      "file_type": "code",
-      "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L85",
-      "_origin": "ast",
-      "id": "src_controllers_user_controllers_handlepasswordchange",
-      "community": 7,
-      "community_name": "User Validators",
-      "norm_label": "handlepasswordchange()"
+      "id": "src_controllers_user_controllers_edituserbyid",
+      "community": 2,
+      "norm_label": "edituserbyid()"
     },
     {
       "label": "database.connection.js",
@@ -681,7 +533,6 @@
       "_origin": "ast",
       "id": "src_db_database_connection",
       "community": 0,
-      "community_name": "Database Schema & Services",
       "norm_label": "database.connection.js"
     },
     {
@@ -692,7 +543,6 @@
       "_origin": "ast",
       "id": "src_db_database_connection_db",
       "community": 0,
-      "community_name": "Database Schema & Services",
       "norm_label": "db"
     },
     {
@@ -702,8 +552,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_db_database_connection_checkconnection",
-      "community": 6,
-      "community_name": "Build Scripts & Tooling",
+      "community": 1,
       "norm_label": "checkconnection()"
     },
     {
@@ -714,7 +563,6 @@
       "_origin": "ast",
       "id": "src_db_schema_database",
       "community": 0,
-      "community_name": "Database Schema & Services",
       "norm_label": "schema.database.js"
     },
     {
@@ -725,7 +573,6 @@
       "_origin": "ast",
       "id": "src_db_schema_database_userroleenum",
       "community": 7,
-      "community_name": "User Validators",
       "norm_label": "userroleenum"
     },
     {
@@ -736,7 +583,6 @@
       "_origin": "ast",
       "id": "src_db_schema_database_transactionstatusenum",
       "community": 0,
-      "community_name": "Database Schema & Services",
       "norm_label": "transactionstatusenum"
     },
     {
@@ -747,7 +593,6 @@
       "_origin": "ast",
       "id": "src_db_schema_database_paymentmethodenum",
       "community": 0,
-      "community_name": "Database Schema & Services",
       "norm_label": "paymentmethodenum"
     },
     {
@@ -758,7 +603,6 @@
       "_origin": "ast",
       "id": "src_db_schema_database_userstable",
       "community": 0,
-      "community_name": "Database Schema & Services",
       "norm_label": "userstable"
     },
     {
@@ -769,7 +613,6 @@
       "_origin": "ast",
       "id": "src_db_schema_database_sessionstable",
       "community": 0,
-      "community_name": "Database Schema & Services",
       "norm_label": "sessionstable"
     },
     {
@@ -780,7 +623,6 @@
       "_origin": "ast",
       "id": "src_db_schema_database_producttable",
       "community": 0,
-      "community_name": "Database Schema & Services",
       "norm_label": "producttable"
     },
     {
@@ -791,7 +633,6 @@
       "_origin": "ast",
       "id": "src_db_schema_database_transactionitemstable",
       "community": 0,
-      "community_name": "Database Schema & Services",
       "norm_label": "transactionitemstable"
     },
     {
@@ -802,19 +643,7 @@
       "_origin": "ast",
       "id": "src_db_schema_database_transactionstable",
       "community": 0,
-      "community_name": "Database Schema & Services",
       "norm_label": "transactionstable"
-    },
-    {
-      "label": "membersTable",
-      "file_type": "code",
-      "source_file": "src/db/schema.database.js",
-      "source_location": "L77",
-      "_origin": "ast",
-      "id": "src_db_schema_database_memberstable",
-      "community": 0,
-      "community_name": "Database Schema & Services",
-      "norm_label": "memberstable"
     },
     {
       "label": "index.js",
@@ -823,19 +652,17 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_index",
-      "community": 6,
-      "community_name": "Build Scripts & Tooling",
+      "community": 1,
       "norm_label": "index.js"
     },
     {
       "label": "app",
       "file_type": "code",
       "source_file": "src/index.js",
-      "source_location": "L11",
+      "source_location": "L9",
       "_origin": "ast",
       "id": "src_index_app",
-      "community": 6,
-      "community_name": "Build Scripts & Tooling",
+      "community": 1,
       "norm_label": "app"
     },
     {
@@ -846,7 +673,6 @@
       "_origin": "ast",
       "id": "src_middlewares_auth_middleware",
       "community": 0,
-      "community_name": "Database Schema & Services",
       "norm_label": "auth.middleware.js"
     },
     {
@@ -856,31 +682,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_middlewares_auth_middleware_authmiddleware",
-      "community": 2,
-      "community_name": "Controllers Layer",
+      "community": 1,
       "norm_label": "authmiddleware()"
-    },
-    {
-      "label": "members.routes.js",
-      "file_type": "code",
-      "source_file": "src/routes/members.routes.js",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "src_routes_members_routes",
-      "community": 2,
-      "community_name": "Controllers Layer",
-      "norm_label": "members.routes.js"
-    },
-    {
-      "label": "memberRoute",
-      "file_type": "code",
-      "source_file": "src/routes/members.routes.js",
-      "source_location": "L21",
-      "_origin": "ast",
-      "id": "src_routes_members_routes_memberroute",
-      "community": 6,
-      "community_name": "Build Scripts & Tooling",
-      "norm_label": "memberroute"
     },
     {
       "label": "product.routes.js",
@@ -890,7 +693,6 @@
       "_origin": "ast",
       "id": "src_routes_product_routes",
       "community": 1,
-      "community_name": "Routing & App Wiring",
       "norm_label": "product.routes.js"
     },
     {
@@ -900,8 +702,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "src_routes_product_routes_productroute",
-      "community": 6,
-      "community_name": "Build Scripts & Tooling",
+      "community": 1,
       "norm_label": "productroute"
     },
     {
@@ -911,19 +712,17 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_routes_transaction_routes",
-      "community": 3,
-      "community_name": "User Service & Errors",
+      "community": 1,
       "norm_label": "transaction.routes.js"
     },
     {
       "label": "transactionRoute",
       "file_type": "code",
       "source_file": "src/routes/transaction.routes.js",
-      "source_location": "L20",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "src_routes_transaction_routes_transactionroute",
-      "community": 6,
-      "community_name": "Build Scripts & Tooling",
+      "community": 1,
       "norm_label": "transactionroute"
     },
     {
@@ -934,85 +733,17 @@
       "_origin": "ast",
       "id": "src_routes_users_routes",
       "community": 7,
-      "community_name": "User Validators",
       "norm_label": "users.routes.js"
     },
     {
       "label": "userRoute",
       "file_type": "code",
       "source_file": "src/routes/users.routes.js",
-      "source_location": "L27",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "src_routes_users_routes_userroute",
-      "community": 6,
-      "community_name": "Build Scripts & Tooling",
+      "community": 1,
       "norm_label": "userroute"
-    },
-    {
-      "label": "members.service.js",
-      "file_type": "code",
-      "source_file": "src/services/members.service.js",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "src_services_members_service",
-      "community": 2,
-      "community_name": "Controllers Layer",
-      "norm_label": "members.service.js"
-    },
-    {
-      "label": "registerMember()",
-      "file_type": "code",
-      "source_file": "src/services/members.service.js",
-      "source_location": "L7",
-      "_origin": "ast",
-      "id": "src_services_members_service_registermember",
-      "community": 2,
-      "community_name": "Controllers Layer",
-      "norm_label": "registermember()"
-    },
-    {
-      "label": "getAllMembers()",
-      "file_type": "code",
-      "source_file": "src/services/members.service.js",
-      "source_location": "L23",
-      "_origin": "ast",
-      "id": "src_services_members_service_getallmembers",
-      "community": 2,
-      "community_name": "Controllers Layer",
-      "norm_label": "getallmembers()"
-    },
-    {
-      "label": "getMemberById()",
-      "file_type": "code",
-      "source_file": "src/services/members.service.js",
-      "source_location": "L78",
-      "_origin": "ast",
-      "id": "src_services_members_service_getmemberbyid",
-      "community": 2,
-      "community_name": "Controllers Layer",
-      "norm_label": "getmemberbyid()"
-    },
-    {
-      "label": "editMemberById()",
-      "file_type": "code",
-      "source_file": "src/services/members.service.js",
-      "source_location": "L99",
-      "_origin": "ast",
-      "id": "src_services_members_service_editmemberbyid",
-      "community": 2,
-      "community_name": "Controllers Layer",
-      "norm_label": "editmemberbyid()"
-    },
-    {
-      "label": "deleteMemberById()",
-      "file_type": "code",
-      "source_file": "src/services/members.service.js",
-      "source_location": "L119",
-      "_origin": "ast",
-      "id": "src_services_members_service_deletememberbyid",
-      "community": 2,
-      "community_name": "Controllers Layer",
-      "norm_label": "deletememberbyid()"
     },
     {
       "label": "product.service.js",
@@ -1021,8 +752,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_services_product_service",
-      "community": 1,
-      "community_name": "Routing & App Wiring",
+      "community": 0,
       "norm_label": "product.service.js"
     },
     {
@@ -1032,8 +762,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_services_product_service_addnewproduct",
-      "community": 1,
-      "community_name": "Routing & App Wiring",
+      "community": 0,
       "norm_label": "addnewproduct()"
     },
     {
@@ -1043,52 +772,47 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_services_product_service_getallproducts",
-      "community": 1,
-      "community_name": "Routing & App Wiring",
+      "community": 0,
       "norm_label": "getallproducts()"
     },
     {
       "label": "getLowStockProducts()",
       "file_type": "code",
       "source_file": "src/services/product.service.js",
-      "source_location": "L91",
+      "source_location": "L86",
       "_origin": "ast",
       "id": "src_services_product_service_getlowstockproducts",
-      "community": 1,
-      "community_name": "Routing & App Wiring",
+      "community": 0,
       "norm_label": "getlowstockproducts()"
     },
     {
       "label": "getProductById()",
       "file_type": "code",
       "source_file": "src/services/product.service.js",
-      "source_location": "L108",
+      "source_location": "L103",
       "_origin": "ast",
       "id": "src_services_product_service_getproductbyid",
-      "community": 1,
-      "community_name": "Routing & App Wiring",
+      "community": 0,
       "norm_label": "getproductbyid()"
     },
     {
       "label": "deleteProductById()",
       "file_type": "code",
       "source_file": "src/services/product.service.js",
-      "source_location": "L129",
+      "source_location": "L124",
       "_origin": "ast",
       "id": "src_services_product_service_deleteproductbyid",
-      "community": 1,
-      "community_name": "Routing & App Wiring",
+      "community": 0,
       "norm_label": "deleteproductbyid()"
     },
     {
       "label": "editProductById()",
       "file_type": "code",
       "source_file": "src/services/product.service.js",
-      "source_location": "L142",
+      "source_location": "L137",
       "_origin": "ast",
       "id": "src_services_product_service_editproductbyid",
-      "community": 1,
-      "community_name": "Routing & App Wiring",
+      "community": 0,
       "norm_label": "editproductbyid()"
     },
     {
@@ -1099,73 +823,56 @@
       "_origin": "ast",
       "id": "src_services_transaction_service",
       "community": 0,
-      "community_name": "Database Schema & Services",
       "norm_label": "transaction.service.js"
     },
     {
       "label": "createTransaction()",
       "file_type": "code",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L15",
+      "source_location": "L14",
       "_origin": "ast",
       "id": "src_services_transaction_service_createtransaction",
-      "community": 3,
-      "community_name": "User Service & Errors",
+      "community": 0,
       "norm_label": "createtransaction()"
     },
     {
       "label": "getAllTransactions()",
       "file_type": "code",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L82",
+      "source_location": "L64",
       "_origin": "ast",
       "id": "src_services_transaction_service_getalltransactions",
-      "community": 3,
-      "community_name": "User Service & Errors",
+      "community": 0,
       "norm_label": "getalltransactions()"
     },
     {
       "label": "getTransactionById()",
       "file_type": "code",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L136",
+      "source_location": "L89",
       "_origin": "ast",
       "id": "src_services_transaction_service_gettransactionbyid",
-      "community": 3,
-      "community_name": "User Service & Errors",
+      "community": 0,
       "norm_label": "gettransactionbyid()"
     },
     {
       "label": "updateTransactionStatus()",
       "file_type": "code",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L166",
+      "source_location": "L120",
       "_origin": "ast",
       "id": "src_services_transaction_service_updatetransactionstatus",
-      "community": 3,
-      "community_name": "User Service & Errors",
+      "community": 0,
       "norm_label": "updatetransactionstatus()"
-    },
-    {
-      "label": "getInvoiceById()",
-      "file_type": "code",
-      "source_file": "src/services/transaction.service.js",
-      "source_location": "L219",
-      "_origin": "ast",
-      "id": "src_services_transaction_service_getinvoicebyid",
-      "community": 3,
-      "community_name": "User Service & Errors",
-      "norm_label": "getinvoicebyid()"
     },
     {
       "label": "getTransactionsSummary()",
       "file_type": "code",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L279",
+      "source_location": "L173",
       "_origin": "ast",
       "id": "src_services_transaction_service_gettransactionssummary",
-      "community": 3,
-      "community_name": "User Service & Errors",
+      "community": 0,
       "norm_label": "gettransactionssummary()"
     },
     {
@@ -1175,8 +882,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_services_user_service",
-      "community": 0,
-      "community_name": "Database Schema & Services",
+      "community": 3,
       "norm_label": "user.service.js"
     },
     {
@@ -1186,8 +892,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_services_user_service_registeruser",
-      "community": 7,
-      "community_name": "User Validators",
+      "community": 3,
       "norm_label": "registeruser()"
     },
     {
@@ -1197,64 +902,48 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "src_services_user_service_loginuser",
-      "community": 0,
-      "community_name": "Database Schema & Services",
+      "community": 3,
       "norm_label": "loginuser()"
     },
     {
       "label": "getAllUsers()",
       "file_type": "code",
       "source_file": "src/services/user.service.js",
-      "source_location": "L55",
+      "source_location": "L48",
       "_origin": "ast",
       "id": "src_services_user_service_getallusers",
-      "community": 7,
-      "community_name": "User Validators",
+      "community": 3,
       "norm_label": "getallusers()"
     },
     {
       "label": "getUserById()",
       "file_type": "code",
       "source_file": "src/services/user.service.js",
-      "source_location": "L107",
+      "source_location": "L100",
       "_origin": "ast",
       "id": "src_services_user_service_getuserbyid",
-      "community": 7,
-      "community_name": "User Validators",
+      "community": 3,
       "norm_label": "getuserbyid()"
     },
     {
       "label": "editUserRole()",
       "file_type": "code",
       "source_file": "src/services/user.service.js",
-      "source_location": "L128",
+      "source_location": "L121",
       "_origin": "ast",
       "id": "src_services_user_service_edituserrole",
-      "community": 7,
-      "community_name": "User Validators",
+      "community": 3,
       "norm_label": "edituserrole()"
     },
     {
       "label": "editUserById()",
       "file_type": "code",
       "source_file": "src/services/user.service.js",
-      "source_location": "L146",
+      "source_location": "L139",
       "_origin": "ast",
       "id": "src_services_user_service_edituserbyid",
-      "community": 7,
-      "community_name": "User Validators",
+      "community": 3,
       "norm_label": "edituserbyid()"
-    },
-    {
-      "label": "changePassword()",
-      "file_type": "code",
-      "source_file": "src/services/user.service.js",
-      "source_location": "L167",
-      "_origin": "ast",
-      "id": "src_services_user_service_changepassword",
-      "community": 7,
-      "community_name": "User Validators",
-      "norm_label": "changepassword()"
     },
     {
       "label": "db-error.js",
@@ -1264,7 +953,6 @@
       "_origin": "ast",
       "id": "src_utils_db_error",
       "community": 0,
-      "community_name": "Database Schema & Services",
       "norm_label": "db-error.js"
     },
     {
@@ -1274,8 +962,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_utils_db_error_parsedberror",
-      "community": 2,
-      "community_name": "Controllers Layer",
+      "community": 0,
       "norm_label": "parsedberror()"
     },
     {
@@ -1285,8 +972,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_utils_errors",
-      "community": 0,
-      "community_name": "Database Schema & Services",
+      "community": 3,
       "norm_label": "errors.js"
     },
     {
@@ -1296,8 +982,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_utils_errors_apperror",
-      "community": 0,
-      "community_name": "Database Schema & Services",
+      "community": 3,
       "norm_label": "apperror"
     },
     {
@@ -1307,8 +992,7 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "src_utils_errors_apperror_constructor",
-      "community": 0,
-      "community_name": "Database Schema & Services",
+      "community": 3,
       "norm_label": ".constructor()"
     },
     {
@@ -1318,8 +1002,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_utils_errors_notfounderror",
-      "community": 0,
-      "community_name": "Database Schema & Services",
+      "community": 3,
       "norm_label": "notfounderror"
     },
     {
@@ -1329,8 +1012,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_utils_errors_notfounderror_constructor",
-      "community": 0,
-      "community_name": "Database Schema & Services",
+      "community": 3,
       "norm_label": ".constructor()"
     },
     {
@@ -1341,7 +1023,6 @@
       "_origin": "ast",
       "id": "src_utils_handle_validation",
       "community": 1,
-      "community_name": "Routing & App Wiring",
       "norm_label": "handle-validation.js"
     },
     {
@@ -1352,7 +1033,6 @@
       "_origin": "ast",
       "id": "src_utils_handle_validation_handlevalidation",
       "community": 1,
-      "community_name": "Routing & App Wiring",
       "norm_label": "handlevalidation()"
     },
     {
@@ -1363,7 +1043,6 @@
       "_origin": "ast",
       "id": "src_utils_helper_login",
       "community": 0,
-      "community_name": "Database Schema & Services",
       "norm_label": "helper.login.js"
     },
     {
@@ -1373,8 +1052,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_utils_helper_login_finduserbyemail",
-      "community": 0,
-      "community_name": "Database Schema & Services",
+      "community": 3,
       "norm_label": "finduserbyemail()"
     },
     {
@@ -1384,8 +1062,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_utils_response",
-      "community": 1,
-      "community_name": "Routing & App Wiring",
+      "community": 2,
       "norm_label": "response.js"
     },
     {
@@ -1395,8 +1072,7 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "src_utils_response_success",
-      "community": 7,
-      "community_name": "User Validators",
+      "community": 2,
       "norm_label": "success()"
     },
     {
@@ -1406,64 +1082,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_utils_response_error",
-      "community": 1,
-      "community_name": "Routing & App Wiring",
+      "community": 2,
       "norm_label": "error()"
-    },
-    {
-      "label": "member.validator.js",
-      "file_type": "code",
-      "source_file": "src/validators/member.validator.js",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "src_validators_member_validator",
-      "community": 2,
-      "community_name": "Controllers Layer",
-      "norm_label": "member.validator.js"
-    },
-    {
-      "label": "registerMemberSchema",
-      "file_type": "code",
-      "source_file": "src/validators/member.validator.js",
-      "source_location": "L3",
-      "_origin": "ast",
-      "id": "src_validators_member_validator_registermemberschema",
-      "community": 2,
-      "community_name": "Controllers Layer",
-      "norm_label": "registermemberschema"
-    },
-    {
-      "label": "getMemberByIdSchema",
-      "file_type": "code",
-      "source_file": "src/validators/member.validator.js",
-      "source_location": "L19",
-      "_origin": "ast",
-      "id": "src_validators_member_validator_getmemberbyidschema",
-      "community": 2,
-      "community_name": "Controllers Layer",
-      "norm_label": "getmemberbyidschema"
-    },
-    {
-      "label": "getMemberQuerySchema",
-      "file_type": "code",
-      "source_file": "src/validators/member.validator.js",
-      "source_location": "L23",
-      "_origin": "ast",
-      "id": "src_validators_member_validator_getmemberqueryschema",
-      "community": 2,
-      "community_name": "Controllers Layer",
-      "norm_label": "getmemberqueryschema"
-    },
-    {
-      "label": "editMemberByIdSchema",
-      "file_type": "code",
-      "source_file": "src/validators/member.validator.js",
-      "source_location": "L29",
-      "_origin": "ast",
-      "id": "src_validators_member_validator_editmemberbyidschema",
-      "community": 2,
-      "community_name": "Controllers Layer",
-      "norm_label": "editmemberbyidschema"
     },
     {
       "label": "product.validator.js",
@@ -1473,7 +1093,6 @@
       "_origin": "ast",
       "id": "src_validators_product_validator",
       "community": 1,
-      "community_name": "Routing & App Wiring",
       "norm_label": "product.validator.js"
     },
     {
@@ -1484,7 +1103,6 @@
       "_origin": "ast",
       "id": "src_validators_product_validator_createnewproductschema",
       "community": 1,
-      "community_name": "Routing & App Wiring",
       "norm_label": "createnewproductschema"
     },
     {
@@ -1495,7 +1113,6 @@
       "_origin": "ast",
       "id": "src_validators_product_validator_getproductsqueryschema",
       "community": 1,
-      "community_name": "Routing & App Wiring",
       "norm_label": "getproductsqueryschema"
     },
     {
@@ -1506,7 +1123,6 @@
       "_origin": "ast",
       "id": "src_validators_product_validator_productidschema",
       "community": 1,
-      "community_name": "Routing & App Wiring",
       "norm_label": "productidschema"
     },
     {
@@ -1517,7 +1133,6 @@
       "_origin": "ast",
       "id": "src_validators_product_validator_editproductbyidschema",
       "community": 1,
-      "community_name": "Routing & App Wiring",
       "norm_label": "editproductbyidschema"
     },
     {
@@ -1528,7 +1143,6 @@
       "_origin": "ast",
       "id": "src_validators_product_validator_deleteproductbyidschema",
       "community": 1,
-      "community_name": "Routing & App Wiring",
       "norm_label": "deleteproductbyidschema"
     },
     {
@@ -1538,8 +1152,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_validators_transaction_validator",
-      "community": 3,
-      "community_name": "User Service & Errors",
+      "community": 1,
       "norm_label": "transaction.validator.js"
     },
     {
@@ -1549,41 +1162,37 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_validators_transaction_validator_createtransactionschema",
-      "community": 3,
-      "community_name": "User Service & Errors",
+      "community": 1,
       "norm_label": "createtransactionschema"
     },
     {
       "label": "updateTransactionStatusSchema",
       "file_type": "code",
       "source_file": "src/validators/transaction.validator.js",
-      "source_location": "L25",
+      "source_location": "L14",
       "_origin": "ast",
       "id": "src_validators_transaction_validator_updatetransactionstatusschema",
-      "community": 3,
-      "community_name": "User Service & Errors",
+      "community": 1,
       "norm_label": "updatetransactionstatusschema"
     },
     {
       "label": "transactionIdParamSchema",
       "file_type": "code",
       "source_file": "src/validators/transaction.validator.js",
-      "source_location": "L35",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "src_validators_transaction_validator_transactionidparamschema",
-      "community": 3,
-      "community_name": "User Service & Errors",
+      "community": 1,
       "norm_label": "transactionidparamschema"
     },
     {
       "label": "getTransactionsQuerySchema",
       "file_type": "code",
       "source_file": "src/validators/transaction.validator.js",
-      "source_location": "L39",
+      "source_location": "L28",
       "_origin": "ast",
       "id": "src_validators_transaction_validator_gettransactionsqueryschema",
-      "community": 3,
-      "community_name": "User Service & Errors",
+      "community": 1,
       "norm_label": "gettransactionsqueryschema"
     },
     {
@@ -1594,7 +1203,6 @@
       "_origin": "ast",
       "id": "src_validators_user_validator",
       "community": 7,
-      "community_name": "User Validators",
       "norm_label": "user.validator.js"
     },
     {
@@ -1605,7 +1213,6 @@
       "_origin": "ast",
       "id": "src_validators_user_validator_createuserschema",
       "community": 7,
-      "community_name": "User Validators",
       "norm_label": "createuserschema"
     },
     {
@@ -1616,7 +1223,6 @@
       "_origin": "ast",
       "id": "src_validators_user_validator_useridparamschema",
       "community": 7,
-      "community_name": "User Validators",
       "norm_label": "useridparamschema"
     },
     {
@@ -1627,7 +1233,6 @@
       "_origin": "ast",
       "id": "src_validators_user_validator_loginuserschema",
       "community": 7,
-      "community_name": "User Validators",
       "norm_label": "loginuserschema"
     },
     {
@@ -1638,7 +1243,6 @@
       "_origin": "ast",
       "id": "src_validators_user_validator_edituserbyidschema",
       "community": 7,
-      "community_name": "User Validators",
       "norm_label": "edituserbyidschema"
     },
     {
@@ -1649,7 +1253,6 @@
       "_origin": "ast",
       "id": "src_validators_user_validator_edituserroleschema",
       "community": 7,
-      "community_name": "User Validators",
       "norm_label": "edituserroleschema"
     },
     {
@@ -1660,19 +1263,7 @@
       "_origin": "ast",
       "id": "src_validators_user_validator_getuserqueryschema",
       "community": 7,
-      "community_name": "User Validators",
       "norm_label": "getuserqueryschema"
-    },
-    {
-      "label": "changePasswordSchema",
-      "file_type": "code",
-      "source_file": "src/validators/user.validator.js",
-      "source_location": "L49",
-      "_origin": "ast",
-      "id": "src_validators_user_validator_changepasswordschema",
-      "community": 7,
-      "community_name": "User Validators",
-      "norm_label": "changepasswordschema"
     },
     {
       "label": "Layered Architecture (routes -> controllers -> services -> db)",
@@ -1684,10 +1275,9 @@
       "author": null,
       "contributor": null,
       "rationale": "One-directional layering: only services touch the DB; controllers stay thin glue; validation happens at the route boundary via zValidator.",
-      "community": 8,
-      "norm_label": "layered architecture (routes -> controllers -> services -> db)",
       "id": "claude_md_layered_architecture",
-      "community_name": "Architecture Conventions"
+      "community": 8,
+      "norm_label": "layered architecture (routes -> controllers -> services -> db)"
     },
     {
       "label": "JSON Response Envelope ({success, data} / {success, error})",
@@ -1699,10 +1289,9 @@
       "author": null,
       "contributor": null,
       "rationale": "All endpoints must keep a consistent JSON shape via success/error helpers in src/utils/response.js.",
-      "community": 4,
-      "norm_label": "json response envelope ({success, data} / {success, error})",
       "id": "claude_md_response_envelope",
-      "community_name": "Docs & Auth Design"
+      "community": 4,
+      "norm_label": "json response envelope ({success, data} / {success, error})"
     },
     {
       "label": "parseDbError (Postgres error code mapping)",
@@ -1714,10 +1303,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Maps raw Postgres error codes (23505 unique, 23503 FK, 23502 not-null) to human-readable Errors so controllers can surface useful .message values.",
-      "community": 4,
-      "norm_label": "parsedberror (postgres error code mapping)",
       "id": "claude_md_parsedberror",
-      "community_name": "Docs & Auth Design"
+      "community": 4,
+      "norm_label": "parsedberror (postgres error code mapping)"
     },
     {
       "label": "Project Commands (bun/drizzle-kit workflow)",
@@ -1728,10 +1316,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
-      "norm_label": "project commands (bun/drizzle-kit workflow)",
       "id": "claude_md_commands",
-      "community_name": "Docs & Auth Design"
+      "community": 4,
+      "norm_label": "project commands (bun/drizzle-kit workflow)"
     },
     {
       "label": "New Resource Convention (schema -> validator -> service -> controller -> route)",
@@ -1742,10 +1329,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
-      "norm_label": "new resource convention (schema -> validator -> service -> controller -> route)",
       "id": "claude_md_resource_convention",
-      "community_name": "Architecture Conventions"
+      "community": 8,
+      "norm_label": "new resource convention (schema -> validator -> service -> controller -> route)"
     },
     {
       "label": "Postgres db service (postgres:16-alpine)",
@@ -1756,10 +1342,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
-      "norm_label": "postgres db service (postgres:16-alpine)",
       "id": "docker_compose_db_service",
-      "community_name": "Docs & Auth Design"
+      "community": 4,
+      "norm_label": "postgres db service (postgres:16-alpine)"
     },
     {
       "label": "README Quickstart (bun install / bun run dev)",
@@ -1770,10 +1355,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
-      "norm_label": "readme quickstart (bun install / bun run dev)",
       "id": "readme_quickstart",
-      "community_name": "Docs & Auth Design"
+      "community": 4,
+      "norm_label": "readme quickstart (bun install / bun run dev)"
     },
     {
       "label": "AppError (base error with .status)",
@@ -1785,10 +1369,9 @@
       "author": null,
       "contributor": null,
       "rationale": "A DB query that finds no row does not throw, so without a status-carrying error the controller would return 200 for missing data; AppError carries .status (default 400) so controllers can return the correct HTTP status. New subclasses are only created when a status is reused across many services or instanceof checks are needed elsewhere.",
-      "community": 4,
-      "norm_label": "apperror (base error with .status)",
       "id": "docs_error_handling_apperror",
-      "community_name": "Docs & Auth Design"
+      "community": 4,
+      "norm_label": "apperror (base error with .status)"
     },
     {
       "label": "NotFoundError (AppError shortcut, 404)",
@@ -1799,10 +1382,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
-      "norm_label": "notfounderror (apperror shortcut, 404)",
       "id": "docs_error_handling_notfounderror",
-      "community_name": "Docs & Auth Design"
+      "community": 4,
+      "norm_label": "notfounderror (apperror shortcut, 404)"
     },
     {
       "label": "Controller status propagation (err.status ?? 400)",
@@ -1814,10 +1396,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Controllers pass err.status ?? 400 to error(); errors from parseDbError have no .status and deliberately fall back to 400.",
-      "community": 4,
-      "norm_label": "controller status propagation (err.status ?? 400)",
       "id": "docs_error_handling_status_propagation",
-      "community_name": "Docs & Auth Design"
+      "community": 4,
+      "norm_label": "controller status propagation (err.status ?? 400)"
     },
     {
       "label": "Error-handling YAGNI deferrals (ConflictError 409, UUID param validation)",
@@ -1829,10 +1410,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Deliberately not built yet: ConflictError (409) until 23505 duplicates need a distinct status, and zValidator('param') UUID checks until endpoints are publicly exposed; parseDbError currently returns plain Error for 23505 so it falls to the 400 default.",
-      "community": 4,
-      "norm_label": "error-handling yagni deferrals (conflicterror 409, uuid param validation)",
       "id": "docs_error_handling_yagni_deferrals",
-      "community_name": "Docs & Auth Design"
+      "community": 4,
+      "norm_label": "error-handling yagni deferrals (conflicterror 409, uuid param validation)"
     },
     {
       "label": "Auth Schema Design (spec)",
@@ -1844,10 +1424,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Schema-only change for password login + DB-backed session tokens using native Bun/Postgres/JS features, explicitly avoiding new auth dependencies (bcrypt/JWT libs); register/login/logout endpoints are out of scope.",
-      "community": 4,
-      "norm_label": "auth schema design (spec)",
       "id": "docs_superpowers_specs_2026_07_10_auth_schema_design_auth_schema_design",
-      "community_name": "Docs & Auth Design"
+      "community": 4,
+      "norm_label": "auth schema design (spec)"
     },
     {
       "label": "usersTable auth columns (password, role)",
@@ -1859,10 +1438,9 @@
       "author": null,
       "contributor": null,
       "rationale": "password stores a hash (Bun.password.hash/verify, native bcrypt in Bun runtime, no new dependency); role uses a Postgres enum so values are constrained at the DB level rather than only in Zod.",
-      "community": 4,
-      "norm_label": "userstable auth columns (password, role)",
       "id": "docs_superpowers_specs_2026_07_10_auth_schema_design_userstable_auth_columns",
-      "community_name": "Docs & Auth Design"
+      "community": 4,
+      "norm_label": "userstable auth columns (password, role)"
     },
     {
       "label": "sessionsTable (DB-backed session tokens)",
@@ -1874,10 +1452,9 @@
       "author": null,
       "contributor": null,
       "rationale": "token generated with crypto.randomUUID() (native Web Crypto) to avoid a JWT/session library; userId FK uses onDelete cascade so sessions are auto-removed when a user is deleted, avoiding manual cleanup in the service layer.",
-      "community": 4,
-      "norm_label": "sessionstable (db-backed session tokens)",
       "id": "docs_superpowers_specs_2026_07_10_auth_schema_design_sessionstable",
-      "community_name": "Docs & Auth Design"
+      "community": 4,
+      "norm_label": "sessionstable (db-backed session tokens)"
     },
     {
       "label": "userRoleEnum (pg enum user_role: user, admin)",
@@ -1888,10 +1465,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
-      "norm_label": "userroleenum (pg enum user_role: user, admin)",
       "id": "docs_superpowers_specs_2026_07_10_auth_schema_design_userroleenum",
-      "community_name": "Docs & Auth Design"
+      "community": 4,
+      "norm_label": "userroleenum (pg enum user_role: user, admin)"
     },
     {
       "label": "Auth schema YAGNI deferrals (createdAt/userAgent/ipAddress, emailVerified, auth endpoints)",
@@ -1903,10 +1479,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Deliberately deferred until real need: session audit columns (createdAt/userAgent/ipAddress) until a 'manage login devices' feature exists, emailVerified until an email verification flow exists, and register/login/logout endpoints which are outside this schema change's scope. Written explicitly (consistent with docs/error-handling.md) so deferrals are tracked, not silently forgotten.",
-      "community": 4,
-      "norm_label": "auth schema yagni deferrals (createdat/useragent/ipaddress, emailverified, auth endpoints)",
       "id": "docs_superpowers_specs_2026_07_10_auth_schema_design_yagni_deferrals",
-      "community_name": "Docs & Auth Design"
+      "community": 4,
+      "norm_label": "auth schema yagni deferrals (createdat/useragent/ipaddress, emailverified, auth endpoints)"
     },
     {
       "label": "Auth Schema Implementation Plan",
@@ -1918,10 +1493,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Three tasks: edit src/db/schema.database.js, generate migration with drizzle-kit, apply and verify against local Postgres. No new packages; hashing/token generation stay native (Bun.password, crypto.randomUUID) and are out of scope; verification uses drizzle-kit output and direct DB inspection because the repo has no test suite.",
-      "community": 4,
-      "norm_label": "auth schema implementation plan",
       "id": "docs_superpowers_plans_2026_07_10_auth_schema_plan",
-      "community_name": "Docs & Auth Design"
+      "community": 4,
+      "norm_label": "auth schema implementation plan"
     },
     {
       "label": "getAllTransactions (status filtering + pagination)",
@@ -1932,10 +1506,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
-      "norm_label": "getalltransactions (status filtering + pagination)",
       "id": "docs_transactions_getalltransactions",
-      "community_name": "Architecture Conventions"
+      "community": 8,
+      "norm_label": "getalltransactions (status filtering + pagination)"
     }
   ],
   "links": [
@@ -2248,460 +1821,12 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L10",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers",
-      "target": "src_controllers_members_controllers_handleregistermember",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L20",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers",
-      "target": "src_controllers_members_controllers_listmembers",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L30",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers",
-      "target": "src_controllers_members_controllers_memberbyid",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L51",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers",
-      "target": "src_controllers_members_controllers_removemember",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L40",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers",
-      "target": "src_controllers_members_controllers_updatemember",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers",
-      "target": "src_services_members_service",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers",
-      "target": "src_services_members_service_deletememberbyid",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers",
-      "target": "src_services_members_service_editmemberbyid",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers",
-      "target": "src_services_members_service_getallmembers",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers",
-      "target": "src_services_members_service_getmemberbyid",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers",
-      "target": "src_services_members_service_registermember",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers",
-      "target": "src_utils_response",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers",
-      "target": "src_utils_response_error",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers",
-      "target": "src_utils_response_success",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/routes/members.routes.js",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_members_routes",
-      "target": "src_controllers_members_controllers",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L13",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers_handleregistermember",
-      "target": "src_services_members_service_registermember"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L16",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers_handleregistermember",
-      "target": "src_utils_response_error"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L14",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers_handleregistermember",
-      "target": "src_utils_response_success"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/routes/members.routes.js",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_members_routes",
-      "target": "src_controllers_members_controllers_handleregistermember",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L23",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers_listmembers",
-      "target": "src_services_members_service_getallmembers"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L26",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers_listmembers",
-      "target": "src_utils_response_error"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L24",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers_listmembers",
-      "target": "src_utils_response_success"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/routes/members.routes.js",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_members_routes",
-      "target": "src_controllers_members_controllers_listmembers",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L33",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers_memberbyid",
-      "target": "src_services_members_service_getmemberbyid"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L36",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers_memberbyid",
-      "target": "src_utils_response_error"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L34",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers_memberbyid",
-      "target": "src_utils_response_success"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/routes/members.routes.js",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_members_routes",
-      "target": "src_controllers_members_controllers_memberbyid",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L44",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers_updatemember",
-      "target": "src_services_members_service_editmemberbyid"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L47",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers_updatemember",
-      "target": "src_utils_response_error"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L45",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers_updatemember",
-      "target": "src_utils_response_success"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/routes/members.routes.js",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_members_routes",
-      "target": "src_controllers_members_controllers_updatemember",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L54",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers_removemember",
-      "target": "src_services_members_service_deletememberbyid"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L57",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers_removemember",
-      "target": "src_utils_response_error"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L55",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_members_controllers_removemember",
-      "target": "src_utils_response_success"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/routes/members.routes.js",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_members_routes",
-      "target": "src_controllers_members_controllers_removemember",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "src/controllers/product.controllers.js",
       "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_product_controllers",
-      "target": "src_controllers_product_controllers_createproduct",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L21",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_product_controllers",
-      "target": "src_controllers_product_controllers_listlowstockproducts",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L30",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_product_controllers",
-      "target": "src_controllers_product_controllers_listproducts",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L40",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_product_controllers",
-      "target": "src_controllers_product_controllers_productbyid",
+      "target": "src_controllers_product_controllers_addnewproduct",
       "confidence_score": 1.0
     },
     {
@@ -2712,7 +1837,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_product_controllers",
-      "target": "src_controllers_product_controllers_removeproduct",
+      "target": "src_controllers_product_controllers_deleteproductbyid",
       "confidence_score": 1.0
     },
     {
@@ -2723,7 +1848,40 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_product_controllers",
-      "target": "src_controllers_product_controllers_updateproduct",
+      "target": "src_controllers_product_controllers_editproductbyid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/controllers/product.controllers.js",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_controllers_product_controllers",
+      "target": "src_controllers_product_controllers_getallproducts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/controllers/product.controllers.js",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_controllers_product_controllers",
+      "target": "src_controllers_product_controllers_getlowstockproducts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/controllers/product.controllers.js",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_controllers_product_controllers",
+      "target": "src_controllers_product_controllers_getproductbyid",
       "confidence_score": 1.0
     },
     {
@@ -2864,22 +2022,10 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L14",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_product_controllers_createproduct",
-      "target": "src_services_product_service_addnewproduct"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/product.controllers.js",
       "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_product_controllers_createproduct",
+      "source": "src_controllers_product_controllers_addnewproduct",
       "target": "src_utils_response_error"
     },
     {
@@ -2891,7 +2037,7 @@
       "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_product_controllers_createproduct",
+      "source": "src_controllers_product_controllers_addnewproduct",
       "target": "src_utils_response_success"
     },
     {
@@ -2903,20 +2049,8 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_product_routes",
-      "target": "src_controllers_product_controllers_createproduct",
+      "target": "src_controllers_product_controllers_addnewproduct",
       "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L23",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_product_controllers_listlowstockproducts",
-      "target": "src_services_product_service_getlowstockproducts"
     },
     {
       "relation": "calls",
@@ -2927,7 +2061,7 @@
       "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_product_controllers_listlowstockproducts",
+      "source": "src_controllers_product_controllers_getlowstockproducts",
       "target": "src_utils_response_error"
     },
     {
@@ -2939,7 +2073,7 @@
       "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_product_controllers_listlowstockproducts",
+      "source": "src_controllers_product_controllers_getlowstockproducts",
       "target": "src_utils_response_success"
     },
     {
@@ -2951,20 +2085,8 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_product_routes",
-      "target": "src_controllers_product_controllers_listlowstockproducts",
+      "target": "src_controllers_product_controllers_getlowstockproducts",
       "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L33",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_product_controllers_listproducts",
-      "target": "src_services_product_service_getallproducts"
     },
     {
       "relation": "calls",
@@ -2975,7 +2097,7 @@
       "source_location": "L36",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_product_controllers_listproducts",
+      "source": "src_controllers_product_controllers_getallproducts",
       "target": "src_utils_response_error"
     },
     {
@@ -2987,7 +2109,7 @@
       "source_location": "L34",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_product_controllers_listproducts",
+      "source": "src_controllers_product_controllers_getallproducts",
       "target": "src_utils_response_success"
     },
     {
@@ -2999,20 +2121,8 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_product_routes",
-      "target": "src_controllers_product_controllers_listproducts",
+      "target": "src_controllers_product_controllers_getallproducts",
       "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L43",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_product_controllers_productbyid",
-      "target": "src_services_product_service_getproductbyid"
     },
     {
       "relation": "calls",
@@ -3023,7 +2133,7 @@
       "source_location": "L46",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_product_controllers_productbyid",
+      "source": "src_controllers_product_controllers_getproductbyid",
       "target": "src_utils_response_error"
     },
     {
@@ -3035,7 +2145,7 @@
       "source_location": "L44",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_product_controllers_productbyid",
+      "source": "src_controllers_product_controllers_getproductbyid",
       "target": "src_utils_response_success"
     },
     {
@@ -3047,20 +2157,8 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_product_routes",
-      "target": "src_controllers_product_controllers_productbyid",
+      "target": "src_controllers_product_controllers_getproductbyid",
       "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L53",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_product_controllers_removeproduct",
-      "target": "src_services_product_service_deleteproductbyid"
     },
     {
       "relation": "calls",
@@ -3071,7 +2169,7 @@
       "source_location": "L56",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_product_controllers_removeproduct",
+      "source": "src_controllers_product_controllers_deleteproductbyid",
       "target": "src_utils_response_error"
     },
     {
@@ -3083,7 +2181,7 @@
       "source_location": "L54",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_product_controllers_removeproduct",
+      "source": "src_controllers_product_controllers_deleteproductbyid",
       "target": "src_utils_response_success"
     },
     {
@@ -3095,20 +2193,8 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_product_routes",
-      "target": "src_controllers_product_controllers_removeproduct",
+      "target": "src_controllers_product_controllers_deleteproductbyid",
       "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L70",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_product_controllers_updateproduct",
-      "target": "src_services_product_service_editproductbyid"
     },
     {
       "relation": "calls",
@@ -3119,7 +2205,7 @@
       "source_location": "L66",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_product_controllers_updateproduct",
+      "source": "src_controllers_product_controllers_editproductbyid",
       "target": "src_utils_response_error"
     },
     {
@@ -3131,7 +2217,7 @@
       "source_location": "L71",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_product_controllers_updateproduct",
+      "source": "src_controllers_product_controllers_editproductbyid",
       "target": "src_utils_response_success"
     },
     {
@@ -3143,18 +2229,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_product_routes",
-      "target": "src_controllers_product_controllers_updateproduct",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L27",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_transaction_controllers",
-      "target": "src_controllers_transaction_controllers_changetransactionstatus",
+      "target": "src_controllers_product_controllers_editproductbyid",
       "confidence_score": 1.0
     },
     {
@@ -3165,51 +2240,51 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_transaction_controllers",
-      "target": "src_controllers_transaction_controllers_handlecreatetransaction",
+      "target": "src_controllers_transaction_controllers_createtransaction",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L46",
+      "source_location": "L41",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_transaction_controllers",
-      "target": "src_controllers_transaction_controllers_listtransactions",
+      "target": "src_controllers_transaction_controllers_getalltransactions",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L65",
+      "source_location": "L60",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_transaction_controllers",
-      "target": "src_controllers_transaction_controllers_transactionbyid",
+      "target": "src_controllers_transaction_controllers_gettransactionbyid",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L75",
+      "source_location": "L51",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_transaction_controllers",
-      "target": "src_controllers_transaction_controllers_transactioninvoice",
+      "target": "src_controllers_transaction_controllers_gettransactionssummary",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L56",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_transaction_controllers",
-      "target": "src_controllers_transaction_controllers_transactionssummary",
+      "target": "src_controllers_transaction_controllers_updatetransactionstatus",
       "confidence_score": 1.0
     },
     {
@@ -3221,7 +2296,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_transaction_controllers",
-      "target": "src_services_transaction_service",
+      "target": "src_db_schema_database",
       "confidence_score": 1.0
     },
     {
@@ -3230,6 +2305,30 @@
       "confidence": "EXTRACTED",
       "source_file": "src/controllers/transaction.controllers.js",
       "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_controllers_transaction_controllers",
+      "target": "src_db_schema_database_paymentmethodenum",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/controllers/transaction.controllers.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_controllers_transaction_controllers",
+      "target": "src_services_transaction_service",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/controllers/transaction.controllers.js",
+      "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_transaction_controllers",
@@ -3241,7 +2340,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L1",
+      "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_transaction_controllers",
@@ -3253,19 +2352,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_transaction_controllers",
-      "target": "src_services_transaction_service_getinvoicebyid",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L1",
+      "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_transaction_controllers",
@@ -3277,7 +2364,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L1",
+      "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_transaction_controllers",
@@ -3289,7 +2376,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L1",
+      "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_transaction_controllers",
@@ -3350,22 +2437,10 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L15",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_transaction_controllers_handlecreatetransaction",
-      "target": "src_services_transaction_service_createtransaction"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L23",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_transaction_controllers_handlecreatetransaction",
+      "source": "src_controllers_transaction_controllers_createtransaction",
       "target": "src_utils_response_error"
     },
     {
@@ -3374,10 +2449,10 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L21",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_transaction_controllers_handlecreatetransaction",
+      "source": "src_controllers_transaction_controllers_createtransaction",
       "target": "src_utils_response_success"
     },
     {
@@ -3389,8 +2464,20 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_transaction_routes",
-      "target": "src_controllers_transaction_controllers_handlecreatetransaction",
+      "target": "src_controllers_transaction_controllers_createtransaction",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/controllers/transaction.controllers.js",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_controllers_transaction_controllers_updatetransactionstatus",
+      "target": "src_utils_response_error"
     },
     {
       "relation": "calls",
@@ -3401,31 +2488,7 @@
       "source_location": "L35",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_transaction_controllers_changetransactionstatus",
-      "target": "src_services_transaction_service_updatetransactionstatus"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L33",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_transaction_controllers_changetransactionstatus",
-      "target": "src_utils_response_error"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L40",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_transaction_controllers_changetransactionstatus",
+      "source": "src_controllers_transaction_controllers_updatetransactionstatus",
       "target": "src_utils_response_success"
     },
     {
@@ -3437,7 +2500,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_transaction_routes",
-      "target": "src_controllers_transaction_controllers_changetransactionstatus",
+      "target": "src_controllers_transaction_controllers_updatetransactionstatus",
       "confidence_score": 1.0
     },
     {
@@ -3446,22 +2509,10 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L49",
+      "source_location": "L47",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_transaction_controllers_listtransactions",
-      "target": "src_services_transaction_service_getalltransactions"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L52",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_transaction_controllers_listtransactions",
+      "source": "src_controllers_transaction_controllers_getalltransactions",
       "target": "src_utils_response_error"
     },
     {
@@ -3470,10 +2521,10 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L50",
+      "source_location": "L45",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_transaction_controllers_listtransactions",
+      "source": "src_controllers_transaction_controllers_getalltransactions",
       "target": "src_utils_response_success"
     },
     {
@@ -3485,7 +2536,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_transaction_routes",
-      "target": "src_controllers_transaction_controllers_listtransactions",
+      "target": "src_controllers_transaction_controllers_getalltransactions",
       "confidence_score": 1.0
     },
     {
@@ -3494,22 +2545,10 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L58",
+      "source_location": "L56",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_transaction_controllers_transactionssummary",
-      "target": "src_services_transaction_service_gettransactionssummary"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L61",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_transaction_controllers_transactionssummary",
+      "source": "src_controllers_transaction_controllers_gettransactionssummary",
       "target": "src_utils_response_error"
     },
     {
@@ -3518,10 +2557,10 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L59",
+      "source_location": "L54",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_transaction_controllers_transactionssummary",
+      "source": "src_controllers_transaction_controllers_gettransactionssummary",
       "target": "src_utils_response_success"
     },
     {
@@ -3533,7 +2572,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_transaction_routes",
-      "target": "src_controllers_transaction_controllers_transactionssummary",
+      "target": "src_controllers_transaction_controllers_gettransactionssummary",
       "confidence_score": 1.0
     },
     {
@@ -3542,134 +2581,63 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/transaction.controllers.js",
+      "source_location": "L66",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_controllers_transaction_controllers_gettransactionbyid",
+      "target": "src_utils_response_error"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/controllers/transaction.controllers.js",
+      "source_location": "L64",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_controllers_transaction_controllers_gettransactionbyid",
+      "target": "src_utils_response_success"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/routes/transaction.routes.js",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_routes_transaction_routes",
+      "target": "src_controllers_transaction_controllers_gettransactionbyid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/controllers/user.controllers.js",
       "source_location": "L68",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_transaction_controllers_transactionbyid",
-      "target": "src_services_transaction_service_gettransactionbyid"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L71",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_transaction_controllers_transactionbyid",
-      "target": "src_utils_response_error"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L69",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_transaction_controllers_transactionbyid",
-      "target": "src_utils_response_success"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/routes/transaction.routes.js",
-      "source_location": "L11",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_transaction_routes",
-      "target": "src_controllers_transaction_controllers_transactionbyid",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L78",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_transaction_controllers_transactioninvoice",
-      "target": "src_services_transaction_service_getinvoicebyid"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L81",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_transaction_controllers_transactioninvoice",
-      "target": "src_utils_response_error"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L79",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_transaction_controllers_transactioninvoice",
-      "target": "src_utils_response_success"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/routes/transaction.routes.js",
-      "source_location": "L11",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_transaction_routes",
-      "target": "src_controllers_transaction_controllers_transactioninvoice",
+      "source": "src_controllers_user_controllers",
+      "target": "src_controllers_user_controllers_edituserbyid",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L22",
+      "source_location": "L51",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_user_controllers",
-      "target": "src_controllers_user_controllers_handlelogin",
+      "target": "src_controllers_user_controllers_edituserrole",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L85",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_user_controllers",
-      "target": "src_controllers_user_controllers_handlepasswordchange",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L12",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_user_controllers",
-      "target": "src_controllers_user_controllers_handleregister",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L32",
+      "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_user_controllers",
@@ -3680,40 +2648,29 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L42",
+      "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_user_controllers",
-      "target": "src_controllers_user_controllers_myprofile",
+      "target": "src_controllers_user_controllers_loginuser",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L74",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_user_controllers",
-      "target": "src_controllers_user_controllers_updatemyprofile",
+      "target": "src_controllers_user_controllers_registeruser",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L57",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_user_controllers",
-      "target": "src_controllers_user_controllers_updateuserrole",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L47",
+      "source_location": "L41",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_user_controllers",
@@ -3730,18 +2687,6 @@
       "_origin": "ast",
       "source": "src_controllers_user_controllers",
       "target": "src_services_user_service",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_user_controllers",
-      "target": "src_services_user_service_changepassword",
       "confidence_score": 1.0
     },
     {
@@ -3821,7 +2766,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L10",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_user_controllers",
@@ -3833,7 +2778,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L10",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_user_controllers",
@@ -3845,7 +2790,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L10",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_user_controllers",
@@ -3857,7 +2802,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/routes/users.routes.js",
-      "source_location": "L13",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_users_routes",
@@ -3870,22 +2815,10 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L15",
+      "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_user_controllers_handleregister",
-      "target": "src_services_user_service_registeruser"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L18",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_user_controllers_handleregister",
+      "source": "src_controllers_user_controllers_registeruser",
       "target": "src_utils_response_error"
     },
     {
@@ -3894,10 +2827,10 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L16",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_user_controllers_handleregister",
+      "source": "src_controllers_user_controllers_registeruser",
       "target": "src_utils_response_success"
     },
     {
@@ -3905,12 +2838,24 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/routes/users.routes.js",
-      "source_location": "L13",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_users_routes",
-      "target": "src_controllers_user_controllers_handleregister",
+      "target": "src_controllers_user_controllers_registeruser",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/controllers/user.controllers.js",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_controllers_user_controllers_loginuser",
+      "target": "src_utils_response_error"
     },
     {
       "relation": "calls",
@@ -3921,31 +2866,7 @@
       "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_user_controllers_handlelogin",
-      "target": "src_services_user_service_loginuser"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L28",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_user_controllers_handlelogin",
-      "target": "src_utils_response_error"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L26",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_user_controllers_handlelogin",
+      "source": "src_controllers_user_controllers_loginuser",
       "target": "src_utils_response_success"
     },
     {
@@ -3953,11 +2874,11 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/routes/users.routes.js",
-      "source_location": "L13",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_users_routes",
-      "target": "src_controllers_user_controllers_handlelogin",
+      "target": "src_controllers_user_controllers_loginuser",
       "confidence_score": 1.0
     },
     {
@@ -3966,7 +2887,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L35",
+      "source_location": "L34",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_user_controllers_listusers",
@@ -3978,7 +2899,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L38",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_user_controllers_listusers",
@@ -3990,7 +2911,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L36",
+      "source_location": "L35",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_user_controllers_listusers",
@@ -4001,7 +2922,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/routes/users.routes.js",
-      "source_location": "L13",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_users_routes",
@@ -4017,30 +2938,6 @@
       "source_location": "L44",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_user_controllers_myprofile",
-      "target": "src_utils_response_success"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/routes/users.routes.js",
-      "source_location": "L13",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_users_routes",
-      "target": "src_controllers_user_controllers_myprofile",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L50",
-      "weight": 1.0,
-      "_origin": "ast",
       "source": "src_controllers_user_controllers_userbyid",
       "target": "src_services_user_service_getuserbyid"
     },
@@ -4050,7 +2947,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L53",
+      "source_location": "L47",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_user_controllers_userbyid",
@@ -4062,7 +2959,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L51",
+      "source_location": "L45",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_controllers_user_controllers_userbyid",
@@ -4073,7 +2970,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/routes/users.routes.js",
-      "source_location": "L13",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_users_routes",
@@ -4086,22 +2983,10 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L67",
+      "source_location": "L57",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_user_controllers_updateuserrole",
-      "target": "src_services_user_service_edituserrole"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L63",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_user_controllers_updateuserrole",
+      "source": "src_controllers_user_controllers_edituserrole",
       "target": "src_utils_response_error"
     },
     {
@@ -4110,10 +2995,10 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L68",
+      "source_location": "L62",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_user_controllers_updateuserrole",
+      "source": "src_controllers_user_controllers_edituserrole",
       "target": "src_utils_response_success"
     },
     {
@@ -4121,12 +3006,24 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/routes/users.routes.js",
-      "source_location": "L13",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_users_routes",
-      "target": "src_controllers_user_controllers_updateuserrole",
+      "target": "src_controllers_user_controllers_edituserrole",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/controllers/user.controllers.js",
+      "source_location": "L74",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_controllers_user_controllers_edituserbyid",
+      "target": "src_utils_response_error"
     },
     {
       "relation": "calls",
@@ -4137,31 +3034,7 @@
       "source_location": "L78",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_controllers_user_controllers_updatemyprofile",
-      "target": "src_services_user_service_edituserbyid"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L81",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_user_controllers_updatemyprofile",
-      "target": "src_utils_response_error"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L79",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_user_controllers_updatemyprofile",
+      "source": "src_controllers_user_controllers_edituserbyid",
       "target": "src_utils_response_success"
     },
     {
@@ -4169,59 +3042,11 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/routes/users.routes.js",
-      "source_location": "L13",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_users_routes",
-      "target": "src_controllers_user_controllers_updatemyprofile",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L89",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_user_controllers_handlepasswordchange",
-      "target": "src_services_user_service_changepassword"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L96",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_user_controllers_handlepasswordchange",
-      "target": "src_utils_response_error"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/user.controllers.js",
-      "source_location": "L94",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_controllers_user_controllers_handlepasswordchange",
-      "target": "src_utils_response_success"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/routes/users.routes.js",
-      "source_location": "L13",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_users_routes",
-      "target": "src_controllers_user_controllers_handlepasswordchange",
+      "target": "src_controllers_user_controllers_edituserbyid",
       "confidence_score": 1.0
     },
     {
@@ -4251,7 +3076,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/index.js",
-      "source_location": "L4",
+      "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_index",
@@ -4267,18 +3092,6 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_middlewares_auth_middleware",
-      "target": "src_db_database_connection",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/members.service.js",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_members_service",
       "target": "src_db_database_connection",
       "confidence_score": 1.0
     },
@@ -4339,18 +3152,6 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_middlewares_auth_middleware",
-      "target": "src_db_database_connection_db",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/members.service.js",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_members_service",
       "target": "src_db_database_connection_db",
       "confidence_score": 1.0
     },
@@ -4407,22 +3208,11 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/index.js",
-      "source_location": "L4",
+      "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_index",
       "target": "src_db_database_connection_checkconnection",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/db/schema.database.js",
-      "source_location": "L77",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_db_schema_database",
-      "target": "src_db_schema_database_memberstable",
       "confidence_score": 1.0
     },
     {
@@ -4529,18 +3319,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/services/members.service.js",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_members_service",
-      "target": "src_db_schema_database",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "src/services/product.service.js",
       "source_location": "L3",
       "weight": 1.0,
@@ -4730,34 +3508,10 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/members.service.js",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_members_service",
-      "target": "src_db_schema_database_memberstable",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/transaction.service.js",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_transaction_service",
-      "target": "src_db_schema_database_memberstable",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/index.js",
-      "source_location": "L11",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_index",
@@ -4769,31 +3523,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/index.js",
-      "source_location": "L9",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_index",
-      "target": "src_routes_members_routes",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/index.js",
-      "source_location": "L9",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_index",
-      "target": "src_routes_members_routes_memberroute",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/index.js",
-      "source_location": "L7",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_index",
@@ -4805,7 +3535,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/index.js",
-      "source_location": "L7",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_index",
@@ -4817,7 +3547,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/index.js",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_index",
@@ -4829,7 +3559,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/index.js",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_index",
@@ -4841,7 +3571,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/index.js",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_index",
@@ -4853,7 +3583,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/index.js",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_index",
@@ -4899,18 +3629,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/routes/members.routes.js",
-      "source_location": "L19",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_members_routes",
-      "target": "src_middlewares_auth_middleware",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "src/routes/product.routes.js",
       "source_location": "L13",
       "weight": 1.0,
@@ -4936,7 +3654,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/routes/users.routes.js",
-      "source_location": "L25",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_users_routes",
@@ -4959,18 +3677,6 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/routes/members.routes.js",
-      "source_location": "L19",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_members_routes",
-      "target": "src_middlewares_auth_middleware_authmiddleware",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "src/routes/product.routes.js",
       "source_location": "L13",
       "weight": 1.0,
@@ -4996,106 +3702,11 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/routes/users.routes.js",
-      "source_location": "L25",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_users_routes",
       "target": "src_middlewares_auth_middleware_authmiddleware",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/routes/members.routes.js",
-      "source_location": "L21",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_members_routes",
-      "target": "src_routes_members_routes_memberroute",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/routes/members.routes.js",
-      "source_location": "L18",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_members_routes",
-      "target": "src_utils_handle_validation",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/routes/members.routes.js",
-      "source_location": "L18",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_members_routes",
-      "target": "src_utils_handle_validation_handlevalidation",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/routes/members.routes.js",
-      "source_location": "L12",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_members_routes",
-      "target": "src_validators_member_validator",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/routes/members.routes.js",
-      "source_location": "L12",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_members_routes",
-      "target": "src_validators_member_validator_editmemberbyidschema",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/routes/members.routes.js",
-      "source_location": "L12",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_members_routes",
-      "target": "src_validators_member_validator_getmemberbyidschema",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/routes/members.routes.js",
-      "source_location": "L12",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_members_routes",
-      "target": "src_validators_member_validator_getmemberqueryschema",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/routes/members.routes.js",
-      "source_location": "L12",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_members_routes",
-      "target": "src_validators_member_validator_registermemberschema",
       "confidence_score": 1.0
     },
     {
@@ -5209,7 +3820,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/routes/transaction.routes.js",
-      "source_location": "L20",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_transaction_routes",
@@ -5304,7 +3915,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/routes/users.routes.js",
-      "source_location": "L27",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_users_routes",
@@ -5316,7 +3927,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/routes/users.routes.js",
-      "source_location": "L24",
+      "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_users_routes",
@@ -5328,7 +3939,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/routes/users.routes.js",
-      "source_location": "L24",
+      "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_routes_users_routes",
@@ -5345,18 +3956,6 @@
       "_origin": "ast",
       "source": "src_routes_users_routes",
       "target": "src_validators_user_validator",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/routes/users.routes.js",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_routes_users_routes",
-      "target": "src_validators_user_validator_changepasswordschema",
       "confidence_score": 1.0
     },
     {
@@ -5434,169 +4033,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/services/members.service.js",
-      "source_location": "L119",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_members_service",
-      "target": "src_services_members_service_deletememberbyid",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/members.service.js",
-      "source_location": "L99",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_members_service",
-      "target": "src_services_members_service_editmemberbyid",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/members.service.js",
-      "source_location": "L23",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_members_service",
-      "target": "src_services_members_service_getallmembers",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/members.service.js",
-      "source_location": "L78",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_members_service",
-      "target": "src_services_members_service_getmemberbyid",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/members.service.js",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_members_service",
-      "target": "src_services_members_service_registermember",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/members.service.js",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_members_service",
-      "target": "src_utils_db_error",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/members.service.js",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_members_service",
-      "target": "src_utils_db_error_parsedberror",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/members.service.js",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_members_service",
-      "target": "src_utils_errors",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/members.service.js",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_members_service",
-      "target": "src_utils_errors_notfounderror",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/members.service.js",
-      "source_location": "L19",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_members_service_registermember",
-      "target": "src_utils_db_error_parsedberror"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/members.service.js",
-      "source_location": "L74",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_members_service_getallmembers",
-      "target": "src_utils_db_error_parsedberror"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/members.service.js",
-      "source_location": "L95",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_members_service_getmemberbyid",
-      "target": "src_utils_db_error_parsedberror"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/members.service.js",
-      "source_location": "L115",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_members_service_editmemberbyid",
-      "target": "src_utils_db_error_parsedberror"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/members.service.js",
-      "source_location": "L129",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_members_service_deletememberbyid",
-      "target": "src_utils_db_error_parsedberror"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "src/services/product.service.js",
       "source_location": "L8",
       "weight": 1.0,
@@ -5609,7 +4045,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/services/product.service.js",
-      "source_location": "L129",
+      "source_location": "L124",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_product_service",
@@ -5620,7 +4056,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/services/product.service.js",
-      "source_location": "L142",
+      "source_location": "L137",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_product_service",
@@ -5642,7 +4078,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/services/product.service.js",
-      "source_location": "L91",
+      "source_location": "L86",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_product_service",
@@ -5653,7 +4089,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/services/product.service.js",
-      "source_location": "L108",
+      "source_location": "L103",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_product_service",
@@ -5750,7 +4186,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/product.service.js",
-      "source_location": "L87",
+      "source_location": "L82",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_product_service_getallproducts",
@@ -5762,7 +4198,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/product.service.js",
-      "source_location": "L104",
+      "source_location": "L99",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_product_service_getlowstockproducts",
@@ -5774,7 +4210,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/product.service.js",
-      "source_location": "L125",
+      "source_location": "L120",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_product_service_getproductbyid",
@@ -5786,7 +4222,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/product.service.js",
-      "source_location": "L138",
+      "source_location": "L133",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_product_service_deleteproductbyid",
@@ -5798,7 +4234,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/product.service.js",
-      "source_location": "L160",
+      "source_location": "L155",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_product_service_editproductbyid",
@@ -5808,7 +4244,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L15",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_transaction_service",
@@ -5819,7 +4255,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L82",
+      "source_location": "L64",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_transaction_service",
@@ -5830,18 +4266,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L219",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_transaction_service",
-      "target": "src_services_transaction_service_getinvoicebyid",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/transaction.service.js",
-      "source_location": "L136",
+      "source_location": "L89",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_transaction_service",
@@ -5852,7 +4277,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L279",
+      "source_location": "L173",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_transaction_service",
@@ -5863,7 +4288,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L166",
+      "source_location": "L120",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_transaction_service",
@@ -5875,7 +4300,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L12",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_transaction_service",
@@ -5887,7 +4312,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L12",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_transaction_service",
@@ -5899,7 +4324,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L13",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_transaction_service",
@@ -5911,7 +4336,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L13",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_transaction_service",
@@ -5923,7 +4348,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L13",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_transaction_service",
@@ -5936,7 +4361,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L78",
+      "source_location": "L60",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_transaction_service_createtransaction",
@@ -5948,7 +4373,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L132",
+      "source_location": "L85",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_transaction_service_getalltransactions",
@@ -5960,7 +4385,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L162",
+      "source_location": "L116",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_transaction_service_gettransactionbyid",
@@ -5972,7 +4397,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L215",
+      "source_location": "L169",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_transaction_service_updatetransactionstatus",
@@ -5984,19 +4409,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L275",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_transaction_service_getinvoicebyid",
-      "target": "src_utils_db_error_parsedberror"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/transaction.service.js",
-      "source_location": "L291",
+      "source_location": "L185",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_transaction_service_gettransactionssummary",
@@ -6006,18 +4419,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/services/user.service.js",
-      "source_location": "L167",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_user_service",
-      "target": "src_services_user_service_changepassword",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/user.service.js",
-      "source_location": "L146",
+      "source_location": "L139",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_user_service",
@@ -6028,7 +4430,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/services/user.service.js",
-      "source_location": "L128",
+      "source_location": "L121",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_user_service",
@@ -6039,7 +4441,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/services/user.service.js",
-      "source_location": "L55",
+      "source_location": "L48",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_user_service",
@@ -6050,7 +4452,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/services/user.service.js",
-      "source_location": "L107",
+      "source_location": "L100",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_user_service",
@@ -6193,7 +4595,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/user.service.js",
-      "source_location": "L103",
+      "source_location": "L96",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_user_service_getallusers",
@@ -6205,7 +4607,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/user.service.js",
-      "source_location": "L124",
+      "source_location": "L117",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_user_service_getuserbyid",
@@ -6217,7 +4619,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/user.service.js",
-      "source_location": "L142",
+      "source_location": "L135",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_user_service_edituserrole",
@@ -6229,22 +4631,10 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/user.service.js",
-      "source_location": "L163",
+      "source_location": "L156",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_services_user_service_edituserbyid",
-      "target": "src_utils_db_error_parsedberror"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/user.service.js",
-      "source_location": "L189",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_services_user_service_changepassword",
       "target": "src_utils_db_error_parsedberror"
     },
     {
@@ -6421,50 +4811,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/validators/member.validator.js",
-      "source_location": "L29",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_validators_member_validator",
-      "target": "src_validators_member_validator_editmemberbyidschema",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/validators/member.validator.js",
-      "source_location": "L19",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_validators_member_validator",
-      "target": "src_validators_member_validator_getmemberbyidschema",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/validators/member.validator.js",
-      "source_location": "L23",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_validators_member_validator",
-      "target": "src_validators_member_validator_getmemberqueryschema",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/validators/member.validator.js",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_validators_member_validator",
-      "target": "src_validators_member_validator_registermemberschema",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "src/validators/product.validator.js",
       "source_location": "L3",
       "weight": 1.0,
@@ -6532,7 +4878,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/validators/transaction.validator.js",
-      "source_location": "L39",
+      "source_location": "L28",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_validators_transaction_validator",
@@ -6543,7 +4889,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/validators/transaction.validator.js",
-      "source_location": "L35",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_validators_transaction_validator",
@@ -6554,22 +4900,11 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/validators/transaction.validator.js",
-      "source_location": "L25",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_validators_transaction_validator",
       "target": "src_validators_transaction_validator_updatetransactionstatusschema",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/validators/user.validator.js",
-      "source_location": "L49",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_validators_user_validator",
-      "target": "src_validators_user_validator_changepasswordschema",
       "confidence_score": 1.0
     },
     {
@@ -6860,5 +5195,5 @@
       "source_file": "docs/error-handling.md"
     }
   ],
-  "built_at_commit": "a7cd3a608ab7bd4e950574db7a6f44a60b1bd7be"
+  "built_at_commit": "25d79d36173462ef5a5671ecb8fceee7033e195b"
 }

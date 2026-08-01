@@ -4,14 +4,20 @@ import {
   getAllTransactions,
   getTransactionsSummary,
   getTransactionById,
+  getInvoiceById,
 } from "../services/transaction.service";
 import { success, error } from "../utils/response";
 
 export const handleCreateTransaction = async (c) => {
   try {
     const loggedInUser = c.get("user");
-    const { items } = c.req.valid("json");
-    const transaction = await createTransaction(loggedInUser.id, items);
+    const { items, memberId, guestName } = c.req.valid("json");
+    const transaction = await createTransaction(
+      loggedInUser.id,
+      items,
+      memberId,
+      guestName,
+    );
     return success(c, transaction, 201);
   } catch (err) {
     return error(c, err.message, err.status ?? 400);
@@ -61,6 +67,16 @@ export const transactionById = async (c) => {
     const id = c.req.param("id");
     const transaction = await getTransactionById(id);
     return success(c, transaction);
+  } catch (err) {
+    return error(c, err.message, err.status ?? 400);
+  }
+};
+
+export const transactionInvoice = async (c) => {
+  try {
+    const { id } = c.req.valid("param");
+    const invoice = await getInvoiceById(id);
+    return success(c, invoice);
   } catch (err) {
     return error(c, err.message, err.status ?? 400);
   }

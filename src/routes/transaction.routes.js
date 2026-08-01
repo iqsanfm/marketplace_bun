@@ -14,6 +14,7 @@ import {
   listTransactions,
   transactionsSummary,
   transactionById,
+  transactionInvoice,
 } from "../controllers/transaction.controllers.js";
 
 const transactionRoute = new Hono();
@@ -32,6 +33,12 @@ transactionRoute.get(
   "/:id",
   zValidator("param", transactionIdParamSchema, handleValidation),
   transactionById,
+);
+
+transactionRoute.get(
+  "/:id/invoice",
+  zValidator("param", transactionIdParamSchema, handleValidation),
+  transactionInvoice,
 );
 
 transactionRoute.post(
