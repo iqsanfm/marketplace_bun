@@ -407,11 +407,12 @@ export const getTransactionsSummary = async () => {
     const summary = await db
       .select({
         status: transactionsTable.status,
+        orderChannel: transactionsTable.orderChannel,
         count: sql`count(*)::int`,
         total: sql`coalesce(sum(${transactionsTable.totalAmount}), 0)`,
       })
       .from(transactionsTable)
-      .groupBy(transactionsTable.status);
+      .groupBy(transactionsTable.status, transactionsTable.orderChannel);
     return summary;
   } catch (err) {
     throw parseDbError(err);

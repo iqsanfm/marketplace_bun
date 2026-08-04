@@ -255,11 +255,11 @@ hdr "BAGIAN 4 — angka laporan harus benar, bukan cuma 200"
 LAP=$(req $ADM POST /product "{\"product_name\":\"Laporan SIM$S\",\"price\":1000,\"stock\":100,\"sku\":\"SIMZ$S\",\"category\":\"simlap$S\"}" | c2 | jq -r '.data[0].id')
 
 SB=$(req $ADM GET /transactions/summary | c2)
-PC0=$(jq -r '[.data[] | select(.status=="paid")][0].count // 0' <<< "$SB")
-PT0=$(jq -r '[.data[] | select(.status=="paid")][0].total // 0 | tonumber' <<< "$SB")
-CC0=$(jq -r '[.data[] | select(.status=="cancelled")][0].count // 0' <<< "$SB")
+PC0=$(jq -r '[.data[] | select(.status=="paid") | .count] | add // 0' <<< "$SB")
+PT0=$(jq -r '[.data[] | select(.status=="paid") | .total | tonumber] | add // 0' <<< "$SB")
+CC0=$(jq -r '[.data[] | select(.status=="cancelled") | .count] | add // 0' <<< "$SB")
 
-# jual 2 pcs -> paid ; jual 3 pcs -> paid lalu dibatalkan admin
+# jual 2 pcs -> paid offline (kasir) ; jual 3 pcs -> paid lalu dibatalkan admin
 JL="{\"items\":[{\"productId\":\"$LAP\",\"quantity\":2}]}"
 TA=$(req $KSR POST /transactions "$JL" | c2 | jq -r .data.id)
 req $KSR PATCH /transactions/$TA/status '{"status":"paid","paymentMethod":"cash"}' > /dev/null
@@ -269,13 +269,15 @@ req $KSR PATCH /transactions/$TB/status '{"status":"paid","paymentMethod":"cash"
 req $ADM PATCH /transactions/$TB/status '{"status":"cancelled","cancelReason":"tes laporan"}' > /dev/null
 
 SA=$(req $ADM GET /transactions/summary | c2)
-PC1=$(jq -r '[.data[] | select(.status=="paid")][0].count // 0' <<< "$SA")
-PT1=$(jq -r '[.data[] | select(.status=="paid")][0].total // 0 | tonumber' <<< "$SA")
-CC1=$(jq -r '[.data[] | select(.status=="cancelled")][0].count // 0' <<< "$SA")
+PC1=$(jq -r '[.data[] | select(.status=="paid") | .count] | add // 0' <<< "$SA")
+PT1=$(jq -r '[.data[] | select(.status=="paid") | .total | tonumber] | add // 0' <<< "$SA")
+CC1=$(jq -r '[.data[] | select(.status=="cancelled") | .count] | add // 0' <<< "$SA")
+BADCH=$(jq -r '[.data[] | select(.orderChannel!="offline" and .orderChannel!="online")] | length' <<< "$SA")
 
 ok "summary: paid nambah 1 transaksi (yang dibatalkan keluar dari paid)" 1 $((PC1-PC0))
 ok "summary: omzet paid nambah 2000, bukan 5000" 2000 $((PT1-PT0))
 ok "summary: cancelled nambah 1" 1 $((CC1-CC0))
+ok "summary: setiap baris punya orderChannel yang valid" 0 "$BADCH"
 
 BS=$(req $ADM GET "/product/best-seller?category=simlap$S" | c2)
 ok "best-seller: yang cancelled tidak dihitung (2, bukan 5)" 2 \
