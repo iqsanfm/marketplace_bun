@@ -22,7 +22,7 @@ import {
 } from "../controllers/user.controllers";
 
 import { handleValidation } from "../utils/handle-validation.js";
-import { authMiddleware } from "../middlewares/auth.middleware.js";
+import { authMiddleware, requireRole } from "../middlewares/auth.middleware.js";
 
 const userRoute = new Hono();
 
@@ -42,6 +42,7 @@ userRoute.use("*", authMiddleware);
 
 userRoute.get(
   "/",
+  requireRole("admin"),
   zValidator("query", getUserQuerySchema, handleValidation),
   listUsers,
 );
@@ -56,6 +57,7 @@ userRoute.patch(
 
 userRoute.patch(
   "/:id/role",
+  requireRole("admin"),
   zValidator("param", userIdParamSchema, handleValidation),
   zValidator("json", editUserRoleSchema, handleValidation),
   updateUserRole,
@@ -69,6 +71,7 @@ userRoute.patch(
 
 userRoute.get(
   "/:id",
+  requireRole("admin"),
   zValidator("param", userIdParamSchema, handleValidation),
   userById,
 );

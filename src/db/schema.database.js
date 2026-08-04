@@ -9,7 +9,14 @@ import {
   varchar,
 } from "drizzle-orm/pg-core";
 
-export const userRoleEnum = pgEnum("user_role", ["user", "admin"]);
+export const userRoleEnum = pgEnum("user_role", [
+  "user",
+  "admin",
+  "kasir",
+  "admin_online",
+  "packaging",
+  "gudang",
+]);
 export const transactionStatusEnum = pgEnum("transaction_status", [
   "pending",
   "paid",
@@ -17,6 +24,16 @@ export const transactionStatusEnum = pgEnum("transaction_status", [
 ]);
 
 export const paymentMethodEnum = pgEnum("payment_method", ["cash", "transfer"]);
+
+export const orderChannelEnum = pgEnum("order_channel", ["offline", "online"]);
+
+// Soal pengemasan, dipisah dari transactionStatusEnum yang soal pembayaran.
+// Cuma relevan buat order online; null artinya tidak perlu dikemas / belum dibayar.
+export const fulfillmentStatusEnum = pgEnum("fulfillment_status", [
+  "belum_dikemas",
+  "dikemas",
+  "diambil",
+]);
 
 export const usersTable = pgTable("users", {
   id: uuid().primaryKey().defaultRandom(),
@@ -68,9 +85,35 @@ export const transactionsTable = pgTable("transactions", {
   memberId: uuid().references(() => membersTable.id),
   guestName: varchar({ length: 255 }),
   status: transactionStatusEnum().notNull().default("pending"),
+  orderChannel: orderChannelEnum().notNull().default("offline"),
   totalAmount: numeric().notNull(),
   paymentMethod: paymentMethodEnum(),
   paidAt: timestamp(),
+  paidBy: uuid().references(() => usersTable.id),
+  cancelReason: text(),
+  cancelledBy: uuid().references(() => usersTable.id),
+  fulfillmentStatus: fulfillmentStatusEnum(),
+  packedBy: uuid().references(() => usersTable.id),
+  packedAt: timestamp(),
+  handedOverBy: uuid().references(() => usersTable.id),
+  handedOverAt: timestamp(),
+  createdAt: timestamp().notNull().defaultNow(),
+});
+
+// Riwayat penyesuaian stok (stock opname, barang rusak/expired, salah input).
+// Satu baris per penyesuaian — stok produk cuma boleh berubah lewat sini atau lewat
+// transaksi, tidak lewat edit produk biasa.
+export const stockAdjustmentsTable = pgTable("stock_adjustments", {
+  id: uuid().primaryKey().defaultRandom(),
+  productId: uuid()
+    .notNull()
+    .references(() => productTable.id, { onDelete: "cascade" }),
+  userId: uuid()
+    .notNull()
+    .references(() => usersTable.id),
+  stockBefore: integer().notNull(),
+  stockAfter: integer().notNull(),
+  reason: text().notNull(),
   createdAt: timestamp().notNull().defaultNow(),
 });
 

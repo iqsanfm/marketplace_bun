@@ -12,7 +12,13 @@ import {
 import { parseDbError } from "../utils/db-error";
 import { AppError, NotFoundError } from "../utils/errors";
 
-export const createTransaction = async (userId, items, memberId, guestName) => {
+export const createTransaction = async (
+  userId,
+  items,
+  memberId,
+  guestName,
+  orderChannel,
+) => {
   try {
     const productIds = items.map((item) => item.productId);
     const products = await db
@@ -50,7 +56,7 @@ export const createTransaction = async (userId, items, memberId, guestName) => {
 
       const [newTransaction] = await tx
         .insert(transactionsTable)
-        .values({ userId, totalAmount, memberId, guestName })
+        .values({ userId, totalAmount, memberId, guestName, orderChannel })
         .returning();
 
       let finalTransaction = newTransaction;
@@ -79,11 +85,24 @@ export const createTransaction = async (userId, items, memberId, guestName) => {
   }
 };
 
-export const getAllTransactions = async ({ status, search, page, limit }) => {
+export const getAllTransactions = async ({
+  status,
+  orderChannel,
+  fulfillmentStatus,
+  search,
+  page,
+  limit,
+}) => {
   try {
     const offset = (page - 1) * limit;
     const conditions = [];
     if (status) conditions.push(eq(transactionsTable.status, status));
+    if (orderChannel)
+      conditions.push(eq(transactionsTable.orderChannel, orderChannel));
+    if (fulfillmentStatus)
+      conditions.push(
+        eq(transactionsTable.fulfillmentStatus, fulfillmentStatus),
+      );
     if (search) {
       conditions.push(
         or(
@@ -99,6 +118,8 @@ export const getAllTransactions = async ({ status, search, page, limit }) => {
         id: transactionsTable.id,
         userId: transactionsTable.userId,
         status: transactionsTable.status,
+        orderChannel: transactionsTable.orderChannel,
+        fulfillmentStatus: transactionsTable.fulfillmentStatus,
         totalAmount: transactionsTable.totalAmount,
         paymentMethod: transactionsTable.paymentMethod,
         createdAt: transactionsTable.createdAt,
@@ -133,7 +154,7 @@ export const getAllTransactions = async ({ status, search, page, limit }) => {
   }
 };
 
-export const getTransactionById = async (id) => {
+export const getTransactionById = async (id, user) => {
   try {
     const [transaction] = await db
       .select()
@@ -141,6 +162,13 @@ export const getTransactionById = async (id) => {
       .where(eq(transactionsTable.id, id));
 
     if (!transaction) throw new NotFoundError("Transaksi tidak ditemukan");
+    // packaging cuma boleh buka order yang jadi tanggung jawabnya
+    if (
+      user.role === "packaging" &&
+      (transaction.orderChannel !== "online" || transaction.status !== "paid")
+    ) {
+      throw new AppError("Kamu tidak punya akses ke transaksi ini", 403);
+    }
     const items = await db
       .select({
         id: transactionItemsTable.id,
@@ -158,22 +186,49 @@ export const getTransactionById = async (id) => {
 
     return { ...transaction, items };
   } catch (err) {
-    if (err instanceof NotFoundError) throw err;
+    if (err instanceof AppError) throw err;
     throw parseDbError(err);
   }
 };
 
-export const updateTransactionStatus = async (id, status, paymentMethod) => {
+export const updateTransactionStatus = async (
+  id,
+  user,
+  { status, paymentMethod, cancelReason },
+) => {
   try {
     const transaction = await db.transaction(async (tx) => {
+      // FOR UPDATE: tanpa ini, 2 request cancel yang datang barengan sama-sama
+      // melihat status "pending", sama-sama lolos guard, dan stoknya balik 2x.
       const [current] = await tx
         .select()
         .from(transactionsTable)
-        .where(eq(transactionsTable.id, id));
+        .where(eq(transactionsTable.id, id))
+        .for("update");
       if (!current) throw new NotFoundError("Transaksi tidak ditemukan");
-      if (current.status !== "pending") {
+
+      // pending -> paid/cancelled bebas. paid -> cancelled boleh (barang bisa batal
+      // setelah dibayar), tapi admin only karena uangnya harus dibalikin ke pembeli.
+      if (
+        current.status === "cancelled" ||
+        (current.status === "paid" && status === "paid")
+      ) {
         throw new AppError(
           `Transaksi sudah berstatus "${current.status}", tidak bisa diubah lagi`,
+          400,
+        );
+      }
+      if (current.status === "paid" && user.role !== "admin") {
+        throw new AppError(
+          "Hanya admin yang boleh membatalkan transaksi yang sudah dibayar",
+          403,
+        );
+      }
+      // Barang sudah fisik keluar bareng driver. Kalau dicancel di sini, stok sistem
+      // nambah padahal raknya tidak — jadi retur harus lewat barang balik dulu.
+      if (status === "cancelled" && current.fulfillmentStatus === "diambil") {
+        throw new AppError(
+          "Barang sudah dibawa driver, tidak bisa dibatalkan. Kalau barangnya benar-benar kembali, admin catat lewat penyesuaian stok setelah barangnya dicek",
           400,
         );
       }
@@ -182,6 +237,17 @@ export const updateTransactionStatus = async (id, status, paymentMethod) => {
       if (status === "paid") {
         updateData.paymentMethod = paymentMethod;
         updateData.paidAt = new Date();
+        updateData.paidBy = user.id;
+        // order online masuk antrian packaging begitu dibayar; offline selesai di tempat
+        if (current.orderChannel === "online") {
+          updateData.fulfillmentStatus = "belum_dikemas";
+        }
+      }
+      if (status === "cancelled") {
+        updateData.cancelReason = cancelReason;
+        updateData.cancelledBy = user.id;
+        // keluar dari antrian packaging; jejak "pernah dikemas" tetap ada di packedAt/packedBy
+        updateData.fulfillmentStatus = null;
       }
       const [updated] = await tx
         .update(transactionsTable)
@@ -206,6 +272,59 @@ export const updateTransactionStatus = async (id, status, paymentMethod) => {
             .where(eq(productTable.id, item.productId));
         }
       }
+      return updated;
+    });
+
+    return transaction;
+  } catch (err) {
+    if (err instanceof AppError) throw err;
+    throw parseDbError(err);
+  }
+};
+
+// Alur pengemasan cuma maju, satu langkah per kali. "dikemas" = selesai dikemas &
+// siap diambil driver, "diambil" = final.
+const FULFILLMENT_FLOW = { belum_dikemas: "dikemas", dikemas: "diambil" };
+
+export const updateFulfillmentStatus = async (id, user, fulfillmentStatus) => {
+  try {
+    const transaction = await db.transaction(async (tx) => {
+      // FOR UPDATE: 2 orang packaging yang klik barengan sama-sama lihat
+      // "belum_dikemas" dan dua-duanya dijawab sukses — packedBy-nya salah orang.
+      const [current] = await tx
+        .select()
+        .from(transactionsTable)
+        .where(eq(transactionsTable.id, id))
+        .for("update");
+      if (!current) throw new NotFoundError("Transaksi tidak ditemukan");
+
+      if (current.orderChannel !== "online" || current.status !== "paid") {
+        throw new AppError(
+          "Cuma order online yang sudah dibayar yang perlu dikemas",
+          400,
+        );
+      }
+      if (FULFILLMENT_FLOW[current.fulfillmentStatus] !== fulfillmentStatus) {
+        throw new AppError(
+          `Status pengemasan tidak bisa langsung dari "${current.fulfillmentStatus}" ke "${fulfillmentStatus}"`,
+          400,
+        );
+      }
+
+      const updateData = { fulfillmentStatus };
+      if (fulfillmentStatus === "dikemas") {
+        updateData.packedBy = user.id;
+        updateData.packedAt = new Date();
+      } else {
+        updateData.handedOverBy = user.id;
+        updateData.handedOverAt = new Date();
+      }
+
+      const [updated] = await tx
+        .update(transactionsTable)
+        .set(updateData)
+        .where(eq(transactionsTable.id, id))
+        .returning();
       return updated;
     });
 
@@ -251,13 +370,20 @@ export const getInvoiceById = async (id) => {
       .where(eq(transactionItemsTable.transactionId, id));
 
     const isPaid = transaction.status === "paid";
+    // transaksi batal bukan "belum dibayar" — uangnya bisa saja sudah sempat masuk
+    const statusLabel =
+      transaction.status === "cancelled"
+        ? "Batal"
+        : isPaid
+          ? "Lunas"
+          : "Belum Dibayar";
     const { guestName, buyerName, buyerPhone, buyerEmail, ...rest } =
       transaction;
 
     return {
       ...rest,
       isPaid,
-      statusLabel: isPaid ? "Lunas" : "Belum Dibayar",
+      statusLabel,
       paymentMethod: isPaid ? transaction.paymentMethod : null,
       paidAt: isPaid ? transaction.paidAt : null,
       buyer: buyerName

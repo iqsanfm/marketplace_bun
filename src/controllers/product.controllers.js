@@ -6,6 +6,9 @@ import {
   editProductById,
   deleteProductById,
   getLowStockProducts,
+  getBestSellerProducts,
+  adjustProductStock,
+  getStockAdjustments,
 } from "../services/product.service";
 
 export const createProduct = async (c) => {
@@ -21,6 +24,16 @@ export const createProduct = async (c) => {
 export const listLowStockProducts = async (c) => {
   try {
     const product = await getLowStockProducts();
+    return success(c, product);
+  } catch (err) {
+    return error(c, err.message);
+  }
+};
+
+export const listBestSellerProducts = async (c) => {
+  try {
+    const { category, page, limit } = c.req.valid("query");
+    const product = await getBestSellerProducts(category, page, limit);
     return success(c, product);
   } catch (err) {
     return error(c, err.message);
@@ -57,15 +70,31 @@ export const removeProduct = async (c) => {
   }
 };
 
+export const createStockAdjustment = async (c) => {
+  try {
+    const { id } = c.req.valid("param");
+    const body = c.req.valid("json");
+    const adjustment = await adjustProductStock(id, c.get("user"), body);
+    return success(c, adjustment, 201);
+  } catch (err) {
+    return error(c, err.message, err.status ?? 400);
+  }
+};
+
+export const listStockAdjustments = async (c) => {
+  try {
+    const { id } = c.req.valid("param");
+    const query = c.req.valid("query");
+    const adjustments = await getStockAdjustments(id, query);
+    return success(c, adjustments);
+  } catch (err) {
+    return error(c, err.message, err.status ?? 400);
+  }
+};
+
 export const updateProduct = async (c) => {
   try {
-    const loggedInUser = c.get("user");
     const id = c.req.param("id");
-
-    if (loggedInUser.role !== "admin") {
-      return error(c, "Tidak boleh melakukan edit selain Admin", 403);
-    }
-
     const body = c.req.valid("json");
     const product = await editProductById(id, body);
     return success(c, product);

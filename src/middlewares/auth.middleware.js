@@ -25,3 +25,13 @@ export const authMiddleware = async (c, next) => {
   c.set("user", row.users);
   await next();
 };
+
+export const requireRole =
+  (...roles) =>
+  async (c, next) => {
+    const user = c.get("user");
+    if (!roles.includes(user.role)) {
+      return error(c, "Kamu tidak punya akses ke aksi ini", 403);
+    }
+    await next();
+  };

@@ -56,13 +56,12 @@ export const userById = async (c) => {
 
 export const updateUserRole = async (c) => {
   try {
-    const loggedInUser = c.get("user");
     const id = c.req.param("id");
-
-    if (loggedInUser.role !== "admin") {
-      return error(c, "Tidak boleh mengedit selain Admin", 403);
+    // Kalau admin terakhir menurunkan role dirinya sendiri, tidak ada lagi yang bisa
+    // mengembalikan lewat API — harus lewat SQL. Jadi urusan role sendiri ditutup.
+    if (id === c.get("user").id) {
+      return error(c, "Role sendiri tidak bisa diubah, minta admin lain", 400);
     }
-
     const body = c.req.valid("json");
     const user = await editUserRole(id, body);
     return success(c, user);
