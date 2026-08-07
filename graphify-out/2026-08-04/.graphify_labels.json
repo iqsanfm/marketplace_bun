@@ -1,0 +1,14 @@
+{
+  "0": "Database Schema & Services",
+  "1": "Routing & App Wiring",
+  "2": "Controllers Layer",
+  "3": "User Service & Errors",
+  "4": "Docs & Auth Design",
+  "5": "Runtime Dependencies",
+  "6": "Build Scripts & Tooling",
+  "7": "User Validators",
+  "8": "Architecture Conventions",
+  "9": "Drizzle Config",
+  "10": "Role & Pembagian Kerja",
+  "11": "smoke-roles.sh"
+}
