@@ -23,6 +23,7 @@ export const authMiddleware = async (c, next) => {
   }
 
   c.set("user", row.users);
+  c.set("token", token);
   await next();
 };
 

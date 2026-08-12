@@ -15,6 +15,7 @@ import {
   updateUserRole,
   listUsers,
   handleLogin,
+  handleLogout,
   handleRegister,
   userById,
   handlePasswordChange,
@@ -39,6 +40,8 @@ userRoute.post(
 );
 
 userRoute.use("*", authMiddleware);
+
+userRoute.post("/logout", handleLogout);
 
 userRoute.get(
   "/",

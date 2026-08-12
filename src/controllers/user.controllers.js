@@ -1,6 +1,7 @@
 import {
   registerUser,
   loginUser,
+  logoutUser,
   getAllUsers,
   getUserById,
   editUserRole,
@@ -26,6 +27,15 @@ export const handleLogin = async (c) => {
     return success(c, user, 201);
   } catch (err) {
     return error(c, err.message);
+  }
+};
+
+export const handleLogout = async (c) => {
+  try {
+    const result = await logoutUser(c.get("token"));
+    return success(c, result);
+  } catch (err) {
+    return error(c, err.message, err.status ?? 400);
   }
 };
 

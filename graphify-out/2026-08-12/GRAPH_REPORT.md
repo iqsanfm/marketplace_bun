@@ -1,11 +1,11 @@
 # Graph Report - my-app  (2026-08-12)
 
 ## Corpus Check
-- 66 files · ~32,344 words
+- 66 files · ~32,496 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 231 nodes · 529 edges · 13 communities
+- 232 nodes · 533 edges · 13 communities
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.75)
 - Token cost: 0 input · 0 output
 
@@ -37,8 +37,8 @@
 6. `db` - 7 edges
 7. `scripts` - 6 edges
 8. `handleCreateTransaction()` - 6 edges
-9. `authMiddleware()` - 6 edges
-10. `requireRole()` - 6 edges
+9. `listTransactions()` - 6 edges
+10. `authMiddleware()` - 6 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `README Quickstart (bun install / bun run dev)` --semantically_similar_to--> `Project Commands (bun/drizzle-kit workflow)`  [INFERRED] [semantically similar]
@@ -66,16 +66,16 @@ Cohesion: 0.15
 Nodes (17): db, fulfillmentStatusEnum, membersTable, orderChannelEnum, paymentMethodEnum, productTable, sessionsTable, stockAdjustmentsTable (+9 more)
 
 ### Community 1 - "Routing & App Wiring"
-Cohesion: 0.16
-Nodes (29): createProduct(), createStockAdjustment(), listBestSellerProducts(), listLowStockProducts(), listProducts(), listStockAdjustments(), productById(), removeProduct() (+21 more)
+Cohesion: 0.15
+Nodes (37): createProduct(), createStockAdjustment(), listBestSellerProducts(), listLowStockProducts(), listProducts(), listStockAdjustments(), productById(), removeProduct() (+29 more)
 
 ### Community 2 - "Controllers Layer"
 Cohesion: 0.29
 Nodes (7): c2(), hdr(), mkprod(), note(), ok(), req(), simulate.sh script
 
 ### Community 3 - "User Service & Errors"
-Cohesion: 0.14
-Nodes (23): changeFulfillmentStatus(), changeTransactionStatus(), handleCreateTransaction(), listTransactions(), transactionById(), transactionInvoice(), transactionsSummary(), keduanya (+15 more)
+Cohesion: 0.11
+Nodes (23): checkConnection(), app, memberRoute, productRoute, keduanya, pengemasan, penjualan, transactionRoute (+15 more)
 
 ### Community 4 - "Docs & Auth Design"
 Cohesion: 0.16
@@ -86,12 +86,12 @@ Cohesion: 0.07
 Nodes (27): dotenv, drizzle-kit, drizzle-orm, drizzle-zod, hono, @hono/zod-validator, dependencies, dotenv (+19 more)
 
 ### Community 6 - "Build Scripts & Tooling"
-Cohesion: 0.13
-Nodes (22): handleRegisterMember(), listMembers(), memberById(), removeMember(), updateMember(), checkConnection(), app, authMiddleware() (+14 more)
+Cohesion: 0.20
+Nodes (16): handleRegisterMember(), listMembers(), memberById(), removeMember(), updateMember(), authMiddleware(), requireRole(), deleteMemberById() (+8 more)
 
 ### Community 7 - "User Validators"
-Cohesion: 0.16
-Nodes (24): handleLogin(), handlePasswordChange(), handleRegister(), listUsers(), myProfile(), updateMyProfile(), updateUserRole(), userById() (+16 more)
+Cohesion: 0.14
+Nodes (23): handleLogin(), handlePasswordChange(), handleRegister(), listUsers(), myProfile(), updateMyProfile(), updateUserRole(), userById() (+15 more)
 
 ### Community 8 - "Architecture Conventions"
 Cohesion: 0.67
@@ -118,15 +118,15 @@ _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `error()` connect `Routing & App Wiring` to `Database Schema & Services`, `User Service & Errors`, `Build Scripts & Tooling`, `User Validators`?**
   _High betweenness centrality (0.061) - this node is a cross-community bridge._
-- **Why does `parseDbError()` connect `Routing & App Wiring` to `Database Schema & Services`, `User Service & Errors`, `Build Scripts & Tooling`, `User Validators`?**
+- **Why does `parseDbError()` connect `Routing & App Wiring` to `Database Schema & Services`, `Build Scripts & Tooling`, `User Validators`?**
   _High betweenness centrality (0.038) - this node is a cross-community bridge._
-- **Why does `success()` connect `User Validators` to `Routing & App Wiring`, `User Service & Errors`, `Build Scripts & Tooling`?**
-  _High betweenness centrality (0.036) - this node is a cross-community bridge._
+- **Why does `success()` connect `Routing & App Wiring` to `Build Scripts & Tooling`, `User Validators`?**
+  _High betweenness centrality (0.037) - this node is a cross-community bridge._
 - **What connects `name`, `dev`, `db:push` to the rest of the system?**
   _50 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Database Schema & Services` be split into smaller, more focused modules?**
   _Cohesion score 0.14814814814814814 - nodes in this community are weakly interconnected._
 - **Should `User Service & Errors` be split into smaller, more focused modules?**
-  _Cohesion score 0.14461538461538462 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11330049261083744 - nodes in this community are weakly interconnected._
 - **Should `Runtime Dependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.07142857142857142 - nodes in this community are weakly interconnected._

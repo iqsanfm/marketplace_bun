@@ -1,4 +1,4 @@
-import { eq, and, ilike, sql, or } from "drizzle-orm";
+import { eq, and, ilike, lt, sql, or } from "drizzle-orm";
 
 import { db } from "../db/database.connection";
 import { sessionsTable, usersTable } from "../db/schema.database";
@@ -50,6 +50,24 @@ export const loginUser = async ({ email, password }) => {
     token,
     expiresAt,
   };
+};
+
+export const logoutUser = async (token) => {
+  try {
+    // ponytail: sekalian sapu session kadaluarsa di sini, jadi gak perlu cron.
+    // Pindah ke job terjadwal kalau tabel sessions udah gede.
+    await db
+      .delete(sessionsTable)
+      .where(
+        or(
+          eq(sessionsTable.token, token),
+          lt(sessionsTable.expiresAt, new Date()),
+        ),
+      );
+    return { message: "Berhasil logout" };
+  } catch (err) {
+    throw parseDbError(err);
+  }
 };
 
 export const getAllUsers = async ({ role, page, limit, search }) => {
@@ -183,7 +201,11 @@ export const changePassword = async (userId, currentPassword, newPassword) => {
       .set({ password: newHash })
       .where(eq(usersTable.id, userId));
 
-    return { message: "Password berhasil diubah" };
+    // Ganti password harus ngusir semua sesi lama, termasuk sesi yang lagi jalan —
+    // kalau token attacker tetap hidup, ganti password jadi gak ada gunanya.
+    await db.delete(sessionsTable).where(eq(sessionsTable.userId, userId));
+
+    return { message: "Password berhasil diubah, silakan login ulang" };
   } catch (err) {
     if (err instanceof AppError) throw err;
     throw parseDbError(err);

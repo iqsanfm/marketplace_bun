@@ -1,16 +1,16 @@
 # Graph Report - my-app  (2026-08-12)
 
 ## Corpus Check
-- 66 files · ~32,496 words
+- 66 files · ~32,759 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 232 nodes · 533 edges · 13 communities
+- 234 nodes · 541 edges · 14 communities
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.75)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `19094a5a`
+- Built from commit: `8a5a4d82`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -27,11 +27,12 @@
 - Role & Pembagian Kerja
 - smoke-roles.sh
 - Update API: Role, Packaging, Stock Opname — untuk Tim FE
+- transaction.service.js
 
 ## God Nodes (most connected - your core abstractions)
-1. `error()` - 39 edges
-2. `parseDbError()` - 34 edges
-3. `success()` - 34 edges
+1. `error()` - 40 edges
+2. `parseDbError()` - 35 edges
+3. `success()` - 35 edges
 4. `Role & Pembagian Kerja` - 9 edges
 5. `Update API: Role, Packaging, Stock Opname — untuk Tim FE` - 8 edges
 6. `db` - 7 edges
@@ -59,11 +60,11 @@
 - **Auth Schema Change (design + plan + schema entities)** — docs_superpowers_plans_2026_07_10_auth_schema_plan, docs_superpowers_specs_2026_07_10_auth_schema_design_auth_schema_design, docs_superpowers_specs_2026_07_10_auth_schema_design_userstable_auth_columns, docs_superpowers_specs_2026_07_10_auth_schema_design_sessionstable, docs_superpowers_specs_2026_07_10_auth_schema_design_userroleenum [EXTRACTED 1.00]
 - **Service-to-controller error handling flow** — docs_error_handling_apperror, docs_error_handling_notfounderror, docs_error_handling_status_propagation, claude_md_parsedberror [EXTRACTED 1.00]
 
-## Communities (13 total, 0 thin omitted)
+## Communities (14 total, 0 thin omitted)
 
 ### Community 0 - "Database Schema & Services"
-Cohesion: 0.15
-Nodes (17): db, fulfillmentStatusEnum, membersTable, orderChannelEnum, paymentMethodEnum, productTable, sessionsTable, stockAdjustmentsTable (+9 more)
+Cohesion: 0.13
+Nodes (20): fulfillmentStatusEnum, membersTable, orderChannelEnum, paymentMethodEnum, productTable, sessionsTable, stockAdjustmentsTable, transactionItemsTable (+12 more)
 
 ### Community 1 - "Routing & App Wiring"
 Cohesion: 0.15
@@ -74,8 +75,8 @@ Cohesion: 0.29
 Nodes (7): c2(), hdr(), mkprod(), note(), ok(), req(), simulate.sh script
 
 ### Community 3 - "User Service & Errors"
-Cohesion: 0.11
-Nodes (23): checkConnection(), app, memberRoute, productRoute, keduanya, pengemasan, penjualan, transactionRoute (+15 more)
+Cohesion: 0.16
+Nodes (15): checkConnection(), app, memberRoute, productRoute, transactionRoute, userRoute, handleValidation(), createNewProductSchema (+7 more)
 
 ### Community 4 - "Docs & Auth Design"
 Cohesion: 0.16
@@ -86,12 +87,12 @@ Cohesion: 0.07
 Nodes (27): dotenv, drizzle-kit, drizzle-orm, drizzle-zod, hono, @hono/zod-validator, dependencies, dotenv (+19 more)
 
 ### Community 6 - "Build Scripts & Tooling"
-Cohesion: 0.20
-Nodes (16): handleRegisterMember(), listMembers(), memberById(), removeMember(), updateMember(), authMiddleware(), requireRole(), deleteMemberById() (+8 more)
+Cohesion: 0.24
+Nodes (14): handleRegisterMember(), listMembers(), memberById(), removeMember(), updateMember(), deleteMemberById(), editMemberById(), getAllMembers() (+6 more)
 
 ### Community 7 - "User Validators"
-Cohesion: 0.14
-Nodes (23): handleLogin(), handlePasswordChange(), handleRegister(), listUsers(), myProfile(), updateMyProfile(), updateUserRole(), userById() (+15 more)
+Cohesion: 0.27
+Nodes (6): db, usersTable, loginUser(), AppError, NotFoundError, findUserByEmail()
 
 ### Community 8 - "Architecture Conventions"
 Cohesion: 0.67
@@ -109,6 +110,10 @@ Nodes (3): chk(), code(), smoke-roles.sh script
 Cohesion: 0.17
 Nodes (11): 1. Role & akses, 2. Transaksi: field baru & aturan cancel, 3. BARU: alur pengemasan (layar untuk role packaging), 4. BARU: penyesuaian stok (layar untuk role gudang), 5. Perubahan kecil tapi kelihatan di UI, Bikin transaksi, Cancel, Checklist implementasi FE (+3 more)
 
+### Community 13 - "transaction.service.js"
+Cohesion: 0.14
+Nodes (26): changeFulfillmentStatus(), changeTransactionStatus(), handleCreateTransaction(), listTransactions(), transactionById(), transactionInvoice(), transactionsSummary(), keduanya (+18 more)
+
 ## Knowledge Gaps
 - **50 isolated node(s):** `name`, `dev`, `db:push`, `db:generate`, `db:migrate` (+45 more)
   These have ≤1 connection - possible missing edges or undocumented components.
@@ -116,17 +121,17 @@ Nodes (11): 1. Role & akses, 2. Transaksi: field baru & aturan cancel, 3. BARU: 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `error()` connect `Routing & App Wiring` to `Database Schema & Services`, `User Service & Errors`, `Build Scripts & Tooling`, `User Validators`?**
-  _High betweenness centrality (0.061) - this node is a cross-community bridge._
-- **Why does `parseDbError()` connect `Routing & App Wiring` to `Database Schema & Services`, `Build Scripts & Tooling`, `User Validators`?**
+- **Why does `error()` connect `Routing & App Wiring` to `Database Schema & Services`, `User Service & Errors`, `transaction.service.js`, `Build Scripts & Tooling`?**
+  _High betweenness centrality (0.063) - this node is a cross-community bridge._
+- **Why does `parseDbError()` connect `Routing & App Wiring` to `transaction.service.js`, `Build Scripts & Tooling`, `User Validators`?**
+  _High betweenness centrality (0.040) - this node is a cross-community bridge._
+- **Why does `success()` connect `Routing & App Wiring` to `transaction.service.js`, `Build Scripts & Tooling`?**
   _High betweenness centrality (0.038) - this node is a cross-community bridge._
-- **Why does `success()` connect `Routing & App Wiring` to `Build Scripts & Tooling`, `User Validators`?**
-  _High betweenness centrality (0.037) - this node is a cross-community bridge._
 - **What connects `name`, `dev`, `db:push` to the rest of the system?**
   _50 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Database Schema & Services` be split into smaller, more focused modules?**
-  _Cohesion score 0.14814814814814814 - nodes in this community are weakly interconnected._
-- **Should `User Service & Errors` be split into smaller, more focused modules?**
-  _Cohesion score 0.11330049261083744 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.12681159420289856 - nodes in this community are weakly interconnected._
+- **Should `Routing & App Wiring` be split into smaller, more focused modules?**
+  _Cohesion score 0.14878048780487804 - nodes in this community are weakly interconnected._
 - **Should `Runtime Dependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.07142857142857142 - nodes in this community are weakly interconnected._

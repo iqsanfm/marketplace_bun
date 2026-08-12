@@ -141,6 +141,25 @@ chk "stok tetap 5"    5 "$($DB "SELECT stock FROM product WHERE id='$PID';")"
 chk "PATCH tanpa stock tetap jalan" 200 "$(code $ADM PATCH /product/$PID '{"price":12000}')"
 chk "harga keupdate" 12000 "$($DB "SELECT price::int FROM product WHERE id='$PID';")"
 
+echo "== session: logout & ganti password =="
+SES=$(reg "ses$S@x.com" kasir)
+chk "token valid sebelum logout"   200 "$(code $SES GET /users/me)"
+chk "logout berhasil"              200 "$(code $SES POST /users/logout)"
+chk "token mati setelah logout"    401 "$(code $SES GET /users/me)"
+chk "logout tanpa token ditolak"   401 "$(code '' POST /users/logout)"
+
+PW=$(reg "pwd$S@x.com" kasir)
+OLD=$(curl -s -X POST $B/users/login -H 'content-type: application/json' \
+  -d "{\"email\":\"pwd$S@x.com\",\"password\":\"rahasia123\"}" | jq -r .data.token)
+chk "sesi kedua hidup sebelum ganti password" 200 "$(code $OLD GET /users/me)"
+chk "ganti password berhasil" 200 \
+  "$(code $PW PATCH /users/me/password '{"currentPassword":"rahasia123","newPassword":"rahasia456"}')"
+chk "sesi lain ikut mati"     401 "$(code $OLD GET /users/me)"
+chk "sesi sendiri ikut mati"  401 "$(code $PW GET /users/me)"
+NEW=$(curl -s -X POST $B/users/login -H 'content-type: application/json' \
+  -d "{\"email\":\"pwd$S@x.com\",\"password\":\"rahasia456\"}" | jq -r .data.token)
+chk "login pakai password baru boleh" 200 "$(code $NEW GET /users/me)"
+
 $DB "DELETE FROM stock_adjustments WHERE \"productId\"='$PID';
      DELETE FROM transactions WHERE \"userId\" IN (SELECT id FROM users WHERE email LIKE '%$S@x.com');
      DELETE FROM users WHERE email LIKE '%$S@x.com';
