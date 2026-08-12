@@ -55,6 +55,24 @@ chk "kasir bikin transaksi offline" true "$([ "$TID" != null ] && echo true)"
 # stok 10 - 1 (order online admin_online di atas) - 2 (order ini) = 7
 chk "stok kepotong jadi 7" 7 "$($DB "SELECT stock FROM product WHERE id='$PID';")"
 
+echo "== channel juga dijaga di transaksi yang sudah ada =="
+# bikin transaksi sudah difilter per channel; bayar/batal/invoice harus ikut, kalau tidak
+# kasir tinggal ambil id order online dari GET /transactions lalu melunasinya.
+chk "kasir tandai paid order online ditolak"   403 "$(code $KSR PATCH /transactions/$OID/status '{"status":"paid","paymentMethod":"cash"}')"
+chk "kasir buka invoice order online ditolak"  403 "$(code $KSR GET /transactions/$OID/invoice)"
+chk "admin_online tandai paid order offline ditolak" 403 "$(code $AOL PATCH /transactions/$TID/status '{"status":"paid","paymentMethod":"transfer"}')"
+chk "admin_online buka invoice offline ditolak"      403 "$(code $AOL GET /transactions/$TID/invoice)"
+chk "admin buka invoice channel manapun boleh"       200 "$(code $ADM GET /transactions/$OID/invoice)"
+chk "yang ditolak tidak mengubah apa-apa" pending "$($DB "SELECT status FROM transactions WHERE id='$OID';")"
+chk "kasir buka detail order online ditolak" 403 "$(code $KSR GET /transactions/$OID)"
+chk "admin_online buka detail offline ditolak" 403 "$(code $AOL GET /transactions/$TID)"
+chk "id ngawur ditolak validasi, bukan 500" 400 "$(code $KSR GET /transactions/bukan-uuid)"
+# daftar transaksi ikut dikunci: percuma menolak aksi kalau id-nya masih bisa dipungut dari list
+chk "daftar kasir tidak bocor order online" "" \
+  "$(body $KSR GET "/transactions?limit=100" | jq -r '[.data.items[] | select(.orderChannel!="offline")] | .[].id')"
+chk "kasir minta filter online tetap dapat offline" "" \
+  "$(body $KSR GET "/transactions?limit=100&orderChannel=online" | jq -r '[.data.items[] | select(.orderChannel!="offline")] | .[].id')"
+
 chk "cancel tanpa alasan ditolak" 400 "$(code $KSR PATCH /transactions/$TID/status '{"status":"cancelled"}')"
 chk "kasir tandai paid" 200 "$(code $KSR PATCH /transactions/$TID/status '{"status":"paid","paymentMethod":"cash"}')"
 chk "paidBy tercatat" "$($DB "SELECT id FROM users WHERE email='ksr$S@x.com';")" "$($DB "SELECT \"paidBy\" FROM transactions WHERE id='$TID';")"

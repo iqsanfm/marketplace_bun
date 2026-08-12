@@ -12,6 +12,22 @@ import {
 import { parseDbError } from "../utils/db-error";
 import { AppError, NotFoundError } from "../utils/errors";
 
+// kasir pegang transaksi offline, admin_online pegang order online, admin bebas.
+// Dipakai di semua titik yang menyentuh satu transaksi (buat, bayar/batal, invoice) —
+// role saja tidak cukup, yang menentukan channel barisnya.
+const CHANNEL_BY_ROLE = { kasir: "offline", admin_online: "online" };
+
+export const channelForRole = (role) => CHANNEL_BY_ROLE[role];
+
+export const assertChannelAllowed = (role, orderChannel) => {
+  const allowed = CHANNEL_BY_ROLE[role];
+  if (allowed && orderChannel !== allowed)
+    throw new AppError(
+      `Role ${role} cuma boleh menangani transaksi ${allowed}`,
+      403,
+    );
+};
+
 export const createTransaction = async (
   userId,
   items,
@@ -169,6 +185,7 @@ export const getTransactionById = async (id, user) => {
     ) {
       throw new AppError("Kamu tidak punya akses ke transaksi ini", 403);
     }
+    assertChannelAllowed(user.role, transaction.orderChannel);
     const items = await db
       .select({
         id: transactionItemsTable.id,
@@ -206,6 +223,7 @@ export const updateTransactionStatus = async (
         .where(eq(transactionsTable.id, id))
         .for("update");
       if (!current) throw new NotFoundError("Transaksi tidak ditemukan");
+      assertChannelAllowed(user.role, current.orderChannel);
 
       // pending -> paid/cancelled bebas. paid -> cancelled boleh (barang bisa batal
       // setelah dibayar), tapi admin only karena uangnya harus dibalikin ke pembeli.
@@ -261,14 +279,12 @@ export const updateTransactionStatus = async (
           .from(transactionItemsTable)
           .where(eq(transactionItemsTable.transactionId, id));
 
+        // balikin stok lewat SQL, bukan baca-lalu-tulis: kalau ada penjualan lain
+        // yang memotong stok di sela baca dan tulis, angkanya ketimpa dan stok hilang.
         for (const item of items) {
-          const [product] = await tx
-            .select()
-            .from(productTable)
-            .where(eq(productTable.id, item.productId));
           await tx
             .update(productTable)
-            .set({ stock: product.stock + item.quantity })
+            .set({ stock: sql`${productTable.stock} + ${item.quantity}` })
             .where(eq(productTable.id, item.productId));
         }
       }
@@ -335,13 +351,14 @@ export const updateFulfillmentStatus = async (id, user, fulfillmentStatus) => {
   }
 };
 
-export const getInvoiceById = async (id) => {
+export const getInvoiceById = async (id, user) => {
   try {
     const [transaction] = await db
       .select({
         id: transactionsTable.id,
         createdAt: transactionsTable.createdAt,
         status: transactionsTable.status,
+        orderChannel: transactionsTable.orderChannel,
         paymentMethod: transactionsTable.paymentMethod,
         paidAt: transactionsTable.paidAt,
         totalAmount: transactionsTable.totalAmount,
@@ -355,6 +372,7 @@ export const getInvoiceById = async (id) => {
       .where(eq(transactionsTable.id, id));
 
     if (!transaction) throw new NotFoundError("Transaksi tidak ditemukan");
+    assertChannelAllowed(user.role, transaction.orderChannel);
 
     const items = await db
       .select({
@@ -377,7 +395,8 @@ export const getInvoiceById = async (id) => {
         : isPaid
           ? "Lunas"
           : "Belum Dibayar";
-    const { guestName, buyerName, buyerPhone, buyerEmail, ...rest } =
+    // orderChannel cuma dipakai buat cek akses di atas, tidak ikut dicetak
+    const { guestName, buyerName, buyerPhone, buyerEmail, orderChannel, ...rest } =
       transaction;
 
     return {
@@ -397,7 +416,7 @@ export const getInvoiceById = async (id) => {
       })),
     };
   } catch (err) {
-    if (err instanceof NotFoundError) throw err;
+    if (err instanceof AppError) throw err;
     throw parseDbError(err);
   }
 };
