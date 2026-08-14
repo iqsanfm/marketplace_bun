@@ -1,4 +1,5 @@
 -- Role "user" berhenti dipakai sebagai peran aktif; user existing memang kerjanya kasir.
--- Harus migration terpisah: Postgres tidak mengizinkan nilai enum dipakai di transaction
--- yang sama dengan yang menambahkannya (lihat migration sebelumnya).
+-- Nilai 'kasir' disediakan oleh migration sebelumnya, yang sengaja membuat ulang tipe
+-- "user_role" supaya nilainya bisa langsung dipakai di transaksi yang sama (lihat
+-- catatan di sana soal SQLSTATE 55P04).
 UPDATE "users" SET "role" = 'kasir' WHERE "role" = 'user';
