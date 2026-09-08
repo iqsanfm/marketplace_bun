@@ -1,4 +1,15 @@
-import { eq, and, gte, lte, ilike, sql, count, or, desc } from "drizzle-orm";
+import {
+  eq,
+  and,
+  gte,
+  lte,
+  ilike,
+  sql,
+  count,
+  or,
+  desc,
+  inArray,
+} from "drizzle-orm";
 import { db } from "../db/database.connection";
 import {
   productTable,
@@ -16,6 +27,7 @@ export const addNewProduct = async (data) => {
     const product = await db.insert(productTable).values(data).returning({
       id: productTable.id,
       product_name: productTable.product_name,
+      costPrice: productTable.costPrice,
       price: productTable.price,
       stock: productTable.stock,
       sku: productTable.sku,
@@ -23,6 +35,58 @@ export const addNewProduct = async (data) => {
       category: productTable.category,
     });
     return product;
+  } catch (err) {
+    throw parseDbError(err);
+  }
+};
+
+export const findExistingSkus = async (skus) => {
+  try {
+    if (skus.length === 0) return new Set();
+    const rows = await db
+      .select({ sku: productTable.sku })
+      .from(productTable)
+      .where(inArray(productTable.sku, skus));
+    return new Set(rows.map((r) => r.sku));
+  } catch (err) {
+    throw parseDbError(err);
+  }
+};
+
+// Baris dengan SKU yang sudah ada = update, sisanya insert. Satu transaksi,
+// jadi kalau ada yang gagal tidak ada yang setengah masuk.
+export const upsertProducts = async (rows) => {
+  try {
+    return await db.transaction(async (tx) => {
+      const skus = rows.map((r) => r.sku).filter(Boolean);
+      const existing =
+        skus.length > 0
+          ? await tx
+              .select({ sku: productTable.sku })
+              .from(productTable)
+              .where(inArray(productTable.sku, skus))
+              .for("update")
+          : [];
+      const existingSkus = new Set(existing.map((r) => r.sku));
+
+      const toInsert = rows.filter((r) => !r.sku || !existingSkus.has(r.sku));
+      const toUpdate = rows.filter((r) => r.sku && existingSkus.has(r.sku));
+
+      if (toInsert.length > 0)
+        await tx.insert(productTable).values(toInsert);
+
+      // `stock` sengaja dibuang: perubahan stok wajib lewat stock-adjustments
+      // biar ada jejaknya. Kolom stok di CSV cuma berlaku buat produk baru.
+      // ponytail: update satu per satu, cukup buat <=1000 baris; kalau kelamaan
+      // ganti jadi satu INSERT ... ON CONFLICT DO UPDATE.
+      for (const { sku, stock, ...fields } of toUpdate)
+        await tx
+          .update(productTable)
+          .set(fields)
+          .where(eq(productTable.sku, sku));
+
+      return { inserted: toInsert.length, updated: toUpdate.length };
+    });
   } catch (err) {
     throw parseDbError(err);
   }
@@ -59,6 +123,7 @@ export const getAllProducts = async ({
       .select({
         id: productTable.id,
         product_name: productTable.product_name,
+        costPrice: productTable.costPrice,
         price: productTable.price,
         stock: productTable.stock,
         sku: productTable.sku,
@@ -117,6 +182,7 @@ export const getProductById = async (id) => {
       .select({
         id: productTable.id,
         product_name: productTable.product_name,
+        costPrice: productTable.costPrice,
         price: productTable.price,
         stock: productTable.stock,
         sku: productTable.sku,
@@ -154,6 +220,7 @@ export const editProductById = async (id, data) => {
       .returning({
         id: productTable.id,
         product_name: productTable.product_name,
+        costPrice: productTable.costPrice,
         price: productTable.price,
         stock: productTable.stock,
         sku: productTable.sku,

@@ -58,6 +58,7 @@ export const sessionsTable = pgTable("sessions", {
 export const productTable = pgTable("product", {
   id: uuid().primaryKey().defaultRandom(),
   product_name: varchar({ length: 255 }).notNull(),
+  costPrice: numeric().notNull().default("0"),
   price: numeric().notNull(),
   stock: integer().notNull(),
   sku: varchar({ length: 100 }).unique(),

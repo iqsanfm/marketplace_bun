@@ -24,6 +24,8 @@ import {
   listBestSellerProducts,
   createStockAdjustment,
   listStockAdjustments,
+  importProductsCsv,
+  importTemplateCsv,
 } from "../controllers/product.controllers.js";
 
 const productRoute = new Hono();
@@ -41,6 +43,10 @@ productRoute.post(
   zValidator("json", createNewProductSchema, handleValidation),
   createProduct,
 );
+
+productRoute.post("/import", requireRole("admin"), importProductsCsv);
+
+productRoute.get("/import/template", requireRole("admin"), importTemplateCsv);
 
 productRoute.get("/low-stock", listLowStockProducts);
 

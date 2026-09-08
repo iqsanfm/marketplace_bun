@@ -5,7 +5,8 @@
     "db:push": "bunx drizzle-kit push",
     "db:generate": "bunx drizzle-kit generate",
     "db:migrate": "bunx drizzle-kit migrate",
-    "db:studio": "bunx drizzle-kit studio"
+    "db:studio": "bunx drizzle-kit studio",
+    "db:seed": "bun run src/db/seed.js"
   },
   "dependencies": {
     "@hono/zod-validator": "^0.8.0",

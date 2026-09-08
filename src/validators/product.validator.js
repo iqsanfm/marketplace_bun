@@ -5,11 +5,31 @@ export const createNewProductSchema = z.object({
     .string()
     .min(1, "Nama Produk belum di isi")
     .max(255, "Nama maksimal 255 karakter"),
-  price: z.number().positive("Harga harus lebih dari 0"),
+  costPrice: z
+    .number()
+    .nonnegative("Harga modal tidak boleh negatif")
+    .default(0),
+  price: z.number().positive("Harga jual harus lebih dari 0"),
   stock: z.number().int().nonnegative("Stock tidak boleh negatif"),
   sku: z.string().max(100, "Maksimal 100 karakter").optional(),
   description: z.string().optional(),
   category: z.string().max(100, "Maksimal 100 karakter").optional(),
+});
+
+// Sel CSV selalu string, jadi angkanya di-coerce. Sisanya ikut schema create.
+export const importProductRowSchema = createNewProductSchema.extend({
+  // Optional, bukan default(0): sel kosong berarti "jangan diubah", bukan
+  // "harga modalnya nol".
+  costPrice: z.coerce
+    .number()
+    .nonnegative("Harga modal tidak boleh negatif")
+    .optional(),
+  price: z.coerce.number().positive("Harga jual harus lebih dari 0"),
+  stock: z.coerce
+    .number()
+    .int()
+    .nonnegative("Stock tidak boleh negatif")
+    .default(0),
 });
 
 export const getProductsQuerySchema = z.object({
@@ -37,7 +57,8 @@ export const editProductByIdSchema = z
       .string()
       .min(1, "Nama Produk belum di isi")
       .max(255, "Nama maksimal 255 karakter"),
-    price: z.number().positive("Harga harus lebih dari 0"),
+    costPrice: z.number().nonnegative("Harga modal tidak boleh negatif"),
+    price: z.number().positive("Harga jual harus lebih dari 0"),
     sku: z.string().max(100, "Maksimal 100 karakter").optional(),
     description: z.string().optional(),
     category: z.string().max(100, "Maksimal 100 karakter").optional(),

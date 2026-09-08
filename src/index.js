@@ -29,5 +29,8 @@ app.get("/", (c) => {
 
 export default {
   port: PORT,
+  // Satu-satunya endpoint yang terima upload cuma import CSV (dibatasi 2 MB di
+  // controller). Sisanya JSON kecil, jadi 5 MB kelewat longgar pun aman.
+  maxRequestBodySize: 5 * 1024 * 1024,
   fetch: app.fetch,
 };
