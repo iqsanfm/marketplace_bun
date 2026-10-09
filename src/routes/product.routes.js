@@ -10,6 +10,9 @@ import {
   getBestSellerQuerySchema,
   createStockAdjustmentSchema,
   getStockAdjustmentsQuerySchema,
+  addBarcodeSchema,
+  productBarcodeParamSchema,
+  barcodeLookupParamSchema,
 } from "../validators/product.validator";
 
 import { handleValidation } from "../utils/handle-validation.js";
@@ -26,6 +29,9 @@ import {
   listStockAdjustments,
   importProductsCsv,
   importTemplateCsv,
+  productByBarcode,
+  addBarcode,
+  removeBarcode,
 } from "../controllers/product.controllers.js";
 
 const productRoute = new Hono();
@@ -49,6 +55,28 @@ productRoute.post("/import", requireRole("admin"), importProductsCsv);
 productRoute.get("/import/template", requireRole("admin"), importTemplateCsv);
 
 productRoute.get("/low-stock", listLowStockProducts);
+
+// scan kasir: cocok persis ke sku atau barcode tambahan
+productRoute.get(
+  "/barcode/:code",
+  zValidator("param", barcodeLookupParamSchema, handleValidation),
+  productByBarcode,
+);
+
+productRoute.post(
+  "/:id/barcodes",
+  requireRole("admin"),
+  zValidator("param", productIdSchema, handleValidation),
+  zValidator("json", addBarcodeSchema, handleValidation),
+  addBarcode,
+);
+
+productRoute.delete(
+  "/:id/barcodes/:barcode",
+  requireRole("admin"),
+  zValidator("param", productBarcodeParamSchema, handleValidation),
+  removeBarcode,
+);
 
 productRoute.get(
   "/best-seller",

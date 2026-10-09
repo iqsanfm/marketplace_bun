@@ -57,6 +57,18 @@ export const productTable = pgTable("product", {
   category: varchar({ length: 100 }),
 });
 
+// Barcode tambahan per produk (kemasan baru, supplier lain) — barcode utama tetap di
+// productTable.sku. Satu kode harus nunjuk satu produk: unique di sini cuma jaga
+// antar-barcode, bentrok dengan sku produk lain dicek di product.service.
+export const productBarcodesTable = pgTable("product_barcodes", {
+  id: uuid().primaryKey().defaultRandom(),
+  productId: uuid()
+    .notNull()
+    .references(() => productTable.id, { onDelete: "cascade" }),
+  barcode: varchar({ length: 100 }).notNull().unique(),
+  createdAt: timestamp().notNull().defaultNow(),
+});
+
 export const transactionItemsTable = pgTable("transaction_items", {
   id: uuid().primaryKey().defaultRandom(),
   transactionId: uuid()

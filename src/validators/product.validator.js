@@ -94,3 +94,18 @@ export const getStockAdjustmentsQuerySchema = z.object({
 export const deleteProductByIdSchema = z.object({
   id: z.string().uuid("ID tidak valid"),
 });
+
+const barcode = z
+  .string()
+  .trim()
+  .min(1, "Barcode belum diisi")
+  .max(100, "Maksimal 100 karakter");
+
+export const addBarcodeSchema = z.object({ barcode });
+
+export const productBarcodeParamSchema = z.object({
+  id: z.string().uuid("ID tidak valid"),
+  barcode,
+});
+
+export const barcodeLookupParamSchema = z.object({ code: barcode });

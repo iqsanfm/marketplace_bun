@@ -14,17 +14,47 @@ import {
 import { db } from "../db/database.connection";
 import {
   productTable,
+  productBarcodesTable,
   transactionItemsTable,
   transactionsTable,
   stockAdjustmentsTable,
   usersTable,
 } from "../db/schema.database";
 import { parseDbError } from "../utils/db-error";
-import { NotFoundError } from "../utils/errors";
+import { AppError, NotFoundError } from "../utils/errors";
 import { error } from "../utils/response";
+
+// SKU baru tidak boleh sama dengan barcode tambahan produk lain — kalau lolos,
+// satu kali scan bisa nunjuk dua produk.
+const assertSkuNotBarcode = async (sku) => {
+  if (!sku) return;
+  const [taken] = await db
+    .select({ productName: productTable.product_name })
+    .from(productBarcodesTable)
+    .innerJoin(productTable, eq(productBarcodesTable.productId, productTable.id))
+    .where(eq(productBarcodesTable.barcode, sku));
+  if (taken)
+    throw new AppError(
+      `Kode "${sku}" sudah terdaftar sebagai barcode produk "${taken.productName}"`,
+    );
+};
+
+export const findSkusUsedAsBarcode = async (skus) => {
+  try {
+    if (skus.length === 0) return new Set();
+    const rows = await db
+      .select({ barcode: productBarcodesTable.barcode })
+      .from(productBarcodesTable)
+      .where(inArray(productBarcodesTable.barcode, skus));
+    return new Set(rows.map((r) => r.barcode));
+  } catch (err) {
+    throw parseDbError(err);
+  }
+};
 
 export const addNewProduct = async (data) => {
   try {
+    await assertSkuNotBarcode(data.sku);
     const product = await db.insert(productTable).values(data).returning({
       id: productTable.id,
       product_name: productTable.product_name,
@@ -112,6 +142,13 @@ export const getAllProducts = async ({
         or(
           ilike(productTable.product_name, `%${search}%`),
           ilike(productTable.sku, `%${search}%`),
+          inArray(
+            productTable.id,
+            db
+              .select({ id: productBarcodesTable.productId })
+              .from(productBarcodesTable)
+              .where(ilike(productBarcodesTable.barcode, `%${search}%`)),
+          ),
         ),
       );
     if (minPrice !== undefined)
@@ -204,7 +241,97 @@ export const getProductById = async (id) => {
       .from(productTable)
       .where(eq(productTable.id, id));
     if (product.length === 0) throw new NotFoundError("Produk tidak ditemukan");
+    const barcodes = await db
+      .select({ barcode: productBarcodesTable.barcode })
+      .from(productBarcodesTable)
+      .where(eq(productBarcodesTable.productId, id))
+      .orderBy(productBarcodesTable.createdAt);
+    product[0].barcodes = barcodes.map((b) => b.barcode);
     return product;
+  } catch (err) {
+    throw parseDbError(err);
+  }
+};
+
+// Dipakai kasir waktu scan: cocok persis ke sku atau salah satu barcode tambahan.
+export const getProductByCode = async (code) => {
+  try {
+    const [product] = await db
+      .select({
+        id: productTable.id,
+        product_name: productTable.product_name,
+        price: productTable.price,
+        stock: productTable.stock,
+        sku: productTable.sku,
+        category: productTable.category,
+      })
+      .from(productTable)
+      .leftJoin(
+        productBarcodesTable,
+        eq(productBarcodesTable.productId, productTable.id),
+      )
+      .where(
+        or(eq(productTable.sku, code), eq(productBarcodesTable.barcode, code)),
+      )
+      .limit(1);
+    if (!product)
+      throw new NotFoundError("Produk dengan barcode ini belum terdaftar");
+    return product;
+  } catch (err) {
+    throw parseDbError(err);
+  }
+};
+
+export const addProductBarcode = async (productId, barcode) => {
+  try {
+    const [skuOwner] = await db
+      .select({ productName: productTable.product_name })
+      .from(productTable)
+      .where(eq(productTable.sku, barcode));
+    if (skuOwner)
+      throw new AppError(
+        `Barcode "${barcode}" sudah jadi SKU produk "${skuOwner.productName}"`,
+      );
+    const [barcodeOwner] = await db
+      .select({ productName: productTable.product_name })
+      .from(productBarcodesTable)
+      .innerJoin(productTable, eq(productBarcodesTable.productId, productTable.id))
+      .where(eq(productBarcodesTable.barcode, barcode));
+    if (barcodeOwner)
+      throw new AppError(
+        `Barcode "${barcode}" sudah terdaftar di produk "${barcodeOwner.productName}"`,
+      );
+
+    const [product] = await db
+      .select({ id: productTable.id })
+      .from(productTable)
+      .where(eq(productTable.id, productId));
+    if (!product) throw new NotFoundError("Produk tidak ditemukan");
+
+    const [created] = await db
+      .insert(productBarcodesTable)
+      .values({ productId, barcode })
+      .returning();
+    return created;
+  } catch (err) {
+    throw parseDbError(err);
+  }
+};
+
+export const removeProductBarcode = async (productId, barcode) => {
+  try {
+    const [deleted] = await db
+      .delete(productBarcodesTable)
+      .where(
+        and(
+          eq(productBarcodesTable.productId, productId),
+          eq(productBarcodesTable.barcode, barcode),
+        ),
+      )
+      .returning();
+    if (!deleted)
+      throw new NotFoundError("Barcode tidak terdaftar di produk ini");
+    return deleted;
   } catch (err) {
     throw parseDbError(err);
   }
@@ -225,6 +352,7 @@ export const deleteProductById = async (id) => {
 
 export const editProductById = async (id, data) => {
   try {
+    await assertSkuNotBarcode(data.sku);
     const product = await db
       .update(productTable)
       .set(data)

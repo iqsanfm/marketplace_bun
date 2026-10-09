@@ -13,6 +13,10 @@ import {
   getBestSellerProducts,
   adjustProductStock,
   getStockAdjustments,
+  findSkusUsedAsBarcode,
+  getProductByCode,
+  addProductBarcode,
+  removeProductBarcode,
 } from "../services/product.service";
 
 export const createProduct = async (c) => {
@@ -110,6 +114,16 @@ export const importProductsCsv = async (c) => {
         });
       else seen.set(row.sku, i + 2);
     });
+
+    // SKU yang sudah jadi barcode tambahan produk lain: kalau masuk, satu scan
+    // nunjuk dua produk
+    const usedAsBarcode = await findSkusUsedAsBarcode([...seen.keys()]);
+    for (const [sku, line] of seen)
+      if (usedAsBarcode.has(sku))
+        errors.push({
+          line,
+          message: `SKU "${sku}" sudah terdaftar sebagai barcode tambahan produk lain`,
+        });
 
     if (errors.length > 0)
       return c.json({ success: false, error: "CSV tidak valid", errors }, 400);
@@ -214,6 +228,37 @@ export const updateProduct = async (c) => {
     const body = c.req.valid("json");
     const product = await editProductById(id, body);
     return success(c, product);
+  } catch (err) {
+    return error(c, err.message, err.status ?? 400);
+  }
+};
+
+export const productByBarcode = async (c) => {
+  try {
+    const { code } = c.req.valid("param");
+    const product = await getProductByCode(code);
+    return success(c, product);
+  } catch (err) {
+    return error(c, err.message, err.status ?? 400);
+  }
+};
+
+export const addBarcode = async (c) => {
+  try {
+    const { id } = c.req.valid("param");
+    const { barcode } = c.req.valid("json");
+    const created = await addProductBarcode(id, barcode);
+    return success(c, created, 201);
+  } catch (err) {
+    return error(c, err.message, err.status ?? 400);
+  }
+};
+
+export const removeBarcode = async (c) => {
+  try {
+    const { id, barcode } = c.req.valid("param");
+    const deleted = await removeProductBarcode(id, barcode);
+    return success(c, deleted);
   } catch (err) {
     return error(c, err.message, err.status ?? 400);
   }
