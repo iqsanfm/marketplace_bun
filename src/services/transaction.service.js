@@ -12,6 +12,7 @@ import {
 } from "../db/schema.database";
 import { parseDbError } from "../utils/db-error";
 import { AppError, NotFoundError } from "../utils/errors";
+import { toDynamicQris } from "../utils/qris";
 
 // kasir pegang transaksi offline, admin_online pegang order online, admin bebas.
 // Dipakai di semua titik yang menyentuh satu transaksi (buat, bayar/batal, invoice) —
@@ -282,6 +283,38 @@ export const updateTransactionStatus = async (
     });
 
     return transaction;
+  } catch (err) {
+    if (err instanceof AppError) throw err;
+    throw parseDbError(err);
+  }
+};
+
+export const getQrisForTransaction = async (id, user) => {
+  try {
+    const [transaction] = await db
+      .select({
+        status: transactionsTable.status,
+        orderChannel: transactionsTable.orderChannel,
+        totalAmount: transactionsTable.totalAmount,
+      })
+      .from(transactionsTable)
+      .where(eq(transactionsTable.id, id));
+
+    if (!transaction) throw new NotFoundError("Transaksi tidak ditemukan");
+    assertChannelAllowed(user.role, transaction.orderChannel);
+    if (transaction.status !== "pending")
+      throw new AppError(
+        `Transaksi sudah berstatus "${transaction.status}", tidak perlu dibayar lagi`,
+        400,
+      );
+    if (!Bun.env.QRIS_STATIC)
+      throw new AppError("QRIS toko belum diatur (QRIS_STATIC di .env)", 500);
+
+    return {
+      transactionId: id,
+      amount: transaction.totalAmount,
+      qris: toDynamicQris(Bun.env.QRIS_STATIC, transaction.totalAmount),
+    };
   } catch (err) {
     if (err instanceof AppError) throw err;
     throw parseDbError(err);

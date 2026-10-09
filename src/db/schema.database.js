@@ -22,7 +22,7 @@ export const transactionStatusEnum = pgEnum("transaction_status", [
   "cancelled",
 ]);
 
-export const paymentMethodEnum = pgEnum("payment_method", ["cash", "transfer"]);
+export const paymentMethodEnum = pgEnum("payment_method", ["cash", "transfer", "qris"]);
 
 export const orderChannelEnum = pgEnum("order_channel", ["offline", "online"]);
 

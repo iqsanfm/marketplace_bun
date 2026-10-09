@@ -26,7 +26,7 @@ export const createTransactionSchema = z
 export const updateTransactionStatusSchema = z
   .object({
     status: z.enum(["paid", "cancelled"], "Status tidak valid"),
-    paymentMethod: z.enum(["cash", "transfer"]).optional(),
+    paymentMethod: z.enum(["cash", "transfer", "qris"]).optional(),
     amountReceived: z.number().positive("Uang diterima harus lebih dari 0").optional(),
     cancelReason: z
       .string()

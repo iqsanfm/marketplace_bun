@@ -8,6 +8,7 @@ import {
   assertChannelAllowed,
   channelForRole,
   getTransactionsForExport,
+  getQrisForTransaction,
 } from "../services/transaction.service";
 import { success, error } from "../utils/response";
 import { toCsv } from "../utils/csv.js";
@@ -103,6 +104,16 @@ export const exportTransactionsCsv = async (c) => {
       "Content-Type": "text/csv; charset=utf-8",
       "Content-Disposition": `attachment; filename="${filename}"`,
     });
+  } catch (err) {
+    return error(c, err.message, err.status ?? 400);
+  }
+};
+
+export const transactionQris = async (c) => {
+  try {
+    const { id } = c.req.valid("param");
+    const qris = await getQrisForTransaction(id, c.get("user"));
+    return success(c, qris);
   } catch (err) {
     return error(c, err.message, err.status ?? 400);
   }

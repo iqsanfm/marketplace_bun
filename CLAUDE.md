@@ -12,7 +12,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Apply pending migrations: `bun run db:migrate`
 - Open Drizzle Studio (DB GUI): `bun run db:studio`
 
-There is no test suite, lint, or typecheck configured in this repo currently.
+- Run unit tests: `bun test` (currently only `src/utils/qris.test.js`). No lint or typecheck is configured.
 
 ## Architecture
 

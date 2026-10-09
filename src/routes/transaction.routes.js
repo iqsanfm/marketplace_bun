@@ -17,6 +17,7 @@ import {
   transactionById,
   transactionInvoice,
   exportTransactionsCsv,
+  transactionQris,
 } from "../controllers/transaction.controllers.js";
 
 const transactionRoute = new Hono();
@@ -54,6 +55,14 @@ transactionRoute.get(
   penjualan,
   zValidator("param", transactionIdParamSchema, handleValidation),
   transactionInvoice,
+);
+
+// teks QRIS dengan nominal terisi; FE yang merender jadi gambar QR
+transactionRoute.get(
+  "/:id/qris",
+  penjualan,
+  zValidator("param", transactionIdParamSchema, handleValidation),
+  transactionQris,
 );
 
 transactionRoute.post(
