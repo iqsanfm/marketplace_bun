@@ -400,8 +400,11 @@ export const getInvoiceById = async (id, user) => {
   }
 };
 
-export const getTransactionsSummary = async () => {
+export const getTransactionsSummary = async ({ from, to } = {}) => {
   try {
+    const conditions = [];
+    if (from) conditions.push(sql`${createdAtWib}::date >= ${from}`);
+    if (to) conditions.push(sql`${createdAtWib}::date <= ${to}`);
     const summary = await db
       .select({
         status: transactionsTable.status,
@@ -410,8 +413,28 @@ export const getTransactionsSummary = async () => {
         total: sql`coalesce(sum(${transactionsTable.totalAmount}), 0)`,
       })
       .from(transactionsTable)
+      .where(conditions.length ? and(...conditions) : undefined)
       .groupBy(transactionsTable.status, transactionsTable.orderChannel);
     return summary;
+  } catch (err) {
+    throw parseDbError(err);
+  }
+};
+
+// Omzet paid per hari (WIB). Hari tanpa penjualan tetap muncul sebagai 0 karena
+// FE butuh deret yang rapat untuk sparkline & pembanding periode sebelumnya.
+export const getDailySales = async ({ from, to }) => {
+  try {
+    const result = await db.execute(sql`
+      select to_char(d, 'YYYY-MM-DD') as date,
+             count(${transactionsTable.id})::int as count,
+             coalesce(sum(${transactionsTable.totalAmount}), 0)::text as total
+      from generate_series(${from}::date, ${to}::date, interval '1 day') as d
+      left join ${transactionsTable}
+        on ${transactionsTable.status} = 'paid' and ${createdAtWib}::date = d::date
+      group by d
+      order by d`);
+    return result.rows;
   } catch (err) {
     throw parseDbError(err);
   }

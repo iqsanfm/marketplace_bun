@@ -162,8 +162,8 @@ export const listLowStockProducts = async (c) => {
 
 export const listBestSellerProducts = async (c) => {
   try {
-    const { category, page, limit } = c.req.valid("query");
-    const product = await getBestSellerProducts(category, page, limit);
+    const { category, page, limit, from, to } = c.req.valid("query");
+    const product = await getBestSellerProducts(category, page, limit, { from, to });
     return success(c, product);
   } catch (err) {
     return error(c, err.message);

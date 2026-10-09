@@ -6,6 +6,8 @@ import {
   updateTransactionStatusSchema,
   getTransactionsQuerySchema,
   exportTransactionsQuerySchema,
+  summaryQuerySchema,
+  dailyQuerySchema,
 } from "../validators/transaction.validator.js";
 import { handleValidation } from "../utils/handle-validation.js";
 import { authMiddleware, requireRole } from "../middlewares/auth.middleware.js";
@@ -14,6 +16,7 @@ import {
   changeTransactionStatus,
   listTransactions,
   transactionsSummary,
+  dailySales,
   transactionById,
   transactionInvoice,
   exportTransactionsCsv,
@@ -27,7 +30,19 @@ transactionRoute.use("*", authMiddleware);
 // gudang tidak punya akses transaksi sama sekali.
 const penjualan = requireRole("admin", "kasir", "admin_online");
 
-transactionRoute.get("/summary", penjualan, transactionsSummary);
+transactionRoute.get(
+  "/summary",
+  penjualan,
+  zValidator("query", summaryQuerySchema, handleValidation),
+  transactionsSummary,
+);
+
+transactionRoute.get(
+  "/daily",
+  penjualan,
+  zValidator("query", dailyQuerySchema, handleValidation),
+  dailySales,
+);
 
 transactionRoute.get(
   "/",

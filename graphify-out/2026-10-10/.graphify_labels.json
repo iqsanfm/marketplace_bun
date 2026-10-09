@@ -1,17 +1,15 @@
 {
-  "0": "schema.database.js",
-  "1": "parseDbError",
+  "0": "parseDbError",
+  "1": "product.controllers.js",
   "2": "Simulation Script",
-  "3": "transaction.service.js",
+  "3": "transaction.routes.js",
   "4": "Architecture & Auth Design",
   "5": "package.json",
   "6": "error",
-  "7": "members.routes.js",
   "8": "Architecture Conventions",
-  "9": "csv.js",
   "10": "Role & Pembagian Kerja",
   "11": "Role Smoke Tests",
   "12": "Frontend API Update Guide",
-  "13": "product.routes.js",
+  "13": "members.routes.js",
   "14": "compilerOptions"
 }

@@ -3,6 +3,7 @@ import {
   updateTransactionStatus,
   getAllTransactions,
   getTransactionsSummary,
+  getDailySales,
   getTransactionById,
   getInvoiceById,
   assertChannelAllowed,
@@ -64,8 +65,17 @@ export const listTransactions = async (c) => {
 
 export const transactionsSummary = async (c) => {
   try {
-    const summary = await getTransactionsSummary();
+    const summary = await getTransactionsSummary(c.req.valid("query"));
     return success(c, summary);
+  } catch (err) {
+    return error(c, err.message, err.status ?? 400);
+  }
+};
+
+export const dailySales = async (c) => {
+  try {
+    const rows = await getDailySales(c.req.valid("query"));
+    return success(c, rows);
   } catch (err) {
     return error(c, err.message, err.status ?? 400);
   }

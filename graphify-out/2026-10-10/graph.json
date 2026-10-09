@@ -43,7 +43,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "apperror",
@@ -56,7 +56,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "notfounderror",
@@ -64,251 +64,59 @@
       "source_location": "L8"
     },
     {
-      "id": "src_controllers_product_controllers_importproductscsv",
-      "label": "importProductsCsv()",
+      "id": "src_services_members_service_deletememberbyid",
+      "label": "deleteMemberById()",
       "_callable": true,
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "community_name": "parseDbError",
       "file_type": "code",
-      "norm_label": "importproductscsv()",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L64"
-    },
-    {
-      "id": "src_controllers_product_controllers_listlowstockproducts",
-      "label": "listLowStockProducts()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "parseDbError",
-      "file_type": "code",
-      "norm_label": "listlowstockproducts()",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L154"
-    },
-    {
-      "id": "src_controllers_product_controllers_liststockadjustments",
-      "label": "listStockAdjustments()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "parseDbError",
-      "file_type": "code",
-      "norm_label": "liststockadjustments()",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L214"
-    },
-    {
-      "id": "src_controllers_product_controllers_updateproduct",
-      "label": "updateProduct()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "parseDbError",
-      "file_type": "code",
-      "norm_label": "updateproduct()",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L225"
-    },
-    {
-      "id": "src_services_product_service_addnewproduct",
-      "label": "addNewProduct()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "parseDbError",
-      "file_type": "code",
-      "norm_label": "addnewproduct()",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L55"
-    },
-    {
-      "id": "src_services_product_service_addproductbarcode",
-      "label": "addProductBarcode()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "parseDbError",
-      "file_type": "code",
-      "norm_label": "addproductbarcode()",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L285"
-    },
-    {
-      "id": "src_services_product_service_adjustproductstock",
-      "label": "adjustProductStock()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "parseDbError",
-      "file_type": "code",
-      "norm_label": "adjustproductstock()",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L377"
-    },
-    {
-      "id": "src_services_product_service_assertskunotbarcode",
-      "label": "assertSkuNotBarcode()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "parseDbError",
-      "file_type": "code",
-      "norm_label": "assertskunotbarcode()",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L29"
-    },
-    {
-      "id": "src_services_product_service_deleteproductbyid",
-      "label": "deleteProductById()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "parseDbError",
-      "file_type": "code",
-      "norm_label": "deleteproductbyid()",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L340"
-    },
-    {
-      "id": "src_services_product_service_editproductbyid",
-      "label": "editProductById()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "parseDbError",
-      "file_type": "code",
-      "norm_label": "editproductbyid()",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L353"
-    },
-    {
-      "id": "src_services_product_service_findexistingskus",
-      "label": "findExistingSkus()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "parseDbError",
-      "file_type": "code",
-      "norm_label": "findexistingskus()",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L74"
-    },
-    {
-      "id": "src_services_product_service_findskususedasbarcode",
-      "label": "findSkusUsedAsBarcode()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "parseDbError",
-      "file_type": "code",
-      "norm_label": "findskususedasbarcode()",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L42"
-    },
-    {
-      "id": "src_services_product_service_getallproducts",
-      "label": "getAllProducts()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "parseDbError",
-      "file_type": "code",
-      "norm_label": "getallproducts()",
-      "source_file": "src/services/product.service.js",
+      "norm_label": "deletememberbyid()",
+      "source_file": "src/services/members.service.js",
       "source_location": "L126"
     },
     {
-      "id": "src_services_product_service_getbestsellerproducts",
-      "label": "getBestSellerProducts()",
+      "id": "src_services_members_service_editmemberbyid",
+      "label": "editMemberById()",
       "_callable": true,
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "community_name": "parseDbError",
       "file_type": "code",
-      "norm_label": "getbestsellerproducts()",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L451"
+      "norm_label": "editmemberbyid()",
+      "source_file": "src/services/members.service.js",
+      "source_location": "L106"
     },
     {
-      "id": "src_services_product_service_getlowstockproducts",
-      "label": "getLowStockProducts()",
+      "id": "src_services_members_service_getmemberbyid",
+      "label": "getMemberById()",
       "_callable": true,
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "community_name": "parseDbError",
       "file_type": "code",
-      "norm_label": "getlowstockproducts()",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L211"
+      "norm_label": "getmemberbyid()",
+      "source_file": "src/services/members.service.js",
+      "source_location": "L85"
     },
     {
-      "id": "src_services_product_service_getproductbycode",
-      "label": "getProductByCode()",
+      "id": "src_services_transaction_service_createtransaction",
+      "label": "createTransaction()",
       "_callable": true,
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "community_name": "parseDbError",
       "file_type": "code",
-      "norm_label": "getproductbycode()",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L257"
-    },
-    {
-      "id": "src_services_product_service_getproductbyid",
-      "label": "getProductById()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "parseDbError",
-      "file_type": "code",
-      "norm_label": "getproductbyid()",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L228"
-    },
-    {
-      "id": "src_services_product_service_getstockadjustments",
-      "label": "getStockAdjustments()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "parseDbError",
-      "file_type": "code",
-      "norm_label": "getstockadjustments()",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L415"
-    },
-    {
-      "id": "src_services_product_service_removeproductbarcode",
-      "label": "removeProductBarcode()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "parseDbError",
-      "file_type": "code",
-      "norm_label": "removeproductbarcode()",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L321"
-    },
-    {
-      "id": "src_services_product_service_upsertproducts",
-      "label": "upsertProducts()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "parseDbError",
-      "file_type": "code",
-      "norm_label": "upsertproducts()",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L89"
+      "norm_label": "createtransaction()",
+      "source_file": "src/services/transaction.service.js",
+      "source_location": "L32"
     },
     {
       "id": "src_services_user_service_changepassword",
       "label": "changePassword()",
       "_callable": true,
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "changepassword()",
@@ -320,7 +128,7 @@
       "label": "editUserById()",
       "_callable": true,
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "edituserbyid()",
@@ -332,7 +140,7 @@
       "label": "editUserRole()",
       "_callable": true,
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "edituserrole()",
@@ -340,11 +148,23 @@
       "source_location": "L146"
     },
     {
+      "id": "src_services_user_service_getallusers",
+      "label": "getAllUsers()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "parseDbError",
+      "file_type": "code",
+      "norm_label": "getallusers()",
+      "source_file": "src/services/user.service.js",
+      "source_location": "L73"
+    },
+    {
       "id": "src_services_user_service_getuserbyid",
       "label": "getUserById()",
       "_callable": true,
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "getuserbyid()",
@@ -356,7 +176,7 @@
       "label": "loginUser()",
       "_callable": true,
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "loginuser()",
@@ -364,11 +184,35 @@
       "source_location": "L33"
     },
     {
+      "id": "src_services_user_service_logoutuser",
+      "label": "logoutUser()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "parseDbError",
+      "file_type": "code",
+      "norm_label": "logoutuser()",
+      "source_file": "src/services/user.service.js",
+      "source_location": "L55"
+    },
+    {
+      "id": "src_services_user_service_registeruser",
+      "label": "registerUser()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "parseDbError",
+      "file_type": "code",
+      "norm_label": "registeruser()",
+      "source_file": "src/services/user.service.js",
+      "source_location": "L9"
+    },
+    {
       "id": "src_utils_db_error_parsedberror",
       "label": "parseDbError()",
       "_callable": true,
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "parsedberror()",
@@ -380,7 +224,7 @@
       "label": ".constructor()",
       "_callable": true,
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": ".constructor()",
@@ -392,7 +236,7 @@
       "label": ".constructor()",
       "_callable": true,
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": ".constructor()",
@@ -404,12 +248,312 @@
       "label": "findUserByEmail()",
       "_callable": true,
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "finduserbyemail()",
       "source_file": "src/utils/helper.login.js",
       "source_location": "L6"
+    },
+    {
+      "id": "src_controllers_product_controllers_createproduct",
+      "label": "createProduct()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "createproduct()",
+      "source_file": "src/controllers/product.controllers.js",
+      "source_location": "L18"
+    },
+    {
+      "id": "src_controllers_product_controllers_createstockadjustment",
+      "label": "createStockAdjustment()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "createstockadjustment()",
+      "source_file": "src/controllers/product.controllers.js",
+      "source_location": "L189"
+    },
+    {
+      "id": "src_controllers_product_controllers_importproductscsv",
+      "label": "importProductsCsv()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "importproductscsv()",
+      "source_file": "src/controllers/product.controllers.js",
+      "source_location": "L60"
+    },
+    {
+      "id": "src_controllers_product_controllers_importtemplatecsv",
+      "label": "importTemplateCsv()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "importtemplatecsv()",
+      "source_file": "src/controllers/product.controllers.js",
+      "source_location": "L33"
+    },
+    {
+      "id": "src_controllers_product_controllers_listbestsellerproducts",
+      "label": "listBestSellerProducts()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "listbestsellerproducts()",
+      "source_file": "src/controllers/product.controllers.js",
+      "source_location": "L149"
+    },
+    {
+      "id": "src_controllers_product_controllers_listlowstockproducts",
+      "label": "listLowStockProducts()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "listlowstockproducts()",
+      "source_file": "src/controllers/product.controllers.js",
+      "source_location": "L140"
+    },
+    {
+      "id": "src_controllers_product_controllers_listproducts",
+      "label": "listProducts()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "listproducts()",
+      "source_file": "src/controllers/product.controllers.js",
+      "source_location": "L159"
+    },
+    {
+      "id": "src_controllers_product_controllers_liststockadjustments",
+      "label": "listStockAdjustments()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "liststockadjustments()",
+      "source_file": "src/controllers/product.controllers.js",
+      "source_location": "L200"
+    },
+    {
+      "id": "src_controllers_product_controllers_productbyid",
+      "label": "productById()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "productbyid()",
+      "source_file": "src/controllers/product.controllers.js",
+      "source_location": "L169"
+    },
+    {
+      "id": "src_controllers_product_controllers_removeproduct",
+      "label": "removeProduct()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "removeproduct()",
+      "source_file": "src/controllers/product.controllers.js",
+      "source_location": "L179"
+    },
+    {
+      "id": "src_services_product_service_addnewproduct",
+      "label": "addNewProduct()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "addnewproduct()",
+      "source_file": "src/services/product.service.js",
+      "source_location": "L26"
+    },
+    {
+      "id": "src_services_product_service_adjustproductstock",
+      "label": "adjustProductStock()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "adjustproductstock()",
+      "source_file": "src/services/product.service.js",
+      "source_location": "L249"
+    },
+    {
+      "id": "src_services_product_service_deleteproductbyid",
+      "label": "deleteProductById()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "deleteproductbyid()",
+      "source_file": "src/services/product.service.js",
+      "source_location": "L213"
+    },
+    {
+      "id": "src_services_product_service_editproductbyid",
+      "label": "editProductById()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "editproductbyid()",
+      "source_file": "src/services/product.service.js",
+      "source_location": "L226"
+    },
+    {
+      "id": "src_services_product_service_findexistingskus",
+      "label": "findExistingSkus()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "findexistingskus()",
+      "source_file": "src/services/product.service.js",
+      "source_location": "L44"
+    },
+    {
+      "id": "src_services_product_service_getallproducts",
+      "label": "getAllProducts()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "getallproducts()",
+      "source_file": "src/services/product.service.js",
+      "source_location": "L96"
+    },
+    {
+      "id": "src_services_product_service_getbestsellerproducts",
+      "label": "getBestSellerProducts()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "getbestsellerproducts()",
+      "source_file": "src/services/product.service.js",
+      "source_location": "L320"
+    },
+    {
+      "id": "src_services_product_service_getlowstockproducts",
+      "label": "getLowStockProducts()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "getlowstockproducts()",
+      "source_file": "src/services/product.service.js",
+      "source_location": "L174"
+    },
+    {
+      "id": "src_services_product_service_getproductbyid",
+      "label": "getProductById()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "getproductbyid()",
+      "source_file": "src/services/product.service.js",
+      "source_location": "L191"
+    },
+    {
+      "id": "src_services_product_service_getstockadjustments",
+      "label": "getStockAdjustments()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "getstockadjustments()",
+      "source_file": "src/services/product.service.js",
+      "source_location": "L287"
+    },
+    {
+      "id": "src_services_product_service_upsertproducts",
+      "label": "upsertProducts()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "upsertproducts()",
+      "source_file": "src/services/product.service.js",
+      "source_location": "L59"
+    },
+    {
+      "id": "src_utils_csv_parsecsv",
+      "label": "parseCsv()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "parsecsv()",
+      "source_file": "src/utils/csv.js",
+      "source_location": "L26"
+    },
+    {
+      "id": "src_utils_csv_parserows",
+      "label": "parseRows()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "parserows()",
+      "source_file": "src/utils/csv.js",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_utils_csv_quote",
+      "label": "quote()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "quote()",
+      "source_file": "src/utils/csv.js",
+      "source_location": "L39"
+    },
+    {
+      "id": "src_utils_csv_tocsv",
+      "label": "toCsv()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "tocsv()",
+      "source_file": "src/utils/csv.js",
+      "source_location": "L47"
     },
     {
       "id": "src_middlewares_auth_middleware_requirerole",
@@ -424,40 +568,40 @@
       "source_location": "L30"
     },
     {
+      "id": "src_services_transaction_service_updatetransactionstatus",
+      "label": "updateTransactionStatus()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Role & Pembagian Kerja",
+      "file_type": "code",
+      "norm_label": "updatetransactionstatus()",
+      "source_file": "src/services/transaction.service.js",
+      "source_location": "L206"
+    },
+    {
       "id": "src_db_database_connection_checkconnection",
       "label": "checkConnection()",
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "product.routes.js",
+      "community_name": "members.routes.js",
       "file_type": "code",
       "norm_label": "checkconnection()",
       "source_file": "src/db/database.connection.js",
       "source_location": "L5"
     },
     {
-      "id": "src_controllers_transaction_controllers_changetransactionstatus",
-      "label": "changeTransactionStatus()",
+      "id": "src_utils_handle_validation_handlevalidation",
+      "label": "handleValidation()",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
-      "community_name": "transaction.service.js",
+      "community": 13,
+      "community_name": "members.routes.js",
       "file_type": "code",
-      "norm_label": "changetransactionstatus()",
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L36"
-    },
-    {
-      "id": "src_controllers_transaction_controllers_dailysales",
-      "label": "dailySales()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "transaction.service.js",
-      "file_type": "code",
-      "norm_label": "dailysales()",
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L75"
+      "norm_label": "handlevalidation()",
+      "source_file": "src/utils/handle-validation.js",
+      "source_location": "L69"
     },
     {
       "id": "src_controllers_transaction_controllers_exporttransactionscsv",
@@ -465,11 +609,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "transaction.service.js",
+      "community_name": "transaction.routes.js",
       "file_type": "code",
       "norm_label": "exporttransactionscsv()",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L104"
+      "source_location": "L93"
     },
     {
       "id": "src_controllers_transaction_controllers_handlecreatetransaction",
@@ -477,23 +621,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "transaction.service.js",
+      "community_name": "transaction.routes.js",
       "file_type": "code",
       "norm_label": "handlecreatetransaction()",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L17"
-    },
-    {
-      "id": "src_controllers_transaction_controllers_listtransactions",
-      "label": "listTransactions()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "transaction.service.js",
-      "file_type": "code",
-      "norm_label": "listtransactions()",
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L51"
+      "source_location": "L15"
     },
     {
       "id": "src_controllers_transaction_controllers_transactionbyid",
@@ -501,11 +633,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "transaction.service.js",
+      "community_name": "transaction.routes.js",
       "file_type": "code",
       "norm_label": "transactionbyid()",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L84"
+      "source_location": "L73"
     },
     {
       "id": "src_controllers_transaction_controllers_transactioninvoice",
@@ -513,23 +645,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "transaction.service.js",
+      "community_name": "transaction.routes.js",
       "file_type": "code",
       "norm_label": "transactioninvoice()",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L94"
-    },
-    {
-      "id": "src_controllers_transaction_controllers_transactionqris",
-      "label": "transactionQris()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "transaction.service.js",
-      "file_type": "code",
-      "norm_label": "transactionqris()",
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L122"
+      "source_location": "L83"
     },
     {
       "id": "src_controllers_transaction_controllers_transactionssummary",
@@ -537,11 +657,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "transaction.service.js",
+      "community_name": "transaction.routes.js",
       "file_type": "code",
       "norm_label": "transactionssummary()",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L66"
+      "source_location": "L64"
     },
     {
       "id": "src_services_transaction_service_assertchannelallowed",
@@ -549,11 +669,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "transaction.service.js",
+      "community_name": "transaction.routes.js",
       "file_type": "code",
       "norm_label": "assertchannelallowed()",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L24"
+      "source_location": "L23"
     },
     {
       "id": "src_services_transaction_service_channelforrole",
@@ -561,23 +681,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "transaction.service.js",
+      "community_name": "transaction.routes.js",
       "file_type": "code",
       "norm_label": "channelforrole()",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L22"
-    },
-    {
-      "id": "src_services_transaction_service_createtransaction",
-      "label": "createTransaction()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "transaction.service.js",
-      "file_type": "code",
-      "norm_label": "createtransaction()",
-      "source_file": "src/services/transaction.service.js",
-      "source_location": "L33"
+      "source_location": "L21"
     },
     {
       "id": "src_services_transaction_service_getalltransactions",
@@ -585,23 +693,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "transaction.service.js",
+      "community_name": "transaction.routes.js",
       "file_type": "code",
       "norm_label": "getalltransactions()",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L116"
-    },
-    {
-      "id": "src_services_transaction_service_getdailysales",
-      "label": "getDailySales()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "transaction.service.js",
-      "file_type": "code",
-      "norm_label": "getdailysales()",
-      "source_file": "src/services/transaction.service.js",
-      "source_location": "L426"
+      "source_location": "L115"
     },
     {
       "id": "src_services_transaction_service_getinvoicebyid",
@@ -609,23 +705,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "transaction.service.js",
+      "community_name": "transaction.routes.js",
       "file_type": "code",
       "norm_label": "getinvoicebyid()",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L324"
-    },
-    {
-      "id": "src_services_transaction_service_getqrisfortransaction",
-      "label": "getQrisForTransaction()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "transaction.service.js",
-      "file_type": "code",
-      "norm_label": "getqrisfortransaction()",
-      "source_file": "src/services/transaction.service.js",
-      "source_location": "L292"
+      "source_location": "L291"
     },
     {
       "id": "src_services_transaction_service_gettransactionbyid",
@@ -633,11 +717,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "transaction.service.js",
+      "community_name": "transaction.routes.js",
       "file_type": "code",
       "norm_label": "gettransactionbyid()",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L176"
+      "source_location": "L175"
     },
     {
       "id": "src_services_transaction_service_gettransactionsforexport",
@@ -645,11 +729,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "transaction.service.js",
+      "community_name": "transaction.routes.js",
       "file_type": "code",
       "norm_label": "gettransactionsforexport()",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L447"
+      "source_location": "L391"
     },
     {
       "id": "src_services_transaction_service_gettransactionssummary",
@@ -657,11 +741,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "transaction.service.js",
+      "community_name": "transaction.routes.js",
       "file_type": "code",
       "norm_label": "gettransactionssummary()",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L403"
+      "source_location": "L370"
     },
     {
       "id": "src_services_transaction_service_searchcondition",
@@ -669,131 +753,107 @@
       "_callable": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "transaction.service.js",
+      "community_name": "transaction.routes.js",
       "file_type": "code",
       "norm_label": "searchcondition()",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L109"
+      "source_location": "L108"
     },
     {
-      "id": "src_services_transaction_service_updatetransactionstatus",
-      "label": "updateTransactionStatus()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "transaction.service.js",
-      "file_type": "code",
-      "norm_label": "updatetransactionstatus()",
-      "source_file": "src/services/transaction.service.js",
-      "source_location": "L207"
-    },
-    {
-      "id": "src_controllers_product_controllers_addbarcode",
-      "label": "addBarcode()",
+      "id": "src_controllers_members_controllers_handleregistermember",
+      "label": "handleRegisterMember()",
       "_callable": true,
       "_origin": "ast",
       "community": 6,
       "community_name": "error",
       "file_type": "code",
-      "norm_label": "addbarcode()",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L246"
+      "norm_label": "handleregistermember()",
+      "source_file": "src/controllers/members.controllers.js",
+      "source_location": "L10"
     },
     {
-      "id": "src_controllers_product_controllers_createproduct",
-      "label": "createProduct()",
+      "id": "src_controllers_members_controllers_listmembers",
+      "label": "listMembers()",
       "_callable": true,
       "_origin": "ast",
       "community": 6,
       "community_name": "error",
       "file_type": "code",
-      "norm_label": "createproduct()",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L22"
+      "norm_label": "listmembers()",
+      "source_file": "src/controllers/members.controllers.js",
+      "source_location": "L20"
     },
     {
-      "id": "src_controllers_product_controllers_createstockadjustment",
-      "label": "createStockAdjustment()",
+      "id": "src_controllers_members_controllers_memberbyid",
+      "label": "memberById()",
       "_callable": true,
       "_origin": "ast",
       "community": 6,
       "community_name": "error",
       "file_type": "code",
-      "norm_label": "createstockadjustment()",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L203"
+      "norm_label": "memberbyid()",
+      "source_file": "src/controllers/members.controllers.js",
+      "source_location": "L30"
     },
     {
-      "id": "src_controllers_product_controllers_listbestsellerproducts",
-      "label": "listBestSellerProducts()",
+      "id": "src_controllers_members_controllers_removemember",
+      "label": "removeMember()",
       "_callable": true,
       "_origin": "ast",
       "community": 6,
       "community_name": "error",
       "file_type": "code",
-      "norm_label": "listbestsellerproducts()",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L163"
+      "norm_label": "removemember()",
+      "source_file": "src/controllers/members.controllers.js",
+      "source_location": "L51"
     },
     {
-      "id": "src_controllers_product_controllers_listproducts",
-      "label": "listProducts()",
+      "id": "src_controllers_members_controllers_updatemember",
+      "label": "updateMember()",
       "_callable": true,
       "_origin": "ast",
       "community": 6,
       "community_name": "error",
       "file_type": "code",
-      "norm_label": "listproducts()",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L173"
+      "norm_label": "updatemember()",
+      "source_file": "src/controllers/members.controllers.js",
+      "source_location": "L40"
     },
     {
-      "id": "src_controllers_product_controllers_productbybarcode",
-      "label": "productByBarcode()",
+      "id": "src_controllers_product_controllers_updateproduct",
+      "label": "updateProduct()",
       "_callable": true,
       "_origin": "ast",
       "community": 6,
       "community_name": "error",
       "file_type": "code",
-      "norm_label": "productbybarcode()",
+      "norm_label": "updateproduct()",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L236"
+      "source_location": "L211"
     },
     {
-      "id": "src_controllers_product_controllers_productbyid",
-      "label": "productById()",
+      "id": "src_controllers_transaction_controllers_changetransactionstatus",
+      "label": "changeTransactionStatus()",
       "_callable": true,
       "_origin": "ast",
       "community": 6,
       "community_name": "error",
       "file_type": "code",
-      "norm_label": "productbyid()",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L183"
+      "norm_label": "changetransactionstatus()",
+      "source_file": "src/controllers/transaction.controllers.js",
+      "source_location": "L34"
     },
     {
-      "id": "src_controllers_product_controllers_removebarcode",
-      "label": "removeBarcode()",
+      "id": "src_controllers_transaction_controllers_listtransactions",
+      "label": "listTransactions()",
       "_callable": true,
       "_origin": "ast",
       "community": 6,
       "community_name": "error",
       "file_type": "code",
-      "norm_label": "removebarcode()",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L257"
-    },
-    {
-      "id": "src_controllers_product_controllers_removeproduct",
-      "label": "removeProduct()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "error",
-      "file_type": "code",
-      "norm_label": "removeproduct()",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L193"
+      "norm_label": "listtransactions()",
+      "source_file": "src/controllers/transaction.controllers.js",
+      "source_location": "L49"
     },
     {
       "id": "src_controllers_user_controllers_handlelogin",
@@ -916,52 +976,28 @@
       "source_location": "L6"
     },
     {
-      "id": "src_services_user_service_getallusers",
-      "label": "getAllUsers()",
+      "id": "src_services_members_service_getallmembers",
+      "label": "getAllMembers()",
       "_callable": true,
       "_origin": "ast",
       "community": 6,
       "community_name": "error",
       "file_type": "code",
-      "norm_label": "getallusers()",
-      "source_file": "src/services/user.service.js",
-      "source_location": "L73"
+      "norm_label": "getallmembers()",
+      "source_file": "src/services/members.service.js",
+      "source_location": "L23"
     },
     {
-      "id": "src_services_user_service_logoutuser",
-      "label": "logoutUser()",
+      "id": "src_services_members_service_registermember",
+      "label": "registerMember()",
       "_callable": true,
       "_origin": "ast",
       "community": 6,
       "community_name": "error",
       "file_type": "code",
-      "norm_label": "logoutuser()",
-      "source_file": "src/services/user.service.js",
-      "source_location": "L55"
-    },
-    {
-      "id": "src_services_user_service_registeruser",
-      "label": "registerUser()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "error",
-      "file_type": "code",
-      "norm_label": "registeruser()",
-      "source_file": "src/services/user.service.js",
-      "source_location": "L9"
-    },
-    {
-      "id": "src_utils_handle_validation_handlevalidation",
-      "label": "handleValidation()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "error",
-      "file_type": "code",
-      "norm_label": "handlevalidation()",
-      "source_file": "src/utils/handle-validation.js",
-      "source_location": "L69"
+      "norm_label": "registermember()",
+      "source_file": "src/services/members.service.js",
+      "source_location": "L7"
     },
     {
       "id": "src_utils_response_error",
@@ -988,239 +1024,11 @@
       "source_location": "L2"
     },
     {
-      "id": "src_controllers_members_controllers_handleregistermember",
-      "label": "handleRegisterMember()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "members.routes.js",
-      "file_type": "code",
-      "norm_label": "handleregistermember()",
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L10"
-    },
-    {
-      "id": "src_controllers_members_controllers_listmembers",
-      "label": "listMembers()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "members.routes.js",
-      "file_type": "code",
-      "norm_label": "listmembers()",
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L20"
-    },
-    {
-      "id": "src_controllers_members_controllers_memberbyid",
-      "label": "memberById()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "members.routes.js",
-      "file_type": "code",
-      "norm_label": "memberbyid()",
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L30"
-    },
-    {
-      "id": "src_controllers_members_controllers_removemember",
-      "label": "removeMember()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "members.routes.js",
-      "file_type": "code",
-      "norm_label": "removemember()",
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L51"
-    },
-    {
-      "id": "src_controllers_members_controllers_updatemember",
-      "label": "updateMember()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "members.routes.js",
-      "file_type": "code",
-      "norm_label": "updatemember()",
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L40"
-    },
-    {
-      "id": "src_services_members_service_deletememberbyid",
-      "label": "deleteMemberById()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "members.routes.js",
-      "file_type": "code",
-      "norm_label": "deletememberbyid()",
-      "source_file": "src/services/members.service.js",
-      "source_location": "L126"
-    },
-    {
-      "id": "src_services_members_service_editmemberbyid",
-      "label": "editMemberById()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "members.routes.js",
-      "file_type": "code",
-      "norm_label": "editmemberbyid()",
-      "source_file": "src/services/members.service.js",
-      "source_location": "L106"
-    },
-    {
-      "id": "src_services_members_service_getallmembers",
-      "label": "getAllMembers()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "members.routes.js",
-      "file_type": "code",
-      "norm_label": "getallmembers()",
-      "source_file": "src/services/members.service.js",
-      "source_location": "L23"
-    },
-    {
-      "id": "src_services_members_service_getmemberbyid",
-      "label": "getMemberById()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "members.routes.js",
-      "file_type": "code",
-      "norm_label": "getmemberbyid()",
-      "source_file": "src/services/members.service.js",
-      "source_location": "L85"
-    },
-    {
-      "id": "src_services_members_service_registermember",
-      "label": "registerMember()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "members.routes.js",
-      "file_type": "code",
-      "norm_label": "registermember()",
-      "source_file": "src/services/members.service.js",
-      "source_location": "L7"
-    },
-    {
-      "id": "src_controllers_product_controllers_importtemplatecsv",
-      "label": "importTemplateCsv()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "csv.js",
-      "file_type": "code",
-      "norm_label": "importtemplatecsv()",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L37"
-    },
-    {
-      "id": "src_utils_csv_parsecsv",
-      "label": "parseCsv()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "csv.js",
-      "file_type": "code",
-      "norm_label": "parsecsv()",
-      "source_file": "src/utils/csv.js",
-      "source_location": "L26"
-    },
-    {
-      "id": "src_utils_csv_parserows",
-      "label": "parseRows()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "csv.js",
-      "file_type": "code",
-      "norm_label": "parserows()",
-      "source_file": "src/utils/csv.js",
-      "source_location": "L3"
-    },
-    {
-      "id": "src_utils_csv_quote",
-      "label": "quote()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "csv.js",
-      "file_type": "code",
-      "norm_label": "quote()",
-      "source_file": "src/utils/csv.js",
-      "source_location": "L39"
-    },
-    {
-      "id": "src_utils_csv_tocsv",
-      "label": "toCsv()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "csv.js",
-      "file_type": "code",
-      "norm_label": "tocsv()",
-      "source_file": "src/utils/csv.js",
-      "source_location": "L47"
-    },
-    {
-      "id": "src_utils_qris_crc16",
-      "label": "crc16()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "csv.js",
-      "file_type": "code",
-      "norm_label": "crc16()",
-      "source_file": "src/utils/qris.js",
-      "source_location": "L21"
-    },
-    {
-      "id": "src_utils_qris_parsetlv",
-      "label": "parseTlv()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "csv.js",
-      "file_type": "code",
-      "norm_label": "parsetlv()",
-      "source_file": "src/utils/qris.js",
-      "source_location": "L7"
-    },
-    {
-      "id": "src_utils_qris_tlv",
-      "label": "tlv()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "csv.js",
-      "file_type": "code",
-      "norm_label": "tlv()",
-      "source_file": "src/utils/qris.js",
-      "source_location": "L31"
-    },
-    {
-      "id": "src_utils_qris_todynamicqris",
-      "label": "toDynamicQris()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "csv.js",
-      "file_type": "code",
-      "norm_label": "todynamicqris()",
-      "source_file": "src/utils/qris.js",
-      "source_location": "L33"
-    },
-    {
       "id": "src_db_database_connection",
       "label": "database.connection.js",
       "_origin": "ast",
       "community": 0,
-      "community_name": "schema.database.js",
+      "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "database.connection.js",
       "source_file": "src/db/database.connection.js",
@@ -1231,7 +1039,7 @@
       "label": "db",
       "_origin": "ast",
       "community": 0,
-      "community_name": "schema.database.js",
+      "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "db",
       "source_file": "src/db/database.connection.js",
@@ -1242,7 +1050,7 @@
       "label": "schema.database.js",
       "_origin": "ast",
       "community": 0,
-      "community_name": "schema.database.js",
+      "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "schema.database.js",
       "source_file": "src/db/schema.database.js",
@@ -1253,18 +1061,18 @@
       "label": "membersTable",
       "_origin": "ast",
       "community": 0,
-      "community_name": "schema.database.js",
+      "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "memberstable",
       "source_file": "src/db/schema.database.js",
-      "source_location": "L121"
+      "source_location": "L109"
     },
     {
       "id": "src_db_schema_database_orderchannelenum",
       "label": "orderChannelEnum",
       "_origin": "ast",
       "community": 0,
-      "community_name": "schema.database.js",
+      "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "orderchannelenum",
       "source_file": "src/db/schema.database.js",
@@ -1275,29 +1083,18 @@
       "label": "paymentMethodEnum",
       "_origin": "ast",
       "community": 0,
-      "community_name": "schema.database.js",
+      "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "paymentmethodenum",
       "source_file": "src/db/schema.database.js",
       "source_location": "L25"
     },
     {
-      "id": "src_db_schema_database_productbarcodestable",
-      "label": "productBarcodesTable",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "schema.database.js",
-      "file_type": "code",
-      "norm_label": "productbarcodestable",
-      "source_file": "src/db/schema.database.js",
-      "source_location": "L63"
-    },
-    {
       "id": "src_db_schema_database_producttable",
       "label": "productTable",
       "_origin": "ast",
       "community": 0,
-      "community_name": "schema.database.js",
+      "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "producttable",
       "source_file": "src/db/schema.database.js",
@@ -1308,7 +1105,7 @@
       "label": "sessionsTable",
       "_origin": "ast",
       "community": 0,
-      "community_name": "schema.database.js",
+      "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "sessionstable",
       "source_file": "src/db/schema.database.js",
@@ -1319,62 +1116,51 @@
       "label": "stockAdjustmentsTable",
       "_origin": "ast",
       "community": 0,
-      "community_name": "schema.database.js",
+      "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "stockadjustmentstable",
       "source_file": "src/db/schema.database.js",
-      "source_location": "L107"
+      "source_location": "L95"
     },
     {
       "id": "src_db_schema_database_transactionitemstable",
       "label": "transactionItemsTable",
       "_origin": "ast",
       "community": 0,
-      "community_name": "schema.database.js",
+      "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "transactionitemstable",
       "source_file": "src/db/schema.database.js",
-      "source_location": "L72"
+      "source_location": "L60"
     },
     {
       "id": "src_db_schema_database_transactionstable",
       "label": "transactionsTable",
       "_origin": "ast",
       "community": 0,
-      "community_name": "schema.database.js",
+      "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "transactionstable",
       "source_file": "src/db/schema.database.js",
-      "source_location": "L84"
+      "source_location": "L72"
     },
     {
       "id": "src_db_schema_database_transactionstatusenum",
       "label": "transactionStatusEnum",
       "_origin": "ast",
       "community": 0,
-      "community_name": "schema.database.js",
+      "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "transactionstatusenum",
       "source_file": "src/db/schema.database.js",
       "source_location": "L19"
     },
     {
-      "id": "src_db_schema_database_userroleenum",
-      "label": "userRoleEnum",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "schema.database.js",
-      "file_type": "code",
-      "norm_label": "userroleenum",
-      "source_file": "src/db/schema.database.js",
-      "source_location": "L12"
-    },
-    {
       "id": "src_db_schema_database_userstable",
       "label": "usersTable",
       "_origin": "ast",
       "community": 0,
-      "community_name": "schema.database.js",
+      "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "userstable",
       "source_file": "src/db/schema.database.js",
@@ -1385,7 +1171,7 @@
       "label": "seed.js",
       "_origin": "ast",
       "community": 0,
-      "community_name": "schema.database.js",
+      "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "seed.js",
       "source_file": "src/db/seed.js",
@@ -1396,7 +1182,7 @@
       "label": "products",
       "_origin": "ast",
       "community": 0,
-      "community_name": "schema.database.js",
+      "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "products",
       "source_file": "src/db/seed.js",
@@ -1407,7 +1193,7 @@
       "label": "users",
       "_origin": "ast",
       "community": 0,
-      "community_name": "schema.database.js",
+      "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "users",
       "source_file": "src/db/seed.js",
@@ -1418,72 +1204,61 @@
       "label": "auth.middleware.js",
       "_origin": "ast",
       "community": 0,
-      "community_name": "schema.database.js",
+      "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "auth.middleware.js",
       "source_file": "src/middlewares/auth.middleware.js",
       "source_location": "L1"
     },
     {
-      "id": "src_utils_helper_login",
-      "label": "helper.login.js",
+      "id": "src_services_members_service",
+      "label": "members.service.js",
       "_origin": "ast",
       "community": 0,
-      "community_name": "schema.database.js",
+      "community_name": "parseDbError",
       "file_type": "code",
-      "norm_label": "helper.login.js",
-      "source_file": "src/utils/helper.login.js",
+      "norm_label": "members.service.js",
+      "source_file": "src/services/members.service.js",
       "source_location": "L1"
     },
     {
-      "id": "ref_drizzle_orm",
-      "label": "drizzle-orm",
+      "id": "src_services_transaction_service",
+      "label": "transaction.service.js",
       "_origin": "ast",
       "community": 0,
-      "community_name": "schema.database.js",
-      "file_type": "concept",
-      "norm_label": "drizzle-orm",
-      "source_file": "package.json",
-      "source_location": "L14"
-    },
-    {
-      "id": "src_controllers_product_controllers",
-      "label": "product.controllers.js",
-      "_origin": "ast",
-      "community": 1,
       "community_name": "parseDbError",
       "file_type": "code",
-      "norm_label": "product.controllers.js",
-      "source_file": "src/controllers/product.controllers.js",
+      "norm_label": "transaction.service.js",
+      "source_file": "src/services/transaction.service.js",
       "source_location": "L1"
     },
     {
-      "id": "src_services_product_service",
-      "label": "product.service.js",
+      "id": "src_services_transaction_service_channel_by_role",
+      "label": "CHANNEL_BY_ROLE",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "community_name": "parseDbError",
       "file_type": "code",
-      "norm_label": "product.service.js",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L1"
+      "norm_label": "channel_by_role",
+      "source_file": "src/services/transaction.service.js",
+      "source_location": "L19"
     },
     {
-      "id": "src_services_product_service_createdatwib",
+      "id": "src_services_transaction_service_createdatwib",
       "label": "createdAtWib",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "createdatwib",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L449"
+      "source_file": "src/services/transaction.service.js",
+      "source_location": "L389"
     },
     {
       "id": "src_services_user_service",
       "label": "user.service.js",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "user.service.js",
@@ -1494,7 +1269,7 @@
       "id": "src_utils_db_error",
       "label": "db-error.js",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "db-error.js",
@@ -1505,11 +1280,209 @@
       "id": "src_utils_errors",
       "label": "errors.js",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "community_name": "parseDbError",
       "file_type": "code",
       "norm_label": "errors.js",
       "source_file": "src/utils/errors.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_utils_helper_login",
+      "label": "helper.login.js",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "parseDbError",
+      "file_type": "code",
+      "norm_label": "helper.login.js",
+      "source_file": "src/utils/helper.login.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "ref_drizzle_orm",
+      "label": "drizzle-orm",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "parseDbError",
+      "file_type": "concept",
+      "norm_label": "drizzle-orm",
+      "source_file": "package.json",
+      "source_location": "L14"
+    },
+    {
+      "id": "src_controllers_product_controllers",
+      "label": "product.controllers.js",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "product.controllers.js",
+      "source_file": "src/controllers/product.controllers.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_routes_product_routes",
+      "label": "product.routes.js",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "product.routes.js",
+      "source_file": "src/routes/product.routes.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_services_product_service",
+      "label": "product.service.js",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "product.service.js",
+      "source_file": "src/services/product.service.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_utils_csv",
+      "label": "csv.js",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "csv.js",
+      "source_file": "src/utils/csv.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_utils_csv_test",
+      "label": "csv.test.js",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "csv.test.js",
+      "source_file": "src/utils/csv.test.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_validators_product_validator",
+      "label": "product.validator.js",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "product.validator.js",
+      "source_file": "src/validators/product.validator.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_validators_product_validator_createnewproductschema",
+      "label": "createNewProductSchema",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "createnewproductschema",
+      "source_file": "src/validators/product.validator.js",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_validators_product_validator_createstockadjustmentschema",
+      "label": "createStockAdjustmentSchema",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "createstockadjustmentschema",
+      "source_file": "src/validators/product.validator.js",
+      "source_location": "L78"
+    },
+    {
+      "id": "src_validators_product_validator_deleteproductbyidschema",
+      "label": "deleteProductByIdSchema",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "deleteproductbyidschema",
+      "source_file": "src/validators/product.validator.js",
+      "source_location": "L94"
+    },
+    {
+      "id": "src_validators_product_validator_editproductbyidschema",
+      "label": "editProductByIdSchema",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "editproductbyidschema",
+      "source_file": "src/validators/product.validator.js",
+      "source_location": "L56"
+    },
+    {
+      "id": "src_validators_product_validator_getbestsellerqueryschema",
+      "label": "getBestSellerQuerySchema",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "getbestsellerqueryschema",
+      "source_file": "src/validators/product.validator.js",
+      "source_location": "L46"
+    },
+    {
+      "id": "src_validators_product_validator_getproductsqueryschema",
+      "label": "getProductsQuerySchema",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "getproductsqueryschema",
+      "source_file": "src/validators/product.validator.js",
+      "source_location": "L35"
+    },
+    {
+      "id": "src_validators_product_validator_getstockadjustmentsqueryschema",
+      "label": "getStockAdjustmentsQuerySchema",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "getstockadjustmentsqueryschema",
+      "source_file": "src/validators/product.validator.js",
+      "source_location": "L89"
+    },
+    {
+      "id": "src_validators_product_validator_importproductrowschema",
+      "label": "importProductRowSchema",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "importproductrowschema",
+      "source_file": "src/validators/product.validator.js",
+      "source_location": "L20"
+    },
+    {
+      "id": "src_validators_product_validator_productidschema",
+      "label": "productIdSchema",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "code",
+      "norm_label": "productidschema",
+      "source_file": "src/validators/product.validator.js",
+      "source_location": "L52"
+    },
+    {
+      "id": "docref_rfc_4180",
+      "label": "RFC-4180",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "product.controllers.js",
+      "file_type": "concept",
+      "norm_label": "rfc-4180",
+      "source_file": "src/utils/csv.js",
       "source_location": "L1"
     },
     {
@@ -1895,7 +1868,7 @@
       "label": "index.js",
       "_origin": "ast",
       "community": 13,
-      "community_name": "product.routes.js",
+      "community_name": "members.routes.js",
       "file_type": "code",
       "norm_label": "index.js",
       "source_file": "src/index.js",
@@ -1906,220 +1879,165 @@
       "label": "app",
       "_origin": "ast",
       "community": 13,
-      "community_name": "product.routes.js",
+      "community_name": "members.routes.js",
       "file_type": "code",
       "norm_label": "app",
       "source_file": "src/index.js",
       "source_location": "L13"
     },
     {
+      "id": "src_routes_members_routes",
+      "label": "members.routes.js",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "members.routes.js",
+      "file_type": "code",
+      "norm_label": "members.routes.js",
+      "source_file": "src/routes/members.routes.js",
+      "source_location": "L1"
+    },
+    {
       "id": "src_routes_members_routes_memberroute",
       "label": "memberRoute",
       "_origin": "ast",
       "community": 13,
-      "community_name": "product.routes.js",
+      "community_name": "members.routes.js",
       "file_type": "code",
       "norm_label": "memberroute",
       "source_file": "src/routes/members.routes.js",
       "source_location": "L21"
     },
     {
-      "id": "src_routes_product_routes",
-      "label": "product.routes.js",
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "product.routes.js",
-      "file_type": "code",
-      "norm_label": "product.routes.js",
-      "source_file": "src/routes/product.routes.js",
-      "source_location": "L1"
-    },
-    {
       "id": "src_routes_product_routes_productroute",
       "label": "productRoute",
       "_origin": "ast",
       "community": 13,
-      "community_name": "product.routes.js",
+      "community_name": "members.routes.js",
       "file_type": "code",
       "norm_label": "productroute",
       "source_file": "src/routes/product.routes.js",
-      "source_location": "L37"
+      "source_location": "L31"
     },
     {
       "id": "src_routes_transaction_routes_transactionroute",
       "label": "transactionRoute",
       "_origin": "ast",
       "community": 13,
-      "community_name": "product.routes.js",
+      "community_name": "members.routes.js",
       "file_type": "code",
       "norm_label": "transactionroute",
       "source_file": "src/routes/transaction.routes.js",
-      "source_location": "L26"
+      "source_location": "L22"
     },
     {
       "id": "src_routes_users_routes_userroute",
       "label": "userRoute",
       "_origin": "ast",
       "community": 13,
-      "community_name": "product.routes.js",
+      "community_name": "members.routes.js",
       "file_type": "code",
       "norm_label": "userroute",
       "source_file": "src/routes/users.routes.js",
       "source_location": "L28"
     },
     {
-      "id": "src_validators_product_validator",
-      "label": "product.validator.js",
+      "id": "src_utils_handle_validation",
+      "label": "handle-validation.js",
       "_origin": "ast",
       "community": 13,
-      "community_name": "product.routes.js",
+      "community_name": "members.routes.js",
       "file_type": "code",
-      "norm_label": "product.validator.js",
-      "source_file": "src/validators/product.validator.js",
+      "norm_label": "handle-validation.js",
+      "source_file": "src/utils/handle-validation.js",
       "source_location": "L1"
     },
     {
-      "id": "src_validators_product_validator_addbarcodeschema",
-      "label": "addBarcodeSchema",
+      "id": "src_utils_handle_validation_label",
+      "label": "LABEL",
       "_origin": "ast",
       "community": 13,
-      "community_name": "product.routes.js",
+      "community_name": "members.routes.js",
       "file_type": "code",
-      "norm_label": "addbarcodeschema",
-      "source_file": "src/validators/product.validator.js",
-      "source_location": "L106"
+      "norm_label": "label",
+      "source_file": "src/utils/handle-validation.js",
+      "source_location": "L16"
     },
     {
-      "id": "src_validators_product_validator_barcode",
-      "label": "barcode",
+      "id": "src_utils_handle_validation_type_id",
+      "label": "TYPE_ID",
       "_origin": "ast",
       "community": 13,
-      "community_name": "product.routes.js",
+      "community_name": "members.routes.js",
       "file_type": "code",
-      "norm_label": "barcode",
-      "source_file": "src/validators/product.validator.js",
-      "source_location": "L100"
+      "norm_label": "type_id",
+      "source_file": "src/utils/handle-validation.js",
+      "source_location": "L4"
     },
     {
-      "id": "src_validators_product_validator_barcodelookupparamschema",
-      "label": "barcodeLookupParamSchema",
+      "id": "src_validators_member_validator",
+      "label": "member.validator.js",
       "_origin": "ast",
       "community": 13,
-      "community_name": "product.routes.js",
+      "community_name": "members.routes.js",
       "file_type": "code",
-      "norm_label": "barcodelookupparamschema",
-      "source_file": "src/validators/product.validator.js",
-      "source_location": "L113"
+      "norm_label": "member.validator.js",
+      "source_file": "src/validators/member.validator.js",
+      "source_location": "L1"
     },
     {
-      "id": "src_validators_product_validator_createnewproductschema",
-      "label": "createNewProductSchema",
+      "id": "src_validators_member_validator_editmemberbyidschema",
+      "label": "editMemberByIdSchema",
       "_origin": "ast",
       "community": 13,
-      "community_name": "product.routes.js",
+      "community_name": "members.routes.js",
       "file_type": "code",
-      "norm_label": "createnewproductschema",
-      "source_file": "src/validators/product.validator.js",
-      "source_location": "L3"
-    },
-    {
-      "id": "src_validators_product_validator_createstockadjustmentschema",
-      "label": "createStockAdjustmentSchema",
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "product.routes.js",
-      "file_type": "code",
-      "norm_label": "createstockadjustmentschema",
-      "source_file": "src/validators/product.validator.js",
-      "source_location": "L80"
-    },
-    {
-      "id": "src_validators_product_validator_deleteproductbyidschema",
-      "label": "deleteProductByIdSchema",
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "product.routes.js",
-      "file_type": "code",
-      "norm_label": "deleteproductbyidschema",
-      "source_file": "src/validators/product.validator.js",
-      "source_location": "L96"
-    },
-    {
-      "id": "src_validators_product_validator_editproductbyidschema",
-      "label": "editProductByIdSchema",
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "product.routes.js",
-      "file_type": "code",
-      "norm_label": "editproductbyidschema",
-      "source_file": "src/validators/product.validator.js",
-      "source_location": "L58"
-    },
-    {
-      "id": "src_validators_product_validator_getbestsellerqueryschema",
-      "label": "getBestSellerQuerySchema",
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "product.routes.js",
-      "file_type": "code",
-      "norm_label": "getbestsellerqueryschema",
-      "source_file": "src/validators/product.validator.js",
-      "source_location": "L46"
-    },
-    {
-      "id": "src_validators_product_validator_getproductsqueryschema",
-      "label": "getProductsQuerySchema",
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "product.routes.js",
-      "file_type": "code",
-      "norm_label": "getproductsqueryschema",
-      "source_file": "src/validators/product.validator.js",
+      "norm_label": "editmemberbyidschema",
+      "source_file": "src/validators/member.validator.js",
       "source_location": "L35"
     },
     {
-      "id": "src_validators_product_validator_getstockadjustmentsqueryschema",
-      "label": "getStockAdjustmentsQuerySchema",
+      "id": "src_validators_member_validator_getmemberbyidschema",
+      "label": "getMemberByIdSchema",
       "_origin": "ast",
       "community": 13,
-      "community_name": "product.routes.js",
+      "community_name": "members.routes.js",
       "file_type": "code",
-      "norm_label": "getstockadjustmentsqueryschema",
-      "source_file": "src/validators/product.validator.js",
-      "source_location": "L91"
+      "norm_label": "getmemberbyidschema",
+      "source_file": "src/validators/member.validator.js",
+      "source_location": "L22"
     },
     {
-      "id": "src_validators_product_validator_importproductrowschema",
-      "label": "importProductRowSchema",
+      "id": "src_validators_member_validator_getmemberqueryschema",
+      "label": "getMemberQuerySchema",
       "_origin": "ast",
       "community": 13,
-      "community_name": "product.routes.js",
+      "community_name": "members.routes.js",
       "file_type": "code",
-      "norm_label": "importproductrowschema",
-      "source_file": "src/validators/product.validator.js",
-      "source_location": "L20"
+      "norm_label": "getmemberqueryschema",
+      "source_file": "src/validators/member.validator.js",
+      "source_location": "L26"
     },
     {
-      "id": "src_validators_product_validator_productbarcodeparamschema",
-      "label": "productBarcodeParamSchema",
+      "id": "src_validators_member_validator_registermemberschema",
+      "label": "registerMemberSchema",
       "_origin": "ast",
       "community": 13,
-      "community_name": "product.routes.js",
+      "community_name": "members.routes.js",
       "file_type": "code",
-      "norm_label": "productbarcodeparamschema",
-      "source_file": "src/validators/product.validator.js",
-      "source_location": "L108"
+      "norm_label": "registermemberschema",
+      "source_file": "src/validators/member.validator.js",
+      "source_location": "L3"
     },
     {
-      "id": "src_validators_product_validator_productidschema",
-      "label": "productIdSchema",
+      "id": "ref_zod",
+      "label": "zod",
       "_origin": "ast",
       "community": 13,
-      "community_name": "product.routes.js",
-      "file_type": "code",
-      "norm_label": "productidschema",
-      "source_file": "src/validators/product.validator.js",
-      "source_location": "L54"
+      "community_name": "members.routes.js",
+      "file_type": "concept",
+      "norm_label": "zod",
+      "source_file": "package.json",
+      "source_location": "L18"
     },
     {
       "id": "jsconfig",
@@ -2357,7 +2275,7 @@
       "label": "transaction.controllers.js",
       "_origin": "ast",
       "community": 3,
-      "community_name": "transaction.service.js",
+      "community_name": "transaction.routes.js",
       "file_type": "code",
       "norm_label": "transaction.controllers.js",
       "source_file": "src/controllers/transaction.controllers.js",
@@ -2368,7 +2286,7 @@
       "label": "transaction.routes.js",
       "_origin": "ast",
       "community": 3,
-      "community_name": "transaction.service.js",
+      "community_name": "transaction.routes.js",
       "file_type": "code",
       "norm_label": "transaction.routes.js",
       "source_file": "src/routes/transaction.routes.js",
@@ -2379,51 +2297,18 @@
       "label": "penjualan",
       "_origin": "ast",
       "community": 3,
-      "community_name": "transaction.service.js",
+      "community_name": "transaction.routes.js",
       "file_type": "code",
       "norm_label": "penjualan",
       "source_file": "src/routes/transaction.routes.js",
-      "source_location": "L31"
-    },
-    {
-      "id": "src_services_transaction_service",
-      "label": "transaction.service.js",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "transaction.service.js",
-      "file_type": "code",
-      "norm_label": "transaction.service.js",
-      "source_file": "src/services/transaction.service.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_services_transaction_service_channel_by_role",
-      "label": "CHANNEL_BY_ROLE",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "transaction.service.js",
-      "file_type": "code",
-      "norm_label": "channel_by_role",
-      "source_file": "src/services/transaction.service.js",
-      "source_location": "L20"
-    },
-    {
-      "id": "src_services_transaction_service_createdatwib",
-      "label": "createdAtWib",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "transaction.service.js",
-      "file_type": "code",
-      "norm_label": "createdatwib",
-      "source_file": "src/services/transaction.service.js",
-      "source_location": "L445"
+      "source_location": "L27"
     },
     {
       "id": "src_validators_transaction_validator",
       "label": "transaction.validator.js",
       "_origin": "ast",
       "community": 3,
-      "community_name": "transaction.service.js",
+      "community_name": "transaction.routes.js",
       "file_type": "code",
       "norm_label": "transaction.validator.js",
       "source_file": "src/validators/transaction.validator.js",
@@ -2434,73 +2319,40 @@
       "label": "createTransactionSchema",
       "_origin": "ast",
       "community": 3,
-      "community_name": "transaction.service.js",
+      "community_name": "transaction.routes.js",
       "file_type": "code",
       "norm_label": "createtransactionschema",
       "source_file": "src/validators/transaction.validator.js",
       "source_location": "L3"
     },
     {
-      "id": "src_validators_transaction_validator_dailyqueryschema",
-      "label": "dailyQuerySchema",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "transaction.service.js",
-      "file_type": "code",
-      "norm_label": "dailyqueryschema",
-      "source_file": "src/validators/transaction.validator.js",
-      "source_location": "L89"
-    },
-    {
       "id": "src_validators_transaction_validator_exporttransactionsqueryschema",
       "label": "exportTransactionsQuerySchema",
       "_origin": "ast",
       "community": 3,
-      "community_name": "transaction.service.js",
+      "community_name": "transaction.routes.js",
       "file_type": "code",
       "norm_label": "exporttransactionsqueryschema",
       "source_file": "src/validators/transaction.validator.js",
       "source_location": "L64"
     },
     {
-      "id": "src_validators_transaction_validator_fromnotafterto",
-      "label": "fromNotAfterTo",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "transaction.service.js",
-      "file_type": "code",
-      "norm_label": "fromnotafterto",
-      "source_file": "src/validators/transaction.validator.js",
-      "source_location": "L79"
-    },
-    {
       "id": "src_validators_transaction_validator_gettransactionsqueryschema",
       "label": "getTransactionsQuerySchema",
       "_origin": "ast",
       "community": 3,
-      "community_name": "transaction.service.js",
+      "community_name": "transaction.routes.js",
       "file_type": "code",
       "norm_label": "gettransactionsqueryschema",
       "source_file": "src/validators/transaction.validator.js",
       "source_location": "L54"
     },
     {
-      "id": "src_validators_transaction_validator_summaryqueryschema",
-      "label": "summaryQuerySchema",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "transaction.service.js",
-      "file_type": "code",
-      "norm_label": "summaryqueryschema",
-      "source_file": "src/validators/transaction.validator.js",
-      "source_location": "L84"
-    },
-    {
       "id": "src_validators_transaction_validator_tanggal",
       "label": "tanggal",
       "_origin": "ast",
       "community": 3,
-      "community_name": "transaction.service.js",
+      "community_name": "transaction.routes.js",
       "file_type": "code",
       "norm_label": "tanggal",
       "source_file": "src/validators/transaction.validator.js",
@@ -2511,7 +2363,7 @@
       "label": "transactionIdParamSchema",
       "_origin": "ast",
       "community": 3,
-      "community_name": "transaction.service.js",
+      "community_name": "transaction.routes.js",
       "file_type": "code",
       "norm_label": "transactionidparamschema",
       "source_file": "src/validators/transaction.validator.js",
@@ -2522,7 +2374,7 @@
       "label": "updateTransactionStatusSchema",
       "_origin": "ast",
       "community": 3,
-      "community_name": "transaction.service.js",
+      "community_name": "transaction.routes.js",
       "file_type": "code",
       "norm_label": "updatetransactionstatusschema",
       "source_file": "src/validators/transaction.validator.js",
@@ -2859,6 +2711,17 @@
       "source_location": "L23"
     },
     {
+      "id": "src_controllers_members_controllers",
+      "label": "members.controllers.js",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "error",
+      "file_type": "code",
+      "norm_label": "members.controllers.js",
+      "source_file": "src/controllers/members.controllers.js",
+      "source_location": "L1"
+    },
+    {
       "id": "src_controllers_user_controllers",
       "label": "user.controllers.js",
       "_origin": "ast",
@@ -2870,6 +2733,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_db_schema_database_userroleenum",
+      "label": "userRoleEnum",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "error",
+      "file_type": "code",
+      "norm_label": "userroleenum",
+      "source_file": "src/db/schema.database.js",
+      "source_location": "L12"
+    },
+    {
       "id": "src_routes_users_routes",
       "label": "users.routes.js",
       "_origin": "ast",
@@ -2879,39 +2753,6 @@
       "norm_label": "users.routes.js",
       "source_file": "src/routes/users.routes.js",
       "source_location": "L1"
-    },
-    {
-      "id": "src_utils_handle_validation",
-      "label": "handle-validation.js",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "error",
-      "file_type": "code",
-      "norm_label": "handle-validation.js",
-      "source_file": "src/utils/handle-validation.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_utils_handle_validation_label",
-      "label": "LABEL",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "error",
-      "file_type": "code",
-      "norm_label": "label",
-      "source_file": "src/utils/handle-validation.js",
-      "source_location": "L16"
-    },
-    {
-      "id": "src_utils_handle_validation_type_id",
-      "label": "TYPE_ID",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "error",
-      "file_type": "code",
-      "norm_label": "type_id",
-      "source_file": "src/utils/handle-validation.js",
-      "source_location": "L4"
     },
     {
       "id": "src_utils_response",
@@ -3023,160 +2864,6 @@
       "norm_label": "permission matrix (rancangan)",
       "source_file": "docs/roles.md",
       "source_location": "L127"
-    },
-    {
-      "id": "src_controllers_members_controllers",
-      "label": "members.controllers.js",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "members.routes.js",
-      "file_type": "code",
-      "norm_label": "members.controllers.js",
-      "source_file": "src/controllers/members.controllers.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_routes_members_routes",
-      "label": "members.routes.js",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "members.routes.js",
-      "file_type": "code",
-      "norm_label": "members.routes.js",
-      "source_file": "src/routes/members.routes.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_services_members_service",
-      "label": "members.service.js",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "members.routes.js",
-      "file_type": "code",
-      "norm_label": "members.service.js",
-      "source_file": "src/services/members.service.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_validators_member_validator",
-      "label": "member.validator.js",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "members.routes.js",
-      "file_type": "code",
-      "norm_label": "member.validator.js",
-      "source_file": "src/validators/member.validator.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_validators_member_validator_editmemberbyidschema",
-      "label": "editMemberByIdSchema",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "members.routes.js",
-      "file_type": "code",
-      "norm_label": "editmemberbyidschema",
-      "source_file": "src/validators/member.validator.js",
-      "source_location": "L35"
-    },
-    {
-      "id": "src_validators_member_validator_getmemberbyidschema",
-      "label": "getMemberByIdSchema",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "members.routes.js",
-      "file_type": "code",
-      "norm_label": "getmemberbyidschema",
-      "source_file": "src/validators/member.validator.js",
-      "source_location": "L22"
-    },
-    {
-      "id": "src_validators_member_validator_getmemberqueryschema",
-      "label": "getMemberQuerySchema",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "members.routes.js",
-      "file_type": "code",
-      "norm_label": "getmemberqueryschema",
-      "source_file": "src/validators/member.validator.js",
-      "source_location": "L26"
-    },
-    {
-      "id": "src_validators_member_validator_registermemberschema",
-      "label": "registerMemberSchema",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "members.routes.js",
-      "file_type": "code",
-      "norm_label": "registermemberschema",
-      "source_file": "src/validators/member.validator.js",
-      "source_location": "L3"
-    },
-    {
-      "id": "ref_zod",
-      "label": "zod",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "members.routes.js",
-      "file_type": "concept",
-      "norm_label": "zod",
-      "source_file": "package.json",
-      "source_location": "L18"
-    },
-    {
-      "id": "src_utils_csv",
-      "label": "csv.js",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "csv.js",
-      "file_type": "code",
-      "norm_label": "csv.js",
-      "source_file": "src/utils/csv.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_utils_csv_test",
-      "label": "csv.test.js",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "csv.js",
-      "file_type": "code",
-      "norm_label": "csv.test.js",
-      "source_file": "src/utils/csv.test.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_utils_qris",
-      "label": "qris.js",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "csv.js",
-      "file_type": "code",
-      "norm_label": "qris.js",
-      "source_file": "src/utils/qris.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_utils_qris_test",
-      "label": "qris.test.js",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "csv.js",
-      "file_type": "code",
-      "norm_label": "qris.test.js",
-      "source_file": "src/utils/qris.test.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "docref_rfc_4180",
-      "label": "RFC-4180",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "csv.js",
-      "file_type": "concept",
-      "norm_label": "rfc-4180",
-      "source_file": "src/utils/csv.js",
-      "source_location": "L1"
     },
     {
       "id": "docker_compose_db_service",
@@ -3462,8 +3149,8 @@
     {
       "id": "ref_bun_test",
       "label": "ref_bun_test",
-      "community": 9,
-      "community_name": "csv.js",
+      "community": 1,
+      "community_name": "product.controllers.js",
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_bun_test",
@@ -3809,42 +3496,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_controllers_product_controllers_addbarcode",
-      "target": "src_services_product_service_addproductbarcode",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L250",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_product_controllers_addbarcode",
-      "target": "src_utils_response_success",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L251",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_product_controllers_addbarcode",
-      "target": "src_utils_response_error",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L253",
-      "weight": 1.0
-    },
-    {
       "source": "src_controllers_product_controllers_createproduct",
       "target": "src_services_product_service_addnewproduct",
       "relation": "calls",
@@ -3853,7 +3504,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L25",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -3865,7 +3516,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L26",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -3877,7 +3528,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L28",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -3889,7 +3540,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L207",
+      "source_location": "L193",
       "weight": 1.0
     },
     {
@@ -3901,7 +3552,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L208",
+      "source_location": "L194",
       "weight": 1.0
     },
     {
@@ -3913,19 +3564,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L210",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_product_controllers_importproductscsv",
-      "target": "src_services_product_service_findskususedasbarcode",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L120",
+      "source_location": "L196",
       "weight": 1.0
     },
     {
@@ -3937,7 +3576,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L131",
+      "source_location": "L117",
       "weight": 1.0
     },
     {
@@ -3949,7 +3588,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L139",
+      "source_location": "L125",
       "weight": 1.0
     },
     {
@@ -3961,7 +3600,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L147",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -3973,7 +3612,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L70",
+      "source_location": "L66",
       "weight": 1.0
     },
     {
@@ -3985,7 +3624,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L84",
+      "source_location": "L80",
       "weight": 1.0
     },
     {
@@ -3997,7 +3636,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L58",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -4009,7 +3648,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L166",
+      "source_location": "L152",
       "weight": 1.0
     },
     {
@@ -4021,7 +3660,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L167",
+      "source_location": "L153",
       "weight": 1.0
     },
     {
@@ -4033,7 +3672,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L169",
+      "source_location": "L155",
       "weight": 1.0
     },
     {
@@ -4045,7 +3684,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L156",
+      "source_location": "L142",
       "weight": 1.0
     },
     {
@@ -4057,7 +3696,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L157",
+      "source_location": "L143",
       "weight": 1.0
     },
     {
@@ -4069,7 +3708,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L159",
+      "source_location": "L145",
       "weight": 1.0
     },
     {
@@ -4081,7 +3720,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L176",
+      "source_location": "L162",
       "weight": 1.0
     },
     {
@@ -4093,7 +3732,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L177",
+      "source_location": "L163",
       "weight": 1.0
     },
     {
@@ -4105,7 +3744,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L179",
+      "source_location": "L165",
       "weight": 1.0
     },
     {
@@ -4117,7 +3756,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L218",
+      "source_location": "L204",
       "weight": 1.0
     },
     {
@@ -4129,7 +3768,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L219",
+      "source_location": "L205",
       "weight": 1.0
     },
     {
@@ -4141,43 +3780,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L221",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_product_controllers_productbybarcode",
-      "target": "src_services_product_service_getproductbycode",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L239",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_product_controllers_productbybarcode",
-      "target": "src_utils_response_success",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L240",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_product_controllers_productbybarcode",
-      "target": "src_utils_response_error",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L242",
+      "source_location": "L207",
       "weight": 1.0
     },
     {
@@ -4189,7 +3792,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L186",
+      "source_location": "L172",
       "weight": 1.0
     },
     {
@@ -4201,7 +3804,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L187",
+      "source_location": "L173",
       "weight": 1.0
     },
     {
@@ -4213,43 +3816,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L189",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_product_controllers_removebarcode",
-      "target": "src_services_product_service_removeproductbarcode",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L260",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_product_controllers_removebarcode",
-      "target": "src_utils_response_success",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L261",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_product_controllers_removebarcode",
-      "target": "src_utils_response_error",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L263",
+      "source_location": "L175",
       "weight": 1.0
     },
     {
@@ -4261,7 +3828,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L196",
+      "source_location": "L182",
       "weight": 1.0
     },
     {
@@ -4273,7 +3840,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L197",
+      "source_location": "L183",
       "weight": 1.0
     },
     {
@@ -4285,7 +3852,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L199",
+      "source_location": "L185",
       "weight": 1.0
     },
     {
@@ -4297,7 +3864,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L229",
+      "source_location": "L215",
       "weight": 1.0
     },
     {
@@ -4309,7 +3876,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L230",
+      "source_location": "L216",
       "weight": 1.0
     },
     {
@@ -4321,7 +3888,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L232",
+      "source_location": "L218",
       "weight": 1.0
     },
     {
@@ -4333,12 +3900,24 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L40",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
       "source": "src_controllers_transaction_controllers_changetransactionstatus",
       "target": "src_utils_response_success",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/controllers/transaction.controllers.js",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "src_controllers_transaction_controllers_changetransactionstatus",
+      "target": "src_utils_response_error",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4346,78 +3925,6 @@
       "context": "call",
       "source_file": "src/controllers/transaction.controllers.js",
       "source_location": "L45",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_transaction_controllers_changetransactionstatus",
-      "target": "src_utils_response_error",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L47",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_transaction_controllers_dailysales",
-      "target": "src_services_transaction_service_getdailysales",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L77",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_transaction_controllers_dailysales",
-      "target": "src_utils_response_success",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L78",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_transaction_controllers_dailysales",
-      "target": "src_utils_response_error",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L80",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_transaction_controllers_exporttransactionscsv",
-      "target": "src_services_transaction_service_channelforrole",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L108",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_transaction_controllers_exporttransactionscsv",
-      "target": "src_services_transaction_service_gettransactionsforexport",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L110",
       "weight": 1.0
     },
     {
@@ -4429,7 +3936,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L113",
+      "source_location": "L102",
       "weight": 1.0
     },
     {
@@ -4441,7 +3948,31 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L118",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "src_controllers_transaction_controllers_exporttransactionscsv",
+      "target": "src_services_transaction_service_channelforrole",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/controllers/transaction.controllers.js",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
+      "source": "src_controllers_transaction_controllers_exporttransactionscsv",
+      "target": "src_services_transaction_service_gettransactionsforexport",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/controllers/transaction.controllers.js",
+      "source_location": "L99",
       "weight": 1.0
     },
     {
@@ -4453,7 +3984,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L22",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -4465,7 +3996,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L23",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -4477,7 +4008,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L30",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -4489,7 +4020,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L32",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -4501,7 +4032,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L57",
+      "source_location": "L55",
       "weight": 1.0
     },
     {
@@ -4513,7 +4044,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L59",
+      "source_location": "L57",
       "weight": 1.0
     },
     {
@@ -4525,7 +4056,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L60",
+      "source_location": "L58",
       "weight": 1.0
     },
     {
@@ -4537,7 +4068,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L62",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -4549,7 +4080,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L87",
+      "source_location": "L76",
       "weight": 1.0
     },
     {
@@ -4561,7 +4092,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L88",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
@@ -4573,19 +4104,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L90",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_transaction_controllers_transactioninvoice",
-      "target": "src_utils_response_error",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L100",
+      "source_location": "L79",
       "weight": 1.0
     },
     {
@@ -4597,7 +4116,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L97",
+      "source_location": "L86",
       "weight": 1.0
     },
     {
@@ -4609,35 +4128,11 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L98",
+      "source_location": "L87",
       "weight": 1.0
     },
     {
-      "source": "src_controllers_transaction_controllers_transactionqris",
-      "target": "src_services_transaction_service_getqrisfortransaction",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L125",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_transaction_controllers_transactionqris",
-      "target": "src_utils_response_success",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L126",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_transaction_controllers_transactionqris",
+      "source": "src_controllers_transaction_controllers_transactioninvoice",
       "target": "src_utils_response_error",
       "relation": "calls",
       "_origin": "ast",
@@ -4645,7 +4140,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L128",
+      "source_location": "L89",
       "weight": 1.0
     },
     {
@@ -4657,7 +4152,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L68",
+      "source_location": "L66",
       "weight": 1.0
     },
     {
@@ -4669,7 +4164,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L69",
+      "source_location": "L67",
       "weight": 1.0
     },
     {
@@ -4681,7 +4176,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L71",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -5106,18 +4601,6 @@
     },
     {
       "source": "src_services_product_service_addnewproduct",
-      "target": "src_services_product_service_assertskunotbarcode",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L57",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_product_service_addnewproduct",
       "target": "src_utils_db_error_parsedberror",
       "relation": "calls",
       "_origin": "ast",
@@ -5125,43 +4608,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/product.service.js",
-      "source_location": "L70",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_product_service_addproductbarcode",
-      "target": "src_utils_errors_apperror",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L292",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_product_service_addproductbarcode",
-      "target": "src_utils_errors_notfounderror",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L309",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_product_service_addproductbarcode",
-      "target": "src_utils_db_error_parsedberror",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L317",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -5173,7 +4620,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/product.service.js",
-      "source_location": "L387",
+      "source_location": "L259",
       "weight": 1.0
     },
     {
@@ -5185,19 +4632,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/product.service.js",
-      "source_location": "L411",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_product_service_assertskunotbarcode",
-      "target": "src_utils_errors_apperror",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L37",
+      "source_location": "L283",
       "weight": 1.0
     },
     {
@@ -5209,7 +4644,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/product.service.js",
-      "source_location": "L346",
+      "source_location": "L219",
       "weight": 1.0
     },
     {
@@ -5221,19 +4656,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/product.service.js",
-      "source_location": "L349",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_product_service_editproductbyid",
-      "target": "src_services_product_service_assertskunotbarcode",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L355",
+      "source_location": "L222",
       "weight": 1.0
     },
     {
@@ -5245,7 +4668,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/product.service.js",
-      "source_location": "L370",
+      "source_location": "L242",
       "weight": 1.0
     },
     {
@@ -5257,7 +4680,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/product.service.js",
-      "source_location": "L373",
+      "source_location": "L245",
       "weight": 1.0
     },
     {
@@ -5269,19 +4692,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/product.service.js",
-      "source_location": "L83",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_product_service_findskususedasbarcode",
-      "target": "src_utils_db_error_parsedberror",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L51",
+      "source_location": "L53",
       "weight": 1.0
     },
     {
@@ -5293,7 +4704,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/product.service.js",
-      "source_location": "L207",
+      "source_location": "L170",
       "weight": 1.0
     },
     {
@@ -5305,7 +4716,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/product.service.js",
-      "source_location": "L509",
+      "source_location": "L376",
       "weight": 1.0
     },
     {
@@ -5317,31 +4728,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/product.service.js",
-      "source_location": "L224",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_product_service_getproductbycode",
-      "target": "src_utils_errors_notfounderror",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L278",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_product_service_getproductbycode",
-      "target": "src_utils_db_error_parsedberror",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L281",
+      "source_location": "L187",
       "weight": 1.0
     },
     {
@@ -5353,7 +4740,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/product.service.js",
-      "source_location": "L243",
+      "source_location": "L206",
       "weight": 1.0
     },
     {
@@ -5365,7 +4752,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/product.service.js",
-      "source_location": "L252",
+      "source_location": "L209",
       "weight": 1.0
     },
     {
@@ -5377,31 +4764,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/product.service.js",
-      "source_location": "L444",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_product_service_removeproductbarcode",
-      "target": "src_utils_errors_notfounderror",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L333",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_product_service_removeproductbarcode",
-      "target": "src_utils_db_error_parsedberror",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L336",
+      "source_location": "L316",
       "weight": 1.0
     },
     {
@@ -5413,7 +4776,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/product.service.js",
-      "source_location": "L122",
+      "source_location": "L92",
       "weight": 1.0
     },
     {
@@ -5425,7 +4788,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L27",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -5437,7 +4800,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L102",
+      "source_location": "L101",
       "weight": 1.0
     },
     {
@@ -5449,7 +4812,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L51",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -5461,7 +4824,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L71",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -5473,7 +4836,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L129",
+      "source_location": "L128",
       "weight": 1.0
     },
     {
@@ -5485,19 +4848,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L172",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_transaction_service_getdailysales",
-      "target": "src_utils_db_error_parsedberror",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/services/transaction.service.js",
-      "source_location": "L439",
+      "source_location": "L171",
       "weight": 1.0
     },
     {
@@ -5509,7 +4860,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L345",
+      "source_location": "L312",
       "weight": 1.0
     },
     {
@@ -5521,7 +4872,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L346",
+      "source_location": "L313",
       "weight": 1.0
     },
     {
@@ -5533,72 +4884,24 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L399",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_transaction_service_getqrisfortransaction",
-      "target": "src_utils_errors_notfounderror",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/services/transaction.service.js",
-      "source_location": "L303",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_transaction_service_getqrisfortransaction",
-      "target": "src_services_transaction_service_assertchannelallowed",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/services/transaction.service.js",
-      "source_location": "L304",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_transaction_service_getqrisfortransaction",
-      "target": "src_utils_errors_apperror",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/services/transaction.service.js",
-      "source_location": "L306",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_transaction_service_getqrisfortransaction",
-      "target": "src_utils_qris_todynamicqris",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/services/transaction.service.js",
-      "source_location": "L316",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_transaction_service_getqrisfortransaction",
-      "target": "src_utils_db_error_parsedberror",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/services/transaction.service.js",
-      "source_location": "L320",
+      "source_location": "L366",
       "weight": 1.0
     },
     {
       "source": "src_services_transaction_service_gettransactionbyid",
       "target": "src_utils_errors_notfounderror",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/services/transaction.service.js",
+      "source_location": "L182",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_transaction_service_gettransactionbyid",
+      "target": "src_services_transaction_service_assertchannelallowed",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5610,18 +4913,6 @@
     },
     {
       "source": "src_services_transaction_service_gettransactionbyid",
-      "target": "src_services_transaction_service_assertchannelallowed",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/services/transaction.service.js",
-      "source_location": "L184",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_transaction_service_gettransactionbyid",
       "target": "src_utils_db_error_parsedberror",
       "relation": "calls",
       "_origin": "ast",
@@ -5629,7 +4920,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L203",
+      "source_location": "L202",
       "weight": 1.0
     },
     {
@@ -5641,7 +4932,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L458",
+      "source_location": "L402",
       "weight": 1.0
     },
     {
@@ -5653,7 +4944,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L516",
+      "source_location": "L460",
       "weight": 1.0
     },
     {
@@ -5665,7 +4956,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L420",
+      "source_location": "L383",
       "weight": 1.0
     },
     {
@@ -5677,7 +4968,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L221",
+      "source_location": "L220",
       "weight": 1.0
     },
     {
@@ -5689,7 +4980,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L222",
+      "source_location": "L221",
       "weight": 1.0
     },
     {
@@ -5701,7 +4992,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L230",
+      "source_location": "L229",
       "weight": 1.0
     },
     {
@@ -5713,7 +5004,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L288",
+      "source_location": "L287",
       "weight": 1.0
     },
     {
@@ -5930,66 +5221,6 @@
       "context": "call",
       "source_file": "src/utils/helper.login.js",
       "source_location": "L14",
-      "weight": 1.0
-    },
-    {
-      "source": "src_utils_qris_parsetlv",
-      "target": "src_utils_errors_apperror",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/utils/qris.js",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "src_utils_qris_todynamicqris",
-      "target": "src_utils_qris_crc16",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/utils/qris.js",
-      "source_location": "L37",
-      "weight": 1.0
-    },
-    {
-      "source": "src_utils_qris_todynamicqris",
-      "target": "src_utils_errors_apperror",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/utils/qris.js",
-      "source_location": "L38",
-      "weight": 1.0
-    },
-    {
-      "source": "src_utils_qris_todynamicqris",
-      "target": "src_utils_qris_parsetlv",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/utils/qris.js",
-      "source_location": "L40",
-      "weight": 1.0
-    },
-    {
-      "source": "src_utils_qris_todynamicqris",
-      "target": "src_utils_qris_tlv",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/utils/qris.js",
-      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -6270,18 +5501,6 @@
     },
     {
       "source": "src_controllers_product_controllers",
-      "target": "src_services_product_service_addproductbarcode",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_product_controllers",
       "target": "src_services_product_service_adjustproductstock",
       "relation": "imports",
       "_origin": "ast",
@@ -6330,18 +5549,6 @@
     },
     {
       "source": "src_controllers_product_controllers",
-      "target": "src_services_product_service_findskususedasbarcode",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_product_controllers",
       "target": "src_services_product_service_getallproducts",
       "relation": "imports",
       "_origin": "ast",
@@ -6378,18 +5585,6 @@
     },
     {
       "source": "src_controllers_product_controllers",
-      "target": "src_services_product_service_getproductbycode",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_product_controllers",
       "target": "src_services_product_service_getproductbyid",
       "relation": "imports",
       "_origin": "ast",
@@ -6403,18 +5598,6 @@
     {
       "source": "src_controllers_product_controllers",
       "target": "src_services_product_service_getstockadjustments",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_product_controllers",
-      "target": "src_services_product_service_removeproductbarcode",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6486,31 +5669,7 @@
     },
     {
       "source": "src_controllers_transaction_controllers",
-      "target": "src_services_transaction_service_getdailysales",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_transaction_controllers",
       "target": "src_services_transaction_service_getinvoicebyid",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_transaction_controllers",
-      "target": "src_services_transaction_service_getqrisfortransaction",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6577,7 +5736,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L14",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -6589,7 +5748,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L14",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -6601,7 +5760,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L15",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -6949,31 +6108,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/routes/product.routes.js",
-      "source_location": "L19",
-      "weight": 1.0
-    },
-    {
-      "source": "src_routes_product_routes",
-      "target": "src_validators_product_validator_addbarcodeschema",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/routes/product.routes.js",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "src_routes_product_routes",
-      "target": "src_validators_product_validator_barcodelookupparamschema",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/routes/product.routes.js",
-      "source_location": "L4",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -7062,18 +6197,6 @@
     },
     {
       "source": "src_routes_product_routes",
-      "target": "src_validators_product_validator_productbarcodeparamschema",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/routes/product.routes.js",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "src_routes_product_routes",
       "target": "src_validators_product_validator_productidschema",
       "relation": "imports",
       "_origin": "ast",
@@ -7093,24 +6216,12 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/routes/transaction.routes.js",
-      "source_location": "L13",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
       "source": "src_routes_transaction_routes",
       "target": "src_validators_transaction_validator_createtransactionschema",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/routes/transaction.routes.js",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "src_routes_transaction_routes",
-      "target": "src_validators_transaction_validator_dailyqueryschema",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -7135,18 +6246,6 @@
     {
       "source": "src_routes_transaction_routes",
       "target": "src_validators_transaction_validator_gettransactionsqueryschema",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/routes/transaction.routes.js",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "src_routes_transaction_routes",
-      "target": "src_validators_transaction_validator_summaryqueryschema",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -7338,18 +6437,6 @@
     },
     {
       "source": "src_services_product_service",
-      "target": "src_db_schema_database_productbarcodestable",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L15",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_product_service",
       "target": "src_db_schema_database_producttable",
       "relation": "imports",
       "_origin": "ast",
@@ -7417,19 +6504,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/services/product.service.js",
-      "source_location": "L23",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_product_service",
-      "target": "src_utils_errors_apperror",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/services/product.service.js",
-      "source_location": "L24",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -7441,7 +6516,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/services/product.service.js",
-      "source_location": "L24",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -7453,7 +6528,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/services/product.service.js",
-      "source_location": "L25",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -7490,18 +6565,6 @@
       "context": "import",
       "source_file": "src/services/transaction.service.js",
       "source_location": "L14",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_transaction_service",
-      "target": "src_utils_qris_todynamicqris",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/services/transaction.service.js",
-      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -7757,42 +6820,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_utils_qris",
-      "target": "src_utils_errors_apperror",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/utils/qris.js",
-      "source_location": "L5",
-      "weight": 1.0
-    },
-    {
-      "source": "src_utils_qris_test",
-      "target": "src_utils_qris_crc16",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/utils/qris.test.js",
-      "source_location": "L2",
-      "weight": 1.0
-    },
-    {
-      "source": "src_utils_qris_test",
-      "target": "src_utils_qris_todynamicqris",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/utils/qris.test.js",
-      "source_location": "L2",
-      "weight": 1.0
-    },
-    {
       "source": "src_validators_user_validator",
       "target": "src_db_schema_database_userroleenum",
       "relation": "imports",
@@ -7921,7 +6948,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L14",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -7933,7 +6960,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L15",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -8233,7 +7260,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/routes/product.routes.js",
-      "source_location": "L18",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -8245,7 +7272,19 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/routes/product.routes.js",
-      "source_location": "L19",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_product_routes",
+      "target": "src_controllers_product_controllers",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/routes/product.routes.js",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -8258,18 +7297,6 @@
       "context": "import",
       "source_file": "src/routes/product.routes.js",
       "source_location": "L2",
-      "weight": 1.0
-    },
-    {
-      "source": "src_routes_product_routes",
-      "target": "src_controllers_product_controllers",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/routes/product.routes.js",
-      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -8305,7 +7332,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/routes/transaction.routes.js",
-      "source_location": "L12",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -8317,7 +7344,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/routes/transaction.routes.js",
-      "source_location": "L13",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -8329,7 +7356,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/routes/transaction.routes.js",
-      "source_location": "L14",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -8533,7 +7560,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/services/product.service.js",
-      "source_location": "L23",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -8545,7 +7572,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/services/product.service.js",
-      "source_location": "L24",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -8557,7 +7584,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/services/product.service.js",
-      "source_location": "L25",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -8594,18 +7621,6 @@
       "context": "import",
       "source_file": "src/services/transaction.service.js",
       "source_location": "L14",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_transaction_service",
-      "target": "src_utils_qris",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/services/transaction.service.js",
-      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -8810,42 +7825,6 @@
       "context": "import",
       "source_file": "src/utils/helper.login.js",
       "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "src_utils_qris",
-      "target": "src_utils_errors",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/utils/qris.js",
-      "source_location": "L5",
-      "weight": 1.0
-    },
-    {
-      "source": "src_utils_qris_test",
-      "target": "ref_bun_test",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/utils/qris.test.js",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "src_utils_qris_test",
-      "target": "src_utils_qris",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/utils/qris.test.js",
-      "source_location": "L2",
       "weight": 1.0
     },
     {
@@ -9544,7 +8523,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L154",
+      "source_location": "L140",
       "weight": 1.0
     },
     {
@@ -9555,7 +8534,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L163",
+      "source_location": "L149",
       "weight": 1.0
     },
     {
@@ -9566,7 +8545,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L173",
+      "source_location": "L159",
       "weight": 1.0
     },
     {
@@ -9577,7 +8556,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L183",
+      "source_location": "L169",
       "weight": 1.0
     },
     {
@@ -9588,29 +8567,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L193",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_product_controllers",
-      "target": "src_controllers_product_controllers_createstockadjustment",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L203",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_product_controllers",
-      "target": "src_controllers_product_controllers_liststockadjustments",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L214",
+      "source_location": "L179",
       "weight": 1.0
     },
     {
@@ -9621,7 +8578,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L22",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "src_controllers_product_controllers",
+      "target": "src_controllers_product_controllers_createstockadjustment",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/controllers/product.controllers.js",
+      "source_location": "L189",
+      "weight": 1.0
+    },
+    {
+      "source": "src_controllers_product_controllers",
+      "target": "src_controllers_product_controllers_liststockadjustments",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/controllers/product.controllers.js",
+      "source_location": "L200",
       "weight": 1.0
     },
     {
@@ -9632,40 +8611,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L225",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_product_controllers",
-      "target": "src_controllers_product_controllers_productbybarcode",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L236",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_product_controllers",
-      "target": "src_controllers_product_controllers_addbarcode",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L246",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_product_controllers",
-      "target": "src_controllers_product_controllers_removebarcode",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L257",
+      "source_location": "L211",
       "weight": 1.0
     },
     {
@@ -9676,7 +8622,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L37",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -9687,29 +8633,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/product.controllers.js",
-      "source_location": "L64",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_transaction_controllers",
-      "target": "src_controllers_transaction_controllers_exporttransactionscsv",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L104",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_transaction_controllers",
-      "target": "src_controllers_transaction_controllers_transactionqris",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L122",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -9720,7 +8644,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L17",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -9731,7 +8655,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L36",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -9742,7 +8666,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L51",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -9753,18 +8677,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L66",
-      "weight": 1.0
-    },
-    {
-      "source": "src_controllers_transaction_controllers",
-      "target": "src_controllers_transaction_controllers_dailysales",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L75",
+      "source_location": "L64",
       "weight": 1.0
     },
     {
@@ -9775,7 +8688,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L84",
+      "source_location": "L73",
       "weight": 1.0
     },
     {
@@ -9786,7 +8699,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/controllers/transaction.controllers.js",
-      "source_location": "L94",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "src_controllers_transaction_controllers",
+      "target": "src_controllers_transaction_controllers_exporttransactionscsv",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/controllers/transaction.controllers.js",
+      "source_location": "L93",
       "weight": 1.0
     },
     {
@@ -9912,13 +8836,13 @@
     },
     {
       "source": "src_db_schema_database",
-      "target": "src_db_schema_database_stockadjustmentstable",
+      "target": "src_db_schema_database_memberstable",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/db/schema.database.js",
-      "source_location": "L107",
+      "source_location": "L109",
       "weight": 1.0
     },
     {
@@ -9930,17 +8854,6 @@
       "confidence_score": 1.0,
       "source_file": "src/db/schema.database.js",
       "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "src_db_schema_database",
-      "target": "src_db_schema_database_memberstable",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/db/schema.database.js",
-      "source_location": "L121",
       "weight": 1.0
     },
     {
@@ -10011,24 +8924,13 @@
     },
     {
       "source": "src_db_schema_database",
-      "target": "src_db_schema_database_productbarcodestable",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/db/schema.database.js",
-      "source_location": "L63",
-      "weight": 1.0
-    },
-    {
-      "source": "src_db_schema_database",
       "target": "src_db_schema_database_transactionitemstable",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/db/schema.database.js",
-      "source_location": "L72",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -10039,7 +8941,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/db/schema.database.js",
-      "source_location": "L84",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "src_db_schema_database",
+      "target": "src_db_schema_database_stockadjustmentstable",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/db/schema.database.js",
+      "source_location": "L95",
       "weight": 1.0
     },
     {
@@ -10116,7 +9029,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/routes/product.routes.js",
-      "source_location": "L37",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -10127,7 +9040,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/routes/transaction.routes.js",
-      "source_location": "L26",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -10138,7 +9051,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/routes/transaction.routes.js",
-      "source_location": "L31",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -10209,24 +9122,13 @@
     },
     {
       "source": "src_services_product_service",
-      "target": "src_services_product_service_getallproducts",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/product.service.js",
-      "source_location": "L126",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_product_service",
       "target": "src_services_product_service_getlowstockproducts",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/product.service.js",
-      "source_location": "L211",
+      "source_location": "L174",
       "weight": 1.0
     },
     {
@@ -10237,51 +9139,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/product.service.js",
-      "source_location": "L228",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_product_service",
-      "target": "src_services_product_service_getproductbycode",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/product.service.js",
-      "source_location": "L257",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_product_service",
-      "target": "src_services_product_service_addproductbarcode",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/product.service.js",
-      "source_location": "L285",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_product_service",
-      "target": "src_services_product_service_assertskunotbarcode",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/product.service.js",
-      "source_location": "L29",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_product_service",
-      "target": "src_services_product_service_removeproductbarcode",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/product.service.js",
-      "source_location": "L321",
+      "source_location": "L191",
       "weight": 1.0
     },
     {
@@ -10292,7 +9150,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/product.service.js",
-      "source_location": "L340",
+      "source_location": "L213",
       "weight": 1.0
     },
     {
@@ -10303,7 +9161,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/product.service.js",
-      "source_location": "L353",
+      "source_location": "L226",
       "weight": 1.0
     },
     {
@@ -10314,51 +9172,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/product.service.js",
-      "source_location": "L377",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_product_service",
-      "target": "src_services_product_service_getstockadjustments",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/product.service.js",
-      "source_location": "L415",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_product_service",
-      "target": "src_services_product_service_findskususedasbarcode",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/product.service.js",
-      "source_location": "L42",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_product_service",
-      "target": "src_services_product_service_createdatwib",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/product.service.js",
-      "source_location": "L449",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_product_service",
-      "target": "src_services_product_service_getbestsellerproducts",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/product.service.js",
-      "source_location": "L451",
+      "source_location": "L249",
       "weight": 1.0
     },
     {
@@ -10369,7 +9183,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/product.service.js",
-      "source_location": "L55",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_product_service",
+      "target": "src_services_product_service_getstockadjustments",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/services/product.service.js",
+      "source_location": "L287",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_product_service",
+      "target": "src_services_product_service_getbestsellerproducts",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/services/product.service.js",
+      "source_location": "L320",
       "weight": 1.0
     },
     {
@@ -10380,7 +9216,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/product.service.js",
-      "source_location": "L74",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -10391,7 +9227,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/product.service.js",
-      "source_location": "L89",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_product_service",
+      "target": "src_services_product_service_getallproducts",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/services/product.service.js",
+      "source_location": "L96",
       "weight": 1.0
     },
     {
@@ -10402,7 +9249,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L109",
+      "source_location": "L108",
       "weight": 1.0
     },
     {
@@ -10413,7 +9260,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L116",
+      "source_location": "L115",
       "weight": 1.0
     },
     {
@@ -10424,7 +9271,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L176",
+      "source_location": "L175",
       "weight": 1.0
     },
     {
@@ -10435,7 +9282,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L20",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -10446,7 +9293,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L207",
+      "source_location": "L206",
       "weight": 1.0
     },
     {
@@ -10457,7 +9304,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L22",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -10468,18 +9315,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L24",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_transaction_service",
-      "target": "src_services_transaction_service_getqrisfortransaction",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/transaction.service.js",
-      "source_location": "L292",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -10490,7 +9326,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L324",
+      "source_location": "L291",
       "weight": 1.0
     },
     {
@@ -10501,7 +9337,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L33",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -10512,18 +9348,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L403",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_transaction_service",
-      "target": "src_services_transaction_service_getdailysales",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/transaction.service.js",
-      "source_location": "L426",
+      "source_location": "L370",
       "weight": 1.0
     },
     {
@@ -10534,7 +9359,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L445",
+      "source_location": "L389",
       "weight": 1.0
     },
     {
@@ -10545,7 +9370,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/transaction.service.js",
-      "source_location": "L447",
+      "source_location": "L391",
       "weight": 1.0
     },
     {
@@ -10758,50 +9583,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_utils_qris",
-      "target": "src_utils_qris_crc16",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/utils/qris.js",
-      "source_location": "L21",
-      "weight": 1.0
-    },
-    {
-      "source": "src_utils_qris",
-      "target": "src_utils_qris_tlv",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/utils/qris.js",
-      "source_location": "L31",
-      "weight": 1.0
-    },
-    {
-      "source": "src_utils_qris",
-      "target": "src_utils_qris_todynamicqris",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/utils/qris.js",
-      "source_location": "L33",
-      "weight": 1.0
-    },
-    {
-      "source": "src_utils_qris",
-      "target": "src_utils_qris_parsetlv",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/utils/qris.js",
-      "source_location": "L7",
-      "weight": 1.0
-    },
-    {
       "source": "src_utils_response",
       "target": "src_utils_response_success",
       "relation": "contains",
@@ -10869,50 +9650,6 @@
     },
     {
       "source": "src_validators_product_validator",
-      "target": "src_validators_product_validator_barcode",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/validators/product.validator.js",
-      "source_location": "L100",
-      "weight": 1.0
-    },
-    {
-      "source": "src_validators_product_validator",
-      "target": "src_validators_product_validator_addbarcodeschema",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/validators/product.validator.js",
-      "source_location": "L106",
-      "weight": 1.0
-    },
-    {
-      "source": "src_validators_product_validator",
-      "target": "src_validators_product_validator_productbarcodeparamschema",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/validators/product.validator.js",
-      "source_location": "L108",
-      "weight": 1.0
-    },
-    {
-      "source": "src_validators_product_validator",
-      "target": "src_validators_product_validator_barcodelookupparamschema",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/validators/product.validator.js",
-      "source_location": "L113",
-      "weight": 1.0
-    },
-    {
-      "source": "src_validators_product_validator",
       "target": "src_validators_product_validator_importproductrowschema",
       "relation": "contains",
       "_origin": "ast",
@@ -10963,7 +9700,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/validators/product.validator.js",
-      "source_location": "L54",
+      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -10974,7 +9711,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/validators/product.validator.js",
-      "source_location": "L58",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
@@ -10985,7 +9722,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/validators/product.validator.js",
-      "source_location": "L80",
+      "source_location": "L78",
       "weight": 1.0
     },
     {
@@ -10996,7 +9733,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/validators/product.validator.js",
-      "source_location": "L91",
+      "source_location": "L89",
       "weight": 1.0
     },
     {
@@ -11007,7 +9744,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/validators/product.validator.js",
-      "source_location": "L96",
+      "source_location": "L94",
       "weight": 1.0
     },
     {
@@ -11074,39 +9811,6 @@
       "confidence_score": 1.0,
       "source_file": "src/validators/transaction.validator.js",
       "source_location": "L64",
-      "weight": 1.0
-    },
-    {
-      "source": "src_validators_transaction_validator",
-      "target": "src_validators_transaction_validator_fromnotafterto",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/validators/transaction.validator.js",
-      "source_location": "L79",
-      "weight": 1.0
-    },
-    {
-      "source": "src_validators_transaction_validator",
-      "target": "src_validators_transaction_validator_summaryqueryschema",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/validators/transaction.validator.js",
-      "source_location": "L84",
-      "weight": 1.0
-    },
-    {
-      "source": "src_validators_transaction_validator",
-      "target": "src_validators_transaction_validator_dailyqueryschema",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/validators/transaction.validator.js",
-      "source_location": "L89",
       "weight": 1.0
     },
     {
@@ -11437,42 +10141,6 @@
     },
     {
       "source": "src_routes_product_routes",
-      "target": "src_controllers_product_controllers_createstockadjustment",
-      "relation": "indirect_call",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "context": "argument",
-      "source_file": "src/routes/product.routes.js",
-      "source_location": "L105",
-      "weight": 1.0
-    },
-    {
-      "source": "src_routes_product_routes",
-      "target": "src_controllers_product_controllers_liststockadjustments",
-      "relation": "indirect_call",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "context": "argument",
-      "source_file": "src/routes/product.routes.js",
-      "source_location": "L113",
-      "weight": 1.0
-    },
-    {
-      "source": "src_routes_product_routes",
-      "target": "src_controllers_product_controllers_removeproduct",
-      "relation": "indirect_call",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "context": "argument",
-      "source_file": "src/routes/product.routes.js",
-      "source_location": "L120",
-      "weight": 1.0
-    },
-    {
-      "source": "src_routes_product_routes",
       "target": "src_controllers_product_controllers_updateproduct",
       "relation": "indirect_call",
       "_origin": "ast",
@@ -11480,7 +10148,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/routes/product.routes.js",
-      "source_location": "L128",
+      "source_location": "L100",
       "weight": 1.0
     },
     {
@@ -11492,7 +10160,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/routes/product.routes.js",
-      "source_location": "L39",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -11504,7 +10172,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/routes/product.routes.js",
-      "source_location": "L49",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -11516,7 +10184,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/routes/product.routes.js",
-      "source_location": "L50",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -11528,7 +10196,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/routes/product.routes.js",
-      "source_location": "L53",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -11540,7 +10208,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/routes/product.routes.js",
-      "source_location": "L55",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -11552,43 +10220,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/routes/product.routes.js",
-      "source_location": "L57",
-      "weight": 1.0
-    },
-    {
-      "source": "src_routes_product_routes",
-      "target": "src_controllers_product_controllers_productbybarcode",
-      "relation": "indirect_call",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "context": "argument",
-      "source_file": "src/routes/product.routes.js",
-      "source_location": "L63",
-      "weight": 1.0
-    },
-    {
-      "source": "src_routes_product_routes",
-      "target": "src_controllers_product_controllers_addbarcode",
-      "relation": "indirect_call",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "context": "argument",
-      "source_file": "src/routes/product.routes.js",
-      "source_location": "L71",
-      "weight": 1.0
-    },
-    {
-      "source": "src_routes_product_routes",
-      "target": "src_controllers_product_controllers_removebarcode",
-      "relation": "indirect_call",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "context": "argument",
-      "source_file": "src/routes/product.routes.js",
-      "source_location": "L78",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -11600,7 +10232,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/routes/product.routes.js",
-      "source_location": "L84",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
@@ -11612,7 +10244,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/routes/product.routes.js",
-      "source_location": "L90",
+      "source_location": "L62",
       "weight": 1.0
     },
     {
@@ -11624,7 +10256,43 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/routes/product.routes.js",
-      "source_location": "L96",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_product_routes",
+      "target": "src_controllers_product_controllers_createstockadjustment",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "src/routes/product.routes.js",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_product_routes",
+      "target": "src_controllers_product_controllers_liststockadjustments",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "src/routes/product.routes.js",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_product_routes",
+      "target": "src_controllers_product_controllers_removeproduct",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "src/routes/product.routes.js",
+      "source_location": "L92",
       "weight": 1.0
     },
     {
@@ -11636,19 +10304,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/routes/transaction.routes.js",
-      "source_location": "L28",
-      "weight": 1.0
-    },
-    {
-      "source": "src_routes_transaction_routes",
-      "target": "src_utils_handle_validation_handlevalidation",
-      "relation": "indirect_call",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "context": "argument",
-      "source_file": "src/routes/transaction.routes.js",
-      "source_location": "L36",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -11660,19 +10316,19 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/routes/transaction.routes.js",
-      "source_location": "L37",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
       "source": "src_routes_transaction_routes",
-      "target": "src_controllers_transaction_controllers_dailysales",
+      "target": "src_utils_handle_validation_handlevalidation",
       "relation": "indirect_call",
       "_origin": "ast",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/routes/transaction.routes.js",
-      "source_location": "L44",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -11684,7 +10340,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/routes/transaction.routes.js",
-      "source_location": "L51",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -11696,7 +10352,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/routes/transaction.routes.js",
-      "source_location": "L58",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -11708,7 +10364,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/routes/transaction.routes.js",
-      "source_location": "L65",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -11720,19 +10376,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/routes/transaction.routes.js",
-      "source_location": "L72",
-      "weight": 1.0
-    },
-    {
-      "source": "src_routes_transaction_routes",
-      "target": "src_controllers_transaction_controllers_transactionqris",
-      "relation": "indirect_call",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "context": "argument",
-      "source_file": "src/routes/transaction.routes.js",
-      "source_location": "L80",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
@@ -11744,7 +10388,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/routes/transaction.routes.js",
-      "source_location": "L87",
+      "source_location": "L63",
       "weight": 1.0
     },
     {
@@ -11756,7 +10400,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/routes/transaction.routes.js",
-      "source_location": "L95",
+      "source_location": "L71",
       "weight": 1.0
     },
     {
@@ -12240,5 +10884,5 @@
       "source_file": "docs/error-handling.md"
     }
   ],
-  "built_at_commit": "b4462da2a2e5222ba144e2371db60e9f3f419395"
+  "built_at_commit": "95b2a9c8a7c57bcd5eeb9780bd79cd5ad04b3b7e"
 }

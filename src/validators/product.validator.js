@@ -45,6 +45,8 @@ export const getProductsQuerySchema = z.object({
 
 export const getBestSellerQuerySchema = z.object({
   category: z.string().optional(),
+  from: z.iso.date("Format tanggal harus YYYY-MM-DD").optional(),
+  to: z.iso.date("Format tanggal harus YYYY-MM-DD").optional(),
   page: z.coerce.number().int().positive().default(1),
   limit: z.coerce.number().int().positive().max(100).default(10),
 });

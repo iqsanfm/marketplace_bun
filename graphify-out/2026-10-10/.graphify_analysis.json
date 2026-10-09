@@ -1,0 +1,438 @@
+{
+  "communities": {
+    "0": [
+      "docs_roles_aturan_transisi_status_sudah_di_kode",
+      "ref_drizzle_orm",
+      "src_db_database_connection",
+      "src_db_database_connection_db",
+      "src_db_schema_database",
+      "src_db_schema_database_fulfillmentstatusenum",
+      "src_db_schema_database_memberstable",
+      "src_db_schema_database_orderchannelenum",
+      "src_db_schema_database_paymentmethodenum",
+      "src_db_schema_database_producttable",
+      "src_db_schema_database_sessionstable",
+      "src_db_schema_database_stockadjustmentstable",
+      "src_db_schema_database_transactionitemstable",
+      "src_db_schema_database_transactionstable",
+      "src_db_schema_database_transactionstatusenum",
+      "src_db_schema_database_userroleenum",
+      "src_db_schema_database_userstable",
+      "src_db_seed",
+      "src_db_seed_products",
+      "src_db_seed_users",
+      "src_middlewares_auth_middleware",
+      "src_services_members_service",
+      "src_services_members_service_deletememberbyid",
+      "src_services_members_service_editmemberbyid",
+      "src_services_members_service_getallmembers",
+      "src_services_members_service_getmemberbyid",
+      "src_services_members_service_registermember",
+      "src_services_transaction_service",
+      "src_services_transaction_service_assertchannelallowed",
+      "src_services_transaction_service_channel_by_role",
+      "src_services_transaction_service_createtransaction",
+      "src_services_transaction_service_fulfillment_flow",
+      "src_services_transaction_service_getalltransactions",
+      "src_services_transaction_service_getinvoicebyid",
+      "src_services_transaction_service_gettransactionbyid",
+      "src_services_transaction_service_updatefulfillmentstatus",
+      "src_services_transaction_service_updatetransactionstatus",
+      "src_services_user_service",
+      "src_services_user_service_changepassword",
+      "src_services_user_service_edituserbyid",
+      "src_services_user_service_edituserrole",
+      "src_services_user_service_getallusers",
+      "src_services_user_service_getuserbyid",
+      "src_services_user_service_loginuser",
+      "src_services_user_service_logoutuser",
+      "src_utils_db_error",
+      "src_utils_db_error_parsedberror",
+      "src_utils_errors",
+      "src_utils_errors_apperror",
+      "src_utils_errors_apperror_constructor",
+      "src_utils_errors_notfounderror",
+      "src_utils_errors_notfounderror_constructor",
+      "src_utils_helper_login",
+      "src_utils_helper_login_finduserbyemail"
+    ],
+    "1": [
+      "docref_rfc_4180",
+      "ref_bun_test",
+      "src_controllers_product_controllers",
+      "src_controllers_product_controllers_createproduct",
+      "src_controllers_product_controllers_createstockadjustment",
+      "src_controllers_product_controllers_importproductscsv",
+      "src_controllers_product_controllers_importtemplatecsv",
+      "src_controllers_product_controllers_listbestsellerproducts",
+      "src_controllers_product_controllers_listlowstockproducts",
+      "src_controllers_product_controllers_listproducts",
+      "src_controllers_product_controllers_liststockadjustments",
+      "src_controllers_product_controllers_productbyid",
+      "src_controllers_product_controllers_removeproduct",
+      "src_routes_product_routes",
+      "src_services_product_service",
+      "src_services_product_service_addnewproduct",
+      "src_services_product_service_adjustproductstock",
+      "src_services_product_service_deleteproductbyid",
+      "src_services_product_service_editproductbyid",
+      "src_services_product_service_findexistingskus",
+      "src_services_product_service_getallproducts",
+      "src_services_product_service_getbestsellerproducts",
+      "src_services_product_service_getlowstockproducts",
+      "src_services_product_service_getproductbyid",
+      "src_services_product_service_getstockadjustments",
+      "src_services_product_service_upsertproducts",
+      "src_utils_csv",
+      "src_utils_csv_parsecsv",
+      "src_utils_csv_parserows",
+      "src_utils_csv_quote",
+      "src_utils_csv_test",
+      "src_utils_csv_tocsv",
+      "src_validators_product_validator",
+      "src_validators_product_validator_createnewproductschema",
+      "src_validators_product_validator_createstockadjustmentschema",
+      "src_validators_product_validator_deleteproductbyidschema",
+      "src_validators_product_validator_editproductbyidschema",
+      "src_validators_product_validator_getbestsellerqueryschema",
+      "src_validators_product_validator_getproductsqueryschema",
+      "src_validators_product_validator_getstockadjustmentsqueryschema",
+      "src_validators_product_validator_importproductrowschema",
+      "src_validators_product_validator_productidschema"
+    ],
+    "2": [
+      "scripts_simulate",
+      "scripts_simulate_c1",
+      "scripts_simulate_c2",
+      "scripts_simulate_hdr",
+      "scripts_simulate_mkprod",
+      "scripts_simulate_note",
+      "scripts_simulate_ok",
+      "scripts_simulate_reg",
+      "scripts_simulate_req",
+      "scripts_simulate_sh__entry",
+      "scripts_simulate_stok"
+    ],
+    "4": [
+      "claude_md_commands",
+      "claude_md_parsedberror",
+      "claude_md_response_envelope",
+      "docker_compose_db_service",
+      "docs_error_handling_apperror",
+      "docs_error_handling_notfounderror",
+      "docs_error_handling_status_propagation",
+      "docs_error_handling_yagni_deferrals",
+      "docs_superpowers_plans_2026_07_10_auth_schema_plan",
+      "docs_superpowers_specs_2026_07_10_auth_schema_design_auth_schema_design",
+      "docs_superpowers_specs_2026_07_10_auth_schema_design_sessionstable",
+      "docs_superpowers_specs_2026_07_10_auth_schema_design_userroleenum",
+      "docs_superpowers_specs_2026_07_10_auth_schema_design_userstable_auth_columns",
+      "docs_superpowers_specs_2026_07_10_auth_schema_design_yagni_deferrals",
+      "readme_quickstart"
+    ],
+    "5": [
+      "drizzle_config",
+      "package",
+      "package_dependencies",
+      "package_dependencies_dotenv",
+      "package_dependencies_drizzle_orm",
+      "package_dependencies_drizzle_zod",
+      "package_dependencies_hono",
+      "package_dependencies_hono_zod_validator",
+      "package_dependencies_pg",
+      "package_dependencies_zod",
+      "package_devdependencies",
+      "package_devdependencies_drizzle_kit",
+      "package_devdependencies_types_bun",
+      "package_name",
+      "package_scripts",
+      "package_scripts_db_generate",
+      "package_scripts_db_migrate",
+      "package_scripts_db_push",
+      "package_scripts_db_seed",
+      "package_scripts_db_studio",
+      "package_scripts_dev",
+      "ref_dotenv",
+      "ref_drizzle_kit",
+      "ref_drizzle_zod",
+      "ref_hono",
+      "ref_hono_zod_validator",
+      "ref_pg",
+      "ref_types_bun"
+    ],
+    "6": [
+      "docs_roles_permission_matrix_rancangan",
+      "src_controllers_members_controllers",
+      "src_controllers_members_controllers_handleregistermember",
+      "src_controllers_members_controllers_listmembers",
+      "src_controllers_members_controllers_memberbyid",
+      "src_controllers_members_controllers_removemember",
+      "src_controllers_members_controllers_updatemember",
+      "src_controllers_product_controllers_updateproduct",
+      "src_controllers_transaction_controllers",
+      "src_controllers_transaction_controllers_changefulfillmentstatus",
+      "src_controllers_transaction_controllers_changetransactionstatus",
+      "src_controllers_transaction_controllers_handlecreatetransaction",
+      "src_controllers_transaction_controllers_listtransactions",
+      "src_controllers_transaction_controllers_transactionbyid",
+      "src_controllers_transaction_controllers_transactioninvoice",
+      "src_controllers_transaction_controllers_transactionssummary",
+      "src_controllers_user_controllers",
+      "src_controllers_user_controllers_handlelogin",
+      "src_controllers_user_controllers_handlelogout",
+      "src_controllers_user_controllers_handlepasswordchange",
+      "src_controllers_user_controllers_handleregister",
+      "src_controllers_user_controllers_listusers",
+      "src_controllers_user_controllers_myprofile",
+      "src_controllers_user_controllers_updatemyprofile",
+      "src_controllers_user_controllers_updateuserrole",
+      "src_controllers_user_controllers_userbyid",
+      "src_services_transaction_service_channelforrole",
+      "src_services_transaction_service_gettransactionssummary",
+      "src_services_user_service_registeruser",
+      "src_utils_response",
+      "src_utils_response_error",
+      "src_utils_response_success"
+    ],
+    "8": [
+      "claude_md_layered_architecture",
+      "claude_md_resource_convention",
+      "docs_transactions_getalltransactions"
+    ],
+    "10": [
+      "docs_roles",
+      "docs_roles_a_role_permission_selesai",
+      "docs_roles_b_alur_pengemasan_packaging_selesai",
+      "docs_roles_c_stock_opname_gudang_selesai",
+      "docs_roles_keputusan_yang_sudah_disepakati",
+      "docs_roles_konteks",
+      "docs_roles_role_pembagian_kerja",
+      "docs_roles_soal_so_per_produk_atau_sesi",
+      "docs_roles_urutan_kerja_sudah_dijalankan",
+      "docs_roles_yang_perlu_dibangun_3_pekerjaan_terpisah",
+      "docs_roles_yang_sengaja_belum_dikerjakan",
+      "src_middlewares_auth_middleware_requirerole"
+    ],
+    "11": [
+      "scripts_smoke_roles",
+      "scripts_smoke_roles_body",
+      "scripts_smoke_roles_chk",
+      "scripts_smoke_roles_code",
+      "scripts_smoke_roles_reg",
+      "scripts_smoke_roles_sh__entry"
+    ],
+    "12": [
+      "docs_fe_update_roles",
+      "docs_fe_update_roles_1_role_akses",
+      "docs_fe_update_roles_2_transaksi_field_baru_aturan_cancel",
+      "docs_fe_update_roles_3_baru_alur_pengemasan_layar_untuk_role_packaging",
+      "docs_fe_update_roles_4_baru_penyesuaian_stok_layar_untuk_role_gudang",
+      "docs_fe_update_roles_5_perubahan_kecil_tapi_kelihatan_di_ui",
+      "docs_fe_update_roles_bikin_transaksi",
+      "docs_fe_update_roles_cancel",
+      "docs_fe_update_roles_checklist_implementasi_fe",
+      "docs_fe_update_roles_field_baru_di_response_transaksi_list_detail",
+      "docs_fe_update_roles_ringkasan_buat_yang_buru_buru",
+      "docs_fe_update_roles_update_api_role_packaging_stock_opname_untuk_tim_fe"
+    ],
+    "13": [
+      "ref_zod",
+      "src_db_database_connection_checkconnection",
+      "src_index",
+      "src_index_app",
+      "src_middlewares_auth_middleware_authmiddleware",
+      "src_routes_members_routes",
+      "src_routes_members_routes_memberroute",
+      "src_routes_product_routes_productroute",
+      "src_routes_transaction_routes",
+      "src_routes_transaction_routes_keduanya",
+      "src_routes_transaction_routes_pengemasan",
+      "src_routes_transaction_routes_penjualan",
+      "src_routes_transaction_routes_transactionroute",
+      "src_routes_users_routes",
+      "src_routes_users_routes_userroute",
+      "src_utils_handle_validation",
+      "src_utils_handle_validation_handlevalidation",
+      "src_utils_handle_validation_label",
+      "src_utils_handle_validation_type_id",
+      "src_validators_member_validator",
+      "src_validators_member_validator_editmemberbyidschema",
+      "src_validators_member_validator_getmemberbyidschema",
+      "src_validators_member_validator_getmemberqueryschema",
+      "src_validators_member_validator_registermemberschema",
+      "src_validators_transaction_validator",
+      "src_validators_transaction_validator_createtransactionschema",
+      "src_validators_transaction_validator_gettransactionsqueryschema",
+      "src_validators_transaction_validator_transactionidparamschema",
+      "src_validators_transaction_validator_updatefulfillmentstatusschema",
+      "src_validators_transaction_validator_updatetransactionstatusschema",
+      "src_validators_user_validator",
+      "src_validators_user_validator_changepasswordschema",
+      "src_validators_user_validator_createuserschema",
+      "src_validators_user_validator_edituserbyidschema",
+      "src_validators_user_validator_edituserroleschema",
+      "src_validators_user_validator_getuserqueryschema",
+      "src_validators_user_validator_loginuserschema",
+      "src_validators_user_validator_useridparamschema"
+    ]
+  },
+  "cohesion": {
+    "0": 0.1013277428371768,
+    "1": 0.10452961672473868,
+    "2": 0.36363636363636365,
+    "4": 0.1619047619047619,
+    "5": 0.07407407407407407,
+    "6": 0.16733870967741934,
+    "8": 0.6666666666666666,
+    "10": 0.18181818181818182,
+    "11": 0.6,
+    "12": 0.16666666666666666,
+    "13": 0.09388335704125178
+  },
+  "gods": [
+    {
+      "id": "src_utils_response_error",
+      "label": "error()",
+      "degree": 42
+    },
+    {
+      "id": "src_utils_db_error_parsedberror",
+      "label": "parseDbError()",
+      "degree": 38
+    },
+    {
+      "id": "src_utils_response_success",
+      "label": "success()",
+      "degree": 36
+    },
+    {
+      "id": "src_utils_errors_notfounderror",
+      "label": "NotFoundError",
+      "degree": 23
+    },
+    {
+      "id": "src_utils_errors_apperror",
+      "label": "AppError",
+      "degree": 14
+    },
+    {
+      "id": "src_services_transaction_service_updatetransactionstatus",
+      "label": "updateTransactionStatus()",
+      "degree": 9
+    },
+    {
+      "id": "ref_drizzle_orm",
+      "label": "drizzle-orm",
+      "degree": 9
+    },
+    {
+      "id": "docs_roles_role_pembagian_kerja",
+      "label": "Role & Pembagian Kerja",
+      "degree": 9
+    },
+    {
+      "id": "scripts_simulate_sh__entry",
+      "label": "simulate.sh script",
+      "degree": 9
+    },
+    {
+      "id": "src_middlewares_auth_middleware_requirerole",
+      "label": "requireRole()",
+      "degree": 8
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Keputusan yang sudah disepakati",
+      "target": "updateTransactionStatus()",
+      "source_files": [
+        "docs/roles.md",
+        "src/services/transaction.service.js"
+      ],
+      "confidence": "INFERRED",
+      "relation": "references",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (code ↔ doc); connects across different repos/directories; bridges separate communities; peripheral node `Keputusan yang sudah disepakati` unexpectedly reaches hub `updateTransactionStatus()`"
+    },
+    {
+      "source": "Soal SO: per-produk atau sesi?",
+      "target": "editProductById()",
+      "source_files": [
+        "docs/roles.md",
+        "src/services/product.service.js"
+      ],
+      "confidence": "INFERRED",
+      "relation": "references",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (code ↔ doc); connects across different repos/directories; bridges separate communities; peripheral node `Soal SO: per-produk atau sesi?` unexpectedly reaches hub `editProductById()`"
+    },
+    {
+      "source": "A. Role & permission — ✅ SELESAI",
+      "target": "requireRole()",
+      "source_files": [
+        "docs/roles.md",
+        "src/middlewares/auth.middleware.js"
+      ],
+      "confidence": "INFERRED",
+      "relation": "references",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (code ↔ doc); connects across different repos/directories; peripheral node `A. Role & permission — ✅ SELESAI` unexpectedly reaches hub `requireRole()`"
+    },
+    {
+      "source": "B. Alur pengemasan (packaging) — ✅ SELESAI",
+      "target": "requireRole()",
+      "source_files": [
+        "docs/roles.md",
+        "src/middlewares/auth.middleware.js"
+      ],
+      "confidence": "INFERRED",
+      "relation": "references",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (code ↔ doc); connects across different repos/directories; peripheral node `B. Alur pengemasan (packaging) — ✅ SELESAI` unexpectedly reaches hub `requireRole()`"
+    },
+    {
+      "source": "Permission matrix (rancangan)",
+      "target": "authMiddleware()",
+      "source_files": [
+        "docs/roles.md",
+        "src/middlewares/auth.middleware.js"
+      ],
+      "confidence": "INFERRED",
+      "relation": "references",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (code ↔ doc); connects across different repos/directories; bridges separate communities"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `error()` connect `Controllers & Responses` to `Database Schema & Errors`, `Product Catalog & Stock`, `Roles & Work Planning`, `App Routing & Auth`?",
+      "why": "High betweenness centrality (0.081) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `RFC-4180`, `drizzle-zod`, `pg` to the rest of the system?",
+      "why": "11 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Database Schema & Errors` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.1013277428371768 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `drizzle-orm` connect `Database Schema & Errors` to `Product Catalog & Stock`, `Project Dependencies`?",
+      "why": "High betweenness centrality (0.065) - this node is a cross-community bridge."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Product Catalog & Stock` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.10452961672473868 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `parseDbError()` connect `Database Schema & Errors` to `Product Catalog & Stock`, `Controllers & Responses`?",
+      "why": "High betweenness centrality (0.046) - this node is a cross-community bridge."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Project Dependencies` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.07407407407407407 - nodes in this community are weakly interconnected."
+    }
+  ]
+}

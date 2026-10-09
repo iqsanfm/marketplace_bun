@@ -75,3 +75,21 @@ export const exportTransactionsQuerySchema = z
     message: "Tanggal awal tidak boleh setelah tanggal akhir",
     path: ["from"],
   });
+
+const fromNotAfterTo = [
+  (q) => !(q.from && q.to && q.from > q.to),
+  { message: "Tanggal awal tidak boleh setelah tanggal akhir", path: ["from"] },
+];
+
+export const summaryQuerySchema = z
+  .object({ from: tanggal.optional(), to: tanggal.optional() })
+  .refine(...fromNotAfterTo);
+
+// deret harian dipakai sparkline — dibatasi supaya generate_series tidak kebablasan
+export const dailyQuerySchema = z
+  .object({ from: tanggal, to: tanggal })
+  .refine(...fromNotAfterTo)
+  .refine((q) => (Date.parse(q.to) - Date.parse(q.from)) / 86_400_000 <= 366, {
+    message: "Rentang maksimal 1 tahun",
+    path: ["to"],
+  });

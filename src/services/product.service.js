@@ -445,12 +445,17 @@ export const getStockAdjustments = async (productId, { page, limit }) => {
   }
 };
 
-export const getBestSellerProducts = async (category, page, limit) => {
+// Tanggal transaksi dibaca WIB, sama seperti rekap & ringkasan transaksi.
+const createdAtWib = sql`(${transactionsTable.createdAt} AT TIME ZONE 'UTC' AT TIME ZONE 'Asia/Jakarta')`;
+
+export const getBestSellerProducts = async (category, page, limit, { from, to } = {}) => {
   try {
     const offset = (page - 1) * limit;
     const conditions = [eq(transactionsTable.status, "paid")];
 
     if (category) conditions.push(eq(productTable.category, category));
+    if (from) conditions.push(sql`${createdAtWib}::date >= ${from}`);
+    if (to) conditions.push(sql`${createdAtWib}::date <= ${to}`);
 
     const whereClause = and(...conditions);
 
