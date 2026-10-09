@@ -1,7 +1,9 @@
 import { Hono } from "hono";
 import { cors } from "hono/cors";
+import { HTTPException } from "hono/http-exception";
 
 import { checkConnection } from "./db/database.connection";
+import { error } from "./utils/response.js";
 
 import userRoute from "./routes/users.routes.js";
 import productRoute from "./routes/product.routes.js";
@@ -22,6 +24,16 @@ app.route("/member", memberRoute);
 app.route("/product", productRoute);
 
 app.route("/transactions", transactionRoute);
+
+// Default Hono balas teks polos ("404 Not Found", "Malformed JSON ...");
+// disamakan ke envelope JSON + bahasa Indonesia.
+app.notFound((c) => error(c, "Endpoint tidak ditemukan", 404));
+app.onError((err, c) => {
+  if (err instanceof HTTPException && err.status < 500)
+    return error(c, "Format data yang dikirim tidak valid", err.status);
+  console.error(err);
+  return error(c, "Terjadi kesalahan pada server, coba lagi nanti", 500);
+});
 
 app.get("/", (c) => {
   return c.text("Hello Hono!");

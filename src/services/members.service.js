@@ -1,4 +1,4 @@
-import { eq, and, gte, lte, ilike, sql, count, or } from "drizzle-orm";
+import { eq, and, ilike, sql, or, asc, desc } from "drizzle-orm";
 import { db } from "../db/database.connection";
 import { membersTable } from "../db/schema.database";
 import { parseDbError } from "../utils/db-error";
@@ -20,7 +20,7 @@ export const registerMember = async (data) => {
   }
 };
 
-export const getAllMembers = async ({ page, limit, search }) => {
+export const getAllMembers = async ({ page, limit, search, sort }) => {
   try {
     const offset = (page - 1) * limit;
     const conditions = [];
@@ -58,7 +58,14 @@ export const getAllMembers = async ({ page, limit, search }) => {
     }
 
     const [members, countResult] = await Promise.all([
-      dataQuery.limit(limit).offset(offset),
+      // id sebagai tie-breaker biar urutan antar halaman stabil
+      dataQuery
+        .orderBy(
+          sort === "desc" ? desc(membersTable.name) : asc(membersTable.name),
+          asc(membersTable.id),
+        )
+        .limit(limit)
+        .offset(offset),
       countQuery,
     ]);
 

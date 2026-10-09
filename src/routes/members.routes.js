@@ -21,7 +21,7 @@ import { authMiddleware, requireRole } from "../middlewares/auth.middleware";
 const memberRoute = new Hono();
 
 memberRoute.use("*", authMiddleware);
-// Member urusan penjualan. Packaging & gudang tidak ada urusan dengan data pembeli.
+// Member urusan penjualan. Gudang tidak ada urusan dengan data pembeli.
 memberRoute.use("*", requireRole("admin", "kasir", "admin_online"));
 
 memberRoute.post(

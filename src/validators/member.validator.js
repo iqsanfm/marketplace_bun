@@ -25,6 +25,8 @@ export const getMemberByIdSchema = z.object({
 
 export const getMemberQuerySchema = z.object({
   search: z.string().optional(),
+  // urut nama member: asc = A-Z, desc = Z-A
+  sort: z.enum(["asc", "desc"]).default("asc"),
   page: z.coerce.number().int().positive().default(1),
   limit: z.coerce.number().int().positive().max(100).default(10),
 });

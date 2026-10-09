@@ -27,6 +27,7 @@ export const updateTransactionStatusSchema = z
   .object({
     status: z.enum(["paid", "cancelled"], "Status tidak valid"),
     paymentMethod: z.enum(["cash", "transfer"]).optional(),
+    amountReceived: z.number().positive("Uang diterima harus lebih dari 0").optional(),
     cancelReason: z
       .string()
       .min(1, "Alasan tidak boleh kosong")
@@ -37,18 +38,14 @@ export const updateTransactionStatusSchema = z
     message: "paymentMethod wajib diisi kalau status paid",
     path: ["paymentMethod"],
   })
+  .refine((data) => data.paymentMethod !== "cash" || data.amountReceived, {
+    message: "amountReceived wajib diisi kalau bayar cash",
+    path: ["amountReceived"],
+  })
   .refine((data) => data.status !== "cancelled" || data.cancelReason, {
     message: "cancelReason wajib diisi kalau status cancelled",
     path: ["cancelReason"],
   });
-
-// belum_dikemas bukan target transisi — itu status awal waktu order dibayar
-export const updateFulfillmentStatusSchema = z.object({
-  fulfillmentStatus: z.enum(
-    ["dikemas", "diambil"],
-    "Status pengemasan tidak valid",
-  ),
-});
 
 export const transactionIdParamSchema = z.object({
   id: z.string().uuid("Transaction ID tidak valid"),
@@ -57,10 +54,24 @@ export const transactionIdParamSchema = z.object({
 export const getTransactionsQuerySchema = z.object({
   status: z.enum(["pending", "paid", "cancelled"]).optional(),
   orderChannel: z.enum(["offline", "online"]).optional(),
-  fulfillmentStatus: z
-    .enum(["belum_dikemas", "dikemas", "diambil"])
-    .optional(),
   search: z.string().min(1).optional(),
   page: z.coerce.number().int().positive().default(1),
   limit: z.coerce.number().int().positive().max(100).default(10),
 });
+
+const tanggal = z.iso.date("Format tanggal harus YYYY-MM-DD");
+
+export const exportTransactionsQuerySchema = z
+  .object({
+    from: tanggal.optional(),
+    to: tanggal.optional(),
+    status: z.enum(["pending", "paid", "cancelled"]).optional(),
+    orderChannel: z.enum(["offline", "online"]).optional(),
+    search: z.string().min(1).optional(),
+    // CSV tidak punya sheet, jadi rincian produk jadi file terpisah
+    jenis: z.enum(["transaksi", "item"]).default("transaksi"),
+  })
+  .refine((q) => !(q.from && q.to && q.from > q.to), {
+    message: "Tanggal awal tidak boleh setelah tanggal akhir",
+    path: ["from"],
+  });

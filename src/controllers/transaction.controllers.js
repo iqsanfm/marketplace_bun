@@ -1,15 +1,16 @@
 import {
   createTransaction,
   updateTransactionStatus,
-  updateFulfillmentStatus,
   getAllTransactions,
   getTransactionsSummary,
   getTransactionById,
   getInvoiceById,
   assertChannelAllowed,
   channelForRole,
+  getTransactionsForExport,
 } from "../services/transaction.service";
 import { success, error } from "../utils/response";
+import { toCsv } from "../utils/csv.js";
 
 export const handleCreateTransaction = async (c) => {
   try {
@@ -49,11 +50,6 @@ export const listTransactions = async (c) => {
   try {
     const loggedInUser = c.get("user");
     const query = c.req.valid("query");
-    // packaging cuma lihat antrian kerjanya sendiri, bukan semua transaksi
-    if (loggedInUser.role === "packaging") {
-      query.orderChannel = "online";
-      query.status = "paid";
-    }
     // kasir/admin_online dikunci ke channel-nya — filter dari client diabaikan,
     // percuma menolak mereka mengubah order channel lain kalau daftarnya masih bocor
     const locked = channelForRole(loggedInUser.role);
@@ -84,26 +80,29 @@ export const transactionById = async (c) => {
   }
 };
 
-export const changeFulfillmentStatus = async (c) => {
-  try {
-    const { id } = c.req.valid("param");
-    const { fulfillmentStatus } = c.req.valid("json");
-    const transaction = await updateFulfillmentStatus(
-      id,
-      c.get("user"),
-      fulfillmentStatus,
-    );
-    return success(c, transaction);
-  } catch (err) {
-    return error(c, err.message, err.status ?? 400);
-  }
-};
-
 export const transactionInvoice = async (c) => {
   try {
     const { id } = c.req.valid("param");
     const invoice = await getInvoiceById(id, c.get("user"));
     return success(c, invoice);
+  } catch (err) {
+    return error(c, err.message, err.status ?? 400);
+  }
+};
+
+export const exportTransactionsCsv = async (c) => {
+  try {
+    const { jenis, ...filter } = c.req.valid("query");
+    // sama seperti daftar transaksi: kasir/admin_online cuma dapat channel-nya sendiri
+    const locked = channelForRole(c.get("user").role);
+    if (locked) filter.orderChannel = locked;
+    const { header, rows } = await getTransactionsForExport(filter, jenis);
+    const filename = `rekap-${jenis}_${filter.from ?? "awal"}_sd_${filter.to ?? "sekarang"}.csv`;
+    // BOM: tanpa ini Excel di Windows salah baca huruf beraksen.
+    return c.body("﻿" + toCsv(header, rows), 200, {
+      "Content-Type": "text/csv; charset=utf-8",
+      "Content-Disposition": `attachment; filename="${filename}"`,
+    });
   } catch (err) {
     return error(c, err.message, err.status ?? 400);
   }

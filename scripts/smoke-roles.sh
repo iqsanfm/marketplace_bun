@@ -28,7 +28,6 @@ ADM=$(reg "adm$S@x.com" admin)
 KSR=$(reg "ksr$S@x.com" kasir)
 AOL=$(reg "aol$S@x.com" admin_online)
 GDG=$(reg "gdg$S@x.com" gudang)
-PKG=$(reg "pkg$S@x.com" packaging)
 
 echo "== produk: admin only =="
 PID=$(body $ADM POST /product "{\"product_name\":\"Kopi Smoke $S\",\"price\":10000,\"stock\":10,\"sku\":\"SMOKE$S\"}" | jq -r .data[0].id)
@@ -58,7 +57,7 @@ chk "stok kepotong jadi 7" 7 "$($DB "SELECT stock FROM product WHERE id='$PID';"
 echo "== channel juga dijaga di transaksi yang sudah ada =="
 # bikin transaksi sudah difilter per channel; bayar/batal/invoice harus ikut, kalau tidak
 # kasir tinggal ambil id order online dari GET /transactions lalu melunasinya.
-chk "kasir tandai paid order online ditolak"   403 "$(code $KSR PATCH /transactions/$OID/status '{"status":"paid","paymentMethod":"cash"}')"
+chk "kasir tandai paid order online ditolak"   403 "$(code $KSR PATCH /transactions/$OID/status '{"status":"paid","paymentMethod":"cash","amountReceived":100000}')"
 chk "kasir buka invoice order online ditolak"  403 "$(code $KSR GET /transactions/$OID/invoice)"
 chk "admin_online tandai paid order offline ditolak" 403 "$(code $AOL PATCH /transactions/$TID/status '{"status":"paid","paymentMethod":"transfer"}')"
 chk "admin_online buka invoice offline ditolak"      403 "$(code $AOL GET /transactions/$TID/invoice)"
@@ -74,52 +73,19 @@ chk "kasir minta filter online tetap dapat offline" "" \
   "$(body $KSR GET "/transactions?limit=100&orderChannel=online" | jq -r '[.data.items[] | select(.orderChannel!="offline")] | .[].id')"
 
 chk "cancel tanpa alasan ditolak" 400 "$(code $KSR PATCH /transactions/$TID/status '{"status":"cancelled"}')"
-chk "kasir tandai paid" 200 "$(code $KSR PATCH /transactions/$TID/status '{"status":"paid","paymentMethod":"cash"}')"
+chk "kasir tandai paid" 200 "$(code $KSR PATCH /transactions/$TID/status '{"status":"paid","paymentMethod":"cash","amountReceived":100000}')"
 chk "paidBy tercatat" "$($DB "SELECT id FROM users WHERE email='ksr$S@x.com';")" "$($DB "SELECT \"paidBy\" FROM transactions WHERE id='$TID';")"
 chk "kasir cancel yang sudah paid DITOLAK" 403 "$(code $KSR PATCH /transactions/$TID/status '{"status":"cancelled","cancelReason":"iseng"}')"
 chk "admin cancel yang sudah paid BOLEH"  200 "$(code $ADM PATCH /transactions/$TID/status '{"status":"cancelled","cancelReason":"pembeli batal, refund tunai"}')"
 chk "stok balik jadi 9" 9 "$($DB "SELECT stock FROM product WHERE id='$PID';")"
 chk "alasan tersimpan" "pembeli batal, refund tunai" "$($DB "SELECT \"cancelReason\" FROM transactions WHERE id='$TID';")"
 chk "cancelledBy tercatat" "$($DB "SELECT id FROM users WHERE email='adm$S@x.com';")" "$($DB "SELECT \"cancelledBy\" FROM transactions WHERE id='$TID';")"
-chk "cancelled tidak bisa diubah lagi" 400 "$(code $ADM PATCH /transactions/$TID/status '{"status":"paid","paymentMethod":"cash"}')"
+chk "cancelled tidak bisa diubah lagi" 400 "$(code $ADM PATCH /transactions/$TID/status '{"status":"paid","paymentMethod":"cash","amountReceived":100000}')"
 
 echo "== pending boleh dicancel kasir =="
 T2=$(body $KSR POST /transactions "{\"items\":[{\"productId\":\"$PID\",\"quantity\":1}]}" | jq -r .data.id)
 chk "kasir cancel pending boleh" 200 "$(code $KSR PATCH /transactions/$T2/status '{"status":"cancelled","cancelReason":"salah input"}')"
 chk "stok balik lagi jadi 9" 9 "$($DB "SELECT stock FROM product WHERE id='$PID';")"
-
-echo "== packaging: batas akses =="
-chk "packaging bikin transaksi ditolak"  403 "$(code $PKG POST /transactions "$J_ONLINE")"
-chk "packaging buka summary ditolak"     403 "$(code $PKG GET /transactions/summary)"
-chk "packaging tandai paid ditolak"      403 "$(code $PKG PATCH /transactions/$OID/status '{"status":"paid","paymentMethod":"cash"}')"
-chk "packaging lihat antrian boleh"      200 "$(code $PKG GET /transactions)"
-chk "packaging buka order offline ditolak" 403 "$(code $PKG GET /transactions/$TID)"
-chk "kasir ubah status kemasan ditolak"  403 "$(code $KSR PATCH /transactions/$OID/fulfillment '{"fulfillmentStatus":"dikemas"}')"
-
-echo "== alur pengemasan =="
-chk "order online belum dibayar: belum masuk antrian" "" "$($DB "SELECT coalesce(\"fulfillmentStatus\"::text,'') FROM transactions WHERE id='$OID';")"
-chk "belum dibayar tidak bisa dikemas" 400 "$(code $PKG PATCH /transactions/$OID/fulfillment '{"fulfillmentStatus":"dikemas"}')"
-chk "admin_online tandai paid" 200 "$(code $AOL PATCH /transactions/$OID/status '{"status":"paid","paymentMethod":"transfer"}')"
-chk "begitu paid otomatis belum_dikemas" belum_dikemas "$($DB "SELECT \"fulfillmentStatus\" FROM transactions WHERE id='$OID';")"
-chk "packaging buka order online paid boleh" 200 "$(code $PKG GET /transactions/$OID)"
-chk "lompat ke diambil ditolak" 400 "$(code $PKG PATCH /transactions/$OID/fulfillment '{"fulfillmentStatus":"diambil"}')"
-chk "belum_dikemas -> dikemas" 200 "$(code $PKG PATCH /transactions/$OID/fulfillment '{"fulfillmentStatus":"dikemas"}')"
-chk "packedBy tercatat" "$($DB "SELECT id FROM users WHERE email='pkg$S@x.com';")" "$($DB "SELECT \"packedBy\" FROM transactions WHERE id='$OID';")"
-chk "dikemas -> diambil" 200 "$(code $PKG PATCH /transactions/$OID/fulfillment '{"fulfillmentStatus":"diambil"}')"
-chk "handedOverBy tercatat" "$($DB "SELECT id FROM users WHERE email='pkg$S@x.com';")" "$($DB "SELECT \"handedOverBy\" FROM transactions WHERE id='$OID';")"
-chk "diambil = final, tidak bisa mundur" 400 "$(code $PKG PATCH /transactions/$OID/fulfillment '{"fulfillmentStatus":"dikemas"}')"
-
-echo "== order offline tidak kena alur pengemasan =="
-T3=$(body $KSR POST /transactions "{\"items\":[{\"productId\":\"$PID\",\"quantity\":1}]}" | jq -r .data.id)
-code $KSR PATCH /transactions/$T3/status '{"status":"paid","paymentMethod":"cash"}' > /dev/null
-chk "offline paid tetap tanpa status kemasan" "" "$($DB "SELECT coalesce(\"fulfillmentStatus\"::text,'') FROM transactions WHERE id='$T3';")"
-chk "offline tidak bisa dikemas" 400 "$(code $ADM PATCH /transactions/$T3/fulfillment '{"fulfillmentStatus":"dikemas"}')"
-
-# isi listnya, bukan cuma status 200: antrian packaging harus cuma online+paid
-IDS=$(body $PKG GET "/transactions?limit=100" | jq -r '.data.items[].id')
-chk "antrian packaging berisi order online paid" true "$(grep -q "$OID" <<< "$IDS" && echo true)"
-chk "antrian packaging tidak berisi order offline paid" true "$(grep -q "$T3" <<< "$IDS" || echo true)"
-chk "kasir tetap lihat order offline" true "$(body $KSR GET "/transactions?limit=100" | jq -r '.data.items[].id' | grep -q "$T3" && echo true)"
 
 echo "== stock opname (gudang) =="
 STOK=$($DB "SELECT stock FROM product WHERE id='$PID';")

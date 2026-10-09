@@ -34,7 +34,7 @@ productRoute.use("*", authMiddleware);
 // Semua peran kerja boleh lihat katalog. Role "user" (belum ditugaskan) tidak.
 productRoute.use(
   "*",
-  requireRole("admin", "kasir", "admin_online", "packaging", "gudang"),
+  requireRole("admin", "kasir", "admin_online", "gudang"),
 );
 
 productRoute.post(

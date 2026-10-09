@@ -7,6 +7,7 @@ import {
   sql,
   count,
   or,
+  asc,
   desc,
   inArray,
 } from "drizzle-orm";
@@ -97,6 +98,7 @@ export const getAllProducts = async ({
   search,
   minPrice,
   maxPrice,
+  sort,
   page,
   limit,
 }) => {
@@ -142,7 +144,17 @@ export const getAllProducts = async ({
     }
 
     const [items, countResult] = await Promise.all([
-      dataQuery.limit(limit).offset(offset),
+      // id sebagai tie-breaker: tanpa urutan yang pasti, paginasi bisa
+      // menampilkan produk dobel / melompati produk antar halaman.
+      dataQuery
+        .orderBy(
+          sort === "desc"
+            ? desc(productTable.product_name)
+            : asc(productTable.product_name),
+          asc(productTable.id),
+        )
+        .limit(limit)
+        .offset(offset),
       countQuery,
     ]);
 

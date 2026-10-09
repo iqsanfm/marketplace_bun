@@ -37,6 +37,8 @@ export const getProductsQuerySchema = z.object({
   search: z.string().optional(),
   minPrice: z.coerce.number().nonnegative().optional(),
   maxPrice: z.coerce.number().nonnegative().optional(),
+  // urut nama produk: asc = A-Z, desc = Z-A
+  sort: z.enum(["asc", "desc"]).default("asc"),
   page: z.coerce.number().int().positive().default(1),
   limit: z.coerce.number().int().positive().max(100).default(10),
 });

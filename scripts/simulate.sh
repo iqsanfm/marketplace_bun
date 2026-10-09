@@ -43,7 +43,6 @@ stok() { $DB "SELECT stock FROM product WHERE id='$1';"; }
 ADM=$(reg "sim-adm$S@x.com" admin)
 KSR=$(reg "sim-ksr$S@x.com" kasir)
 AOL=$(reg "sim-aol$S@x.com" admin_online)
-PKG=$(reg "sim-pkg$S@x.com" packaging)
 GDG=$(reg "sim-gdg$S@x.com" gudang)
 USR=$(reg "sim-usr$S@x.com" "")   # belum ditugaskan
 
@@ -66,10 +65,11 @@ ok "nama tamu digenerate otomatis" true "$(c2 <<< "$R" | jq -r '.data.guestName 
 ok "stok kopi 100 -> 98" 98 "$(stok $KOPI)"
 ok "total 2x20000 + 1x15000" 55000 "$(c2 <<< "$R" | jq -r '.data.totalAmount | tonumber')"
 
-R=$(req $KSR PATCH /transactions/$T1/status '{"status":"paid","paymentMethod":"cash"}')
+R=$(req $KSR PATCH /transactions/$T1/status '{"status":"paid","paymentMethod":"cash","amountReceived":100000}')
 ok "kasir terima pembayaran cash" 200 "$(c1 <<< "$R")"
-ok "offline tidak masuk antrian kemasan" null "$(c2 <<< "$R" | jq -r .data.fulfillmentStatus)"
-ok "invoice bisa dicetak" 200 "$(c1 <<< "$(req $KSR GET /transactions/$T1/invoice)")"
+R=$(req $KSR GET /transactions/$T1/invoice)
+ok "invoice bisa dicetak" 200 "$(c1 <<< "$R")"
+ok "kembalian 100000 - 55000" 45000 "$(c2 <<< "$R" | jq -r '.data.change | tonumber')"
 
 # Siang: pembeli chat WA, admin online yang input, pembelinya member
 MJ="{\"name\":\"Budi SIM$S\",\"phone\":\"0812$S\",\"email\":\"budi$S@x.com\"}"
@@ -82,16 +82,8 @@ R=$(req $AOL POST /transactions "$J"); T2=$(c2 <<< "$R" | jq -r .data.id)
 ok "admin online input orderan WA" 201 "$(c1 <<< "$R")"
 ok "stok roti 5 -> 2" 2 "$(stok $ROTI)"
 
-ok "belum bayar: belum masuk antrian" null "$(c2 <<< "$(req $AOL GET /transactions/$T2)" | jq -r .data.fulfillmentStatus)"
 R=$(req $AOL PATCH /transactions/$T2/status '{"status":"paid","paymentMethod":"transfer"}')
 ok "pembeli transfer, ditandai paid" 200 "$(c1 <<< "$R")"
-ok "otomatis masuk antrian packaging" belum_dikemas "$(c2 <<< "$R" | jq -r .data.fulfillmentStatus)"
-
-ok "packaging lihat antrian" true \
-   "$(req $PKG GET "/transactions?limit=100" | c2 | jq -r --arg t "$T2" '[.data.items[].id] | index($t) != null')"
-ok "packaging selesai mengemas" 200 "$(c1 <<< "$(req $PKG PATCH /transactions/$T2/fulfillment '{"fulfillmentStatus":"dikemas"}')")"
-ok "driver ambil barang"        200 "$(c1 <<< "$(req $PKG PATCH /transactions/$T2/fulfillment '{"fulfillmentStatus":"diambil"}')")"
-
 # Sore: gudang stock opname, kopi fisik kurang 2
 R=$(req $GDG POST /product/$KOPI/stock-adjustments '{"stockAfter":96,"reason":"SO sore: 2 gelas tumpah"}')
 ok "gudang catat selisih SO" 201 "$(c1 <<< "$R")"
@@ -134,8 +126,7 @@ ok "SO tanpa alasan"        400 "$(c1 <<< "$(req $GDG POST /product/$KOPI/stock-
 ok "SO stok minus"          400 "$(c1 <<< "$(req $GDG POST /product/$KOPI/stock-adjustments '{"stockAfter":-1,"reason":"x"}')")"
 ok "edit produk bawa stock" 400 "$(c1 <<< "$(req $ADM PATCH /product/$KOPI '{"stock":9999}')")"
 
-ok "bayar 2x"  400 "$(c1 <<< "$(req $KSR PATCH /transactions/$T1/status '{"status":"paid","paymentMethod":"cash"}')")"
-ok "kemas order offline" 400 "$(c1 <<< "$(req $PKG PATCH /transactions/$T1/fulfillment '{"fulfillmentStatus":"dikemas"}')")"
+ok "bayar 2x"  400 "$(c1 <<< "$(req $KSR PATCH /transactions/$T1/status '{"status":"paid","paymentMethod":"cash","amountReceived":100000}')")"
 
 hdr "BAGIAN 2b — stok tidak boleh bocor kalau transaksi gagal"
 SEBELUM_KOPI=$(stok $KOPI)
@@ -156,25 +147,6 @@ SESUDAH=$(stok $TEH)
 note "produk sama ditulis 2 baris dalam 1 order (2 + 3)" \
      "status $(c1 <<< "$R"), total $(c2 <<< "$R" | jq -r .data.totalAmount), stok $SEBELUM -> $SESUDAH (turun $((SEBELUM-SESUDAH)))"
 
-# 2. cancel order yang barangnya sudah dibawa driver -> HARUS DITOLAK
-SEBELUM=$(stok $ROTI)
-R=$(req $ADM PATCH /transactions/$T2/status '{"status":"cancelled","cancelReason":"pembeli komplain"}')
-ok "cancel order yang sudah 'diambil' ditolak" 400 "$(c1 <<< "$R")"
-ok "stok tidak balik ke sistem"      "$SEBELUM" "$(stok $ROTI)"
-ok "transaksinya tetap paid"         paid "$($DB "SELECT status FROM transactions WHERE id='$T2';")"
-
-# 2b. cancel order yang baru sampai 'dikemas' -> masih boleh, stok balik
-J="{\"items\":[{\"productId\":\"$KOPI\",\"quantity\":4}],\"orderChannel\":\"online\"}"
-TK2=$(req $AOL POST /transactions "$J" | c2 | jq -r .data.id)
-req $AOL PATCH /transactions/$TK2/status '{"status":"paid","paymentMethod":"transfer"}' > /dev/null
-req $PKG PATCH /transactions/$TK2/fulfillment '{"fulfillmentStatus":"dikemas"}' > /dev/null
-SEBELUM=$(stok $KOPI)
-ok "cancel order yang baru 'dikemas' boleh" 200 \
-   "$(c1 <<< "$(req $ADM PATCH /transactions/$TK2/status '{"status":"cancelled","cancelReason":"pembeli batal sebelum diambil"}')")"
-ok "stoknya balik" $((SEBELUM+4)) "$(stok $KOPI)"
-ok "keluar dari antrian kemasan" "" "$($DB "SELECT coalesce(\"fulfillmentStatus\"::text,'') FROM transactions WHERE id='$TK2';")"
-ok "jejak pernah dikemas tetap ada" 1 "$($DB "SELECT count(*) FROM transactions WHERE id='$TK2' AND \"packedAt\" IS NOT NULL;")"
-
 # 3. dua cancel barengan pada transaksi yang sama
 J="{\"items\":[{\"productId\":\"$KOPI\",\"quantity\":10}]}"
 TR=$(req $KSR POST /transactions "$J" | c2 | jq -r .data.id)
@@ -189,17 +161,6 @@ SESUDAH=$(stok $KOPI)
 SUKSES=$(cat "$TMP"/c[123] | grep -o '"success":true' | wc -l | tr -d ' ')
 ok "3 cancel barengan: stok cuma balik 1x" $((SEBELUM+10)) "$SESUDAH"
 ok "3 cancel barengan: cuma 1 yang sukses"  1 "$SUKSES"
-
-# 3b. dua orang packaging klik "dikemas" barengan pada order yang sama
-J="{\"items\":[{\"productId\":\"$KOPI\",\"quantity\":1}],\"orderChannel\":\"online\"}"
-TF=$(req $AOL POST /transactions "$J" | c2 | jq -r .data.id)
-req $AOL PATCH /transactions/$TF/status '{"status":"paid","paymentMethod":"transfer"}' > /dev/null
-for n in 1 2; do
-  curl -s -o "$TMP/f$n" -X PATCH "$B/transactions/$TF/fulfillment" -H "Authorization: Bearer $PKG" \
-    -H 'content-type: application/json' -d '{"fulfillmentStatus":"dikemas"}' &
-done
-wait
-ok "2 klik 'dikemas' barengan: cuma 1 sukses" 1 "$(cat "$TMP"/f[12] | grep -o '"success":true' | wc -l | tr -d ' ')"
 
 # 4. rebutan barang terakhir
 LAST=$(mkprod "Barang Terakhir SIM$S" 5000 1 "SIML$S")
@@ -224,7 +185,6 @@ R=$(req $AOL POST /member/register "{\"name\":\"Tanpa Email$S\",\"phone\":\"0877
 ok "member boleh tanpa email"        201 "$(c1 <<< "$R")"
 MG=$(c2 <<< "$R" | jq -r '.data[0].id // .data.id')
 ok "gudang bikin member ditolak"     403 "$(c1 <<< "$(req $GDG POST /member/register "{\"name\":\"G$S\",\"phone\":\"0899$S\"}")")"
-ok "packaging hapus member ditolak"  403 "$(c1 <<< "$(req $PKG DELETE /member/$MG)")"
 ok "kasir tetap boleh kelola member" 200 "$(c1 <<< "$(req $KSR GET /member)")"
 
 # 7. admin tidak boleh mengutak-atik role sendiri
@@ -242,7 +202,7 @@ ok "pesannya menjelaskan sebabnya" "Data ini masih dipakai data lain, tidak bisa
    "$(c2 <<< "$R" | jq -r .error)"
 
 # 9. invoice transaksi batal: tetap keluar, tapi labelnya jujur
-R=$(req $ADM GET /transactions/$TK2/invoice)
+R=$(req $ADM GET /transactions/$TR/invoice)
 ok "invoice transaksi cancelled tetap keluar" 200 "$(c1 <<< "$R")"
 ok "labelnya 'Batal', bukan 'Belum Dibayar'" Batal "$(c2 <<< "$R" | jq -r .data.statusLabel)"
 ok "PATCH /member/:id cuma kirim nama" 200 \
@@ -262,10 +222,10 @@ CC0=$(jq -r '[.data[] | select(.status=="cancelled") | .count] | add // 0' <<< "
 # jual 2 pcs -> paid offline (kasir) ; jual 3 pcs -> paid lalu dibatalkan admin
 JL="{\"items\":[{\"productId\":\"$LAP\",\"quantity\":2}]}"
 TA=$(req $KSR POST /transactions "$JL" | c2 | jq -r .data.id)
-req $KSR PATCH /transactions/$TA/status '{"status":"paid","paymentMethod":"cash"}' > /dev/null
+req $KSR PATCH /transactions/$TA/status '{"status":"paid","paymentMethod":"cash","amountReceived":100000}' > /dev/null
 JL="{\"items\":[{\"productId\":\"$LAP\",\"quantity\":3}]}"
 TB=$(req $KSR POST /transactions "$JL" | c2 | jq -r .data.id)
-req $KSR PATCH /transactions/$TB/status '{"status":"paid","paymentMethod":"cash"}' > /dev/null
+req $KSR PATCH /transactions/$TB/status '{"status":"paid","paymentMethod":"cash","amountReceived":100000}' > /dev/null
 req $ADM PATCH /transactions/$TB/status '{"status":"cancelled","cancelReason":"tes laporan"}' > /dev/null
 
 SA=$(req $ADM GET /transactions/summary | c2)

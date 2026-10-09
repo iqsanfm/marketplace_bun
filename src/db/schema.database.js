@@ -14,7 +14,6 @@ export const userRoleEnum = pgEnum("user_role", [
   "admin",
   "kasir",
   "admin_online",
-  "packaging",
   "gudang",
 ]);
 export const transactionStatusEnum = pgEnum("transaction_status", [
@@ -26,14 +25,6 @@ export const transactionStatusEnum = pgEnum("transaction_status", [
 export const paymentMethodEnum = pgEnum("payment_method", ["cash", "transfer"]);
 
 export const orderChannelEnum = pgEnum("order_channel", ["offline", "online"]);
-
-// Soal pengemasan, dipisah dari transactionStatusEnum yang soal pembayaran.
-// Cuma relevan buat order online; null artinya tidak perlu dikemas / belum dibayar.
-export const fulfillmentStatusEnum = pgEnum("fulfillment_status", [
-  "belum_dikemas",
-  "dikemas",
-  "diambil",
-]);
 
 export const usersTable = pgTable("users", {
   id: uuid().primaryKey().defaultRandom(),
@@ -89,15 +80,12 @@ export const transactionsTable = pgTable("transactions", {
   orderChannel: orderChannelEnum().notNull().default("offline"),
   totalAmount: numeric().notNull(),
   paymentMethod: paymentMethodEnum(),
+  // uang yang diserahkan pembeli, cuma diisi kalau bayar cash; kembalian dihitung dari sini
+  amountReceived: numeric(),
   paidAt: timestamp(),
   paidBy: uuid().references(() => usersTable.id),
   cancelReason: text(),
   cancelledBy: uuid().references(() => usersTable.id),
-  fulfillmentStatus: fulfillmentStatusEnum(),
-  packedBy: uuid().references(() => usersTable.id),
-  packedAt: timestamp(),
-  handedOverBy: uuid().references(() => usersTable.id),
-  handedOverAt: timestamp(),
   createdAt: timestamp().notNull().defaultNow(),
 });
 

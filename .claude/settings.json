@@ -6,7 +6,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/heaven/.local/bin/graphify hook-guard search"
+            "command": "C:/Users/Heaven/.local/bin/graphify.EXE hook-guard search",
+            "timeout": 10
           }
         ]
       },
@@ -15,7 +16,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/heaven/.local/bin/graphify hook-guard read"
+            "command": "C:/Users/Heaven/.local/bin/graphify.EXE hook-guard read",
+            "timeout": 10
           }
         ]
       }

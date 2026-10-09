@@ -37,7 +37,10 @@ export const parseCsv = (text) => {
 };
 
 const quote = (value) => {
-  const s = String(value ?? "");
+  let s = String(value ?? "");
+  // Sel yang diawali = + - @ dijalankan Excel sebagai rumus (CSV injection);
+  // nama tamu/produk itu ketikan bebas. Angka negatif dibiarkan.
+  if (/^[=+\-@]/.test(s) && isNaN(s)) s = "'" + s;
   return /[",\r\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
 };
 

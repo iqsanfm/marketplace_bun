@@ -1,4 +1,4 @@
-import { and, eq, gte, ilike, inArray, or, sql } from "drizzle-orm";
+import { and, desc, eq, gte, ilike, inArray, or, sql } from "drizzle-orm";
 
 import { db } from "../db/database.connection";
 
@@ -8,6 +8,7 @@ import {
   productTable,
   paymentMethodEnum,
   membersTable,
+  usersTable,
 } from "../db/schema.database";
 import { parseDbError } from "../utils/db-error";
 import { AppError, NotFoundError } from "../utils/errors";
@@ -101,10 +102,19 @@ export const createTransaction = async (
   }
 };
 
+// Nama pembeli boleh potongan di mana saja; ID cuma dicocokkan dari depan karena
+// yang dipegang orang itu awalan di struk/chat, dan potongan tengah gampang nyasar.
+// Butuh join ke membersTable di query pemanggilnya.
+const searchCondition = (search) =>
+  or(
+    ilike(transactionsTable.guestName, `%${search}%`),
+    ilike(membersTable.name, `%${search}%`),
+    ilike(sql`${transactionsTable.id}::text`, `${search}%`),
+  );
+
 export const getAllTransactions = async ({
   status,
   orderChannel,
-  fulfillmentStatus,
   search,
   page,
   limit,
@@ -115,18 +125,7 @@ export const getAllTransactions = async ({
     if (status) conditions.push(eq(transactionsTable.status, status));
     if (orderChannel)
       conditions.push(eq(transactionsTable.orderChannel, orderChannel));
-    if (fulfillmentStatus)
-      conditions.push(
-        eq(transactionsTable.fulfillmentStatus, fulfillmentStatus),
-      );
-    if (search) {
-      conditions.push(
-        or(
-          ilike(transactionsTable.guestName, `%${search}%`),
-          ilike(membersTable.name, `%${search}%`),
-        ),
-      );
-    }
+    if (search) conditions.push(searchCondition(search));
     const where = conditions.length ? and(...conditions) : undefined;
 
     let dataQuery = db
@@ -135,7 +134,6 @@ export const getAllTransactions = async ({
         userId: transactionsTable.userId,
         status: transactionsTable.status,
         orderChannel: transactionsTable.orderChannel,
-        fulfillmentStatus: transactionsTable.fulfillmentStatus,
         totalAmount: transactionsTable.totalAmount,
         paymentMethod: transactionsTable.paymentMethod,
         createdAt: transactionsTable.createdAt,
@@ -154,7 +152,11 @@ export const getAllTransactions = async ({
     }
 
     const [items, [{ count: total }]] = await Promise.all([
-      dataQuery.limit(limit).offset(offset),
+      // terbaru dulu; id pemecah seri biar halaman tidak dobel/bolong kalau createdAt sama
+      dataQuery
+        .orderBy(desc(transactionsTable.createdAt), desc(transactionsTable.id))
+        .limit(limit)
+        .offset(offset),
       countQuery,
     ]);
 
@@ -178,13 +180,6 @@ export const getTransactionById = async (id, user) => {
       .where(eq(transactionsTable.id, id));
 
     if (!transaction) throw new NotFoundError("Transaksi tidak ditemukan");
-    // packaging cuma boleh buka order yang jadi tanggung jawabnya
-    if (
-      user.role === "packaging" &&
-      (transaction.orderChannel !== "online" || transaction.status !== "paid")
-    ) {
-      throw new AppError("Kamu tidak punya akses ke transaksi ini", 403);
-    }
     assertChannelAllowed(user.role, transaction.orderChannel);
     const items = await db
       .select({
@@ -211,7 +206,7 @@ export const getTransactionById = async (id, user) => {
 export const updateTransactionStatus = async (
   id,
   user,
-  { status, paymentMethod, cancelReason },
+  { status, paymentMethod, amountReceived, cancelReason },
 ) => {
   try {
     const transaction = await db.transaction(async (tx) => {
@@ -242,30 +237,25 @@ export const updateTransactionStatus = async (
           403,
         );
       }
-      // Barang sudah fisik keluar bareng driver. Kalau dicancel di sini, stok sistem
-      // nambah padahal raknya tidak — jadi retur harus lewat barang balik dulu.
-      if (status === "cancelled" && current.fulfillmentStatus === "diambil") {
-        throw new AppError(
-          "Barang sudah dibawa driver, tidak bisa dibatalkan. Kalau barangnya benar-benar kembali, admin catat lewat penyesuaian stok setelah barangnya dicek",
-          400,
-        );
-      }
 
       const updateData = { status };
       if (status === "paid") {
+        if (paymentMethod === "cash") {
+          if (amountReceived < Number(current.totalAmount)) {
+            throw new AppError(
+              `Uang diterima kurang dari total belanja (${current.totalAmount})`,
+              400,
+            );
+          }
+          updateData.amountReceived = String(amountReceived);
+        }
         updateData.paymentMethod = paymentMethod;
         updateData.paidAt = new Date();
         updateData.paidBy = user.id;
-        // order online masuk antrian packaging begitu dibayar; offline selesai di tempat
-        if (current.orderChannel === "online") {
-          updateData.fulfillmentStatus = "belum_dikemas";
-        }
       }
       if (status === "cancelled") {
         updateData.cancelReason = cancelReason;
         updateData.cancelledBy = user.id;
-        // keluar dari antrian packaging; jejak "pernah dikemas" tetap ada di packedAt/packedBy
-        updateData.fulfillmentStatus = null;
       }
       const [updated] = await tx
         .update(transactionsTable)
@@ -298,59 +288,6 @@ export const updateTransactionStatus = async (
   }
 };
 
-// Alur pengemasan cuma maju, satu langkah per kali. "dikemas" = selesai dikemas &
-// siap diambil driver, "diambil" = final.
-const FULFILLMENT_FLOW = { belum_dikemas: "dikemas", dikemas: "diambil" };
-
-export const updateFulfillmentStatus = async (id, user, fulfillmentStatus) => {
-  try {
-    const transaction = await db.transaction(async (tx) => {
-      // FOR UPDATE: 2 orang packaging yang klik barengan sama-sama lihat
-      // "belum_dikemas" dan dua-duanya dijawab sukses — packedBy-nya salah orang.
-      const [current] = await tx
-        .select()
-        .from(transactionsTable)
-        .where(eq(transactionsTable.id, id))
-        .for("update");
-      if (!current) throw new NotFoundError("Transaksi tidak ditemukan");
-
-      if (current.orderChannel !== "online" || current.status !== "paid") {
-        throw new AppError(
-          "Cuma order online yang sudah dibayar yang perlu dikemas",
-          400,
-        );
-      }
-      if (FULFILLMENT_FLOW[current.fulfillmentStatus] !== fulfillmentStatus) {
-        throw new AppError(
-          `Status pengemasan tidak bisa langsung dari "${current.fulfillmentStatus}" ke "${fulfillmentStatus}"`,
-          400,
-        );
-      }
-
-      const updateData = { fulfillmentStatus };
-      if (fulfillmentStatus === "dikemas") {
-        updateData.packedBy = user.id;
-        updateData.packedAt = new Date();
-      } else {
-        updateData.handedOverBy = user.id;
-        updateData.handedOverAt = new Date();
-      }
-
-      const [updated] = await tx
-        .update(transactionsTable)
-        .set(updateData)
-        .where(eq(transactionsTable.id, id))
-        .returning();
-      return updated;
-    });
-
-    return transaction;
-  } catch (err) {
-    if (err instanceof AppError) throw err;
-    throw parseDbError(err);
-  }
-};
-
 export const getInvoiceById = async (id, user) => {
   try {
     const [transaction] = await db
@@ -360,6 +297,7 @@ export const getInvoiceById = async (id, user) => {
         status: transactionsTable.status,
         orderChannel: transactionsTable.orderChannel,
         paymentMethod: transactionsTable.paymentMethod,
+        amountReceived: transactionsTable.amountReceived,
         paidAt: transactionsTable.paidAt,
         totalAmount: transactionsTable.totalAmount,
         guestName: transactionsTable.guestName,
@@ -405,6 +343,14 @@ export const getInvoiceById = async (id, user) => {
       statusLabel,
       paymentMethod: isPaid ? transaction.paymentMethod : null,
       paidAt: isPaid ? transaction.paidAt : null,
+      amountReceived: isPaid ? transaction.amountReceived : null,
+      change:
+        isPaid && transaction.amountReceived
+          ? String(
+              Number(transaction.amountReceived) -
+                Number(transaction.totalAmount),
+            )
+          : null,
       buyer: buyerName
         ? { name: buyerName, phone: buyerPhone, email: buyerEmail }
         : guestName
@@ -433,6 +379,83 @@ export const getTransactionsSummary = async () => {
       .from(transactionsTable)
       .groupBy(transactionsTable.status, transactionsTable.orderChannel);
     return summary;
+  } catch (err) {
+    throw parseDbError(err);
+  }
+};
+
+// createdAt disimpan UTC; rekap dibaca orang toko, jadi tanggal & filter pakai WIB.
+// ponytail: zona waktu di-hardcode, jadikan config kalau ada cabang di luar WIB.
+const createdAtWib = sql`(${transactionsTable.createdAt} AT TIME ZONE 'UTC' AT TIME ZONE 'Asia/Jakarta')`;
+
+export const getTransactionsForExport = async (
+  { from, to, status, orderChannel, search },
+  jenis,
+) => {
+  try {
+    const conditions = [];
+    if (status) conditions.push(eq(transactionsTable.status, status));
+    if (orderChannel)
+      conditions.push(eq(transactionsTable.orderChannel, orderChannel));
+    if (from) conditions.push(sql`${createdAtWib}::date >= ${from}`);
+    if (to) conditions.push(sql`${createdAtWib}::date <= ${to}`);
+    if (search) conditions.push(searchCondition(search));
+    const where = conditions.length ? and(...conditions) : undefined;
+    const tanggal = sql`to_char(${createdAtWib}, 'YYYY-MM-DD HH24:MI')`;
+
+    if (jenis === "item") {
+      const columns = {
+        tanggal,
+        idTransaksi: transactionsTable.id,
+        channel: transactionsTable.orderChannel,
+        status: transactionsTable.status,
+        produk: productTable.product_name,
+        sku: productTable.sku,
+        qty: transactionItemsTable.quantity,
+        hargaSatuan: transactionItemsTable.priceAtPurchase,
+        subtotal: sql`${transactionItemsTable.quantity} * ${transactionItemsTable.priceAtPurchase}`,
+      };
+      const rows = await db
+        .select(columns)
+        .from(transactionItemsTable)
+        .innerJoin(
+          transactionsTable,
+          eq(transactionItemsTable.transactionId, transactionsTable.id),
+        )
+        .innerJoin(
+          productTable,
+          eq(transactionItemsTable.productId, productTable.id),
+        )
+        .leftJoin(
+          membersTable,
+          eq(transactionsTable.memberId, membersTable.id),
+        )
+        .where(where)
+        .orderBy(transactionsTable.createdAt);
+      return { header: Object.keys(columns), rows };
+    }
+
+    const columns = {
+      tanggal,
+      idTransaksi: transactionsTable.id,
+      channel: transactionsTable.orderChannel,
+      pembeli: sql`coalesce(${membersTable.name}, ${transactionsTable.guestName})`,
+      status: transactionsTable.status,
+      metodeBayar: transactionsTable.paymentMethod,
+      total: transactionsTable.totalAmount,
+      uangDiterima: transactionsTable.amountReceived,
+      kembalian: sql`${transactionsTable.amountReceived} - ${transactionsTable.totalAmount}`,
+      dibuatOleh: usersTable.name,
+      alasanBatal: transactionsTable.cancelReason,
+    };
+    const rows = await db
+      .select(columns)
+      .from(transactionsTable)
+      .leftJoin(membersTable, eq(transactionsTable.memberId, membersTable.id))
+      .innerJoin(usersTable, eq(transactionsTable.userId, usersTable.id))
+      .where(where)
+      .orderBy(transactionsTable.createdAt);
+    return { header: Object.keys(columns), rows };
   } catch (err) {
     throw parseDbError(err);
   }

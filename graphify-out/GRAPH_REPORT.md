@@ -1,57 +1,58 @@
-# Graph Report - my-app  (2026-08-12)
+# Graph Report - marketplace_bun  (2026-10-09)
 
 ## Corpus Check
-- 66 files · ~32,759 words
+- 76 files · ~39,959 words
 - Verdict: corpus is large enough that graph structure adds value.
+- Unclassified: 3 file(s) not represented in the graph (top: .graphify-bak 1, (none) 1, .lock 1)
 
 ## Summary
-- 234 nodes · 541 edges · 14 communities
-- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.75)
+- 260 nodes · 659 edges · 13 communities
+- Extraction: 92% EXTRACTED · 8% INFERRED · 0% AMBIGUOUS · INFERRED: 51 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `8a5a4d82`
+- Built from commit: `95b2a9c8`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- Database Schema & Services
-- Routing & App Wiring
-- Controllers Layer
-- User Service & Errors
-- Docs & Auth Design
-- Runtime Dependencies
-- Build Scripts & Tooling
-- User Validators
+- parseDbError
+- product.controllers.js
+- Simulation Script
+- transaction.routes.js
+- Architecture & Auth Design
+- package.json
+- error
 - Architecture Conventions
 - Role & Pembagian Kerja
-- smoke-roles.sh
-- Update API: Role, Packaging, Stock Opname — untuk Tim FE
-- transaction.service.js
+- Role Smoke Tests
+- Frontend API Update Guide
+- members.routes.js
+- compilerOptions
 
 ## God Nodes (most connected - your core abstractions)
-1. `error()` - 40 edges
-2. `parseDbError()` - 35 edges
+1. `error()` - 42 edges
+2. `parseDbError()` - 38 edges
 3. `success()` - 35 edges
-4. `Role & Pembagian Kerja` - 9 edges
-5. `Update API: Role, Packaging, Stock Opname — untuk Tim FE` - 8 edges
-6. `db` - 7 edges
-7. `scripts` - 6 edges
-8. `handleCreateTransaction()` - 6 edges
-9. `listTransactions()` - 6 edges
-10. `authMiddleware()` - 6 edges
+4. `NotFoundError` - 22 edges
+5. `AppError` - 12 edges
+6. `drizzle-orm` - 9 edges
+7. `simulate.sh script` - 9 edges
+8. `updateTransactionStatus()` - 9 edges
+9. `Role & Pembagian Kerja` - 9 edges
+10. `db` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `README Quickstart (bun install / bun run dev)` --semantically_similar_to--> `Project Commands (bun/drizzle-kit workflow)`  [INFERRED] [semantically similar]
-  README.md → CLAUDE.md
-- `getAllTransactions (status filtering + pagination)` --conceptually_related_to--> `Layered Architecture (routes -> controllers -> services -> db)`  [INFERRED]
-  docs/transactions.md → CLAUDE.md
-- `Controller status propagation (err.status ?? 400)` --references--> `JSON Response Envelope ({success, data} / {success, error})`  [EXTRACTED]
-  docs/error-handling.md → CLAUDE.md
-- `Controller status propagation (err.status ?? 400)` --references--> `parseDbError (Postgres error code mapping)`  [EXTRACTED]
-  docs/error-handling.md → CLAUDE.md
-- `Project Commands (bun/drizzle-kit workflow)` --references--> `Postgres db service (postgres:16-alpine)`  [EXTRACTED]
-  CLAUDE.md → docker-compose.yml
+- `Soal SO: per-produk atau sesi?` --references--> `editProductById()`  [INFERRED]
+  docs/roles.md → src/services/product.service.js
+- `A. Role & permission — ✅ SELESAI` --references--> `requireRole()`  [INFERRED]
+  docs/roles.md → src/middlewares/auth.middleware.js
+- `B. Alur pengemasan (packaging) — ✅ SELESAI` --references--> `requireRole()`  [INFERRED]
+  docs/roles.md → src/middlewares/auth.middleware.js
+- `Aturan transisi status (sudah di kode)` --references--> `updateTransactionStatus()`  [INFERRED]
+  docs/roles.md → src/services/transaction.service.js
+- `Keputusan yang sudah disepakati` --references--> `updateTransactionStatus()`  [INFERRED]
+  docs/roles.md → src/services/transaction.service.js
 
 ## Import Cycles
 - None detected.
@@ -60,78 +61,78 @@
 - **Auth Schema Change (design + plan + schema entities)** — docs_superpowers_plans_2026_07_10_auth_schema_plan, docs_superpowers_specs_2026_07_10_auth_schema_design_auth_schema_design, docs_superpowers_specs_2026_07_10_auth_schema_design_userstable_auth_columns, docs_superpowers_specs_2026_07_10_auth_schema_design_sessionstable, docs_superpowers_specs_2026_07_10_auth_schema_design_userroleenum [EXTRACTED 1.00]
 - **Service-to-controller error handling flow** — docs_error_handling_apperror, docs_error_handling_notfounderror, docs_error_handling_status_propagation, claude_md_parsedberror [EXTRACTED 1.00]
 
-## Communities (14 total, 0 thin omitted)
+## Communities (13 total, 0 thin omitted)
 
-### Community 0 - "Database Schema & Services"
-Cohesion: 0.13
-Nodes (20): fulfillmentStatusEnum, membersTable, orderChannelEnum, paymentMethodEnum, productTable, sessionsTable, stockAdjustmentsTable, transactionItemsTable (+12 more)
+### Community 0 - "parseDbError"
+Cohesion: 0.12
+Nodes (32): drizzle-orm, db, membersTable, orderChannelEnum, paymentMethodEnum, productTable, sessionsTable, stockAdjustmentsTable (+24 more)
 
-### Community 1 - "Routing & App Wiring"
-Cohesion: 0.15
-Nodes (37): createProduct(), createStockAdjustment(), listBestSellerProducts(), listLowStockProducts(), listProducts(), listStockAdjustments(), productById(), removeProduct() (+29 more)
+### Community 1 - "product.controllers.js"
+Cohesion: 0.10
+Nodes (35): RFC-4180, createProduct(), createStockAdjustment(), importProductsCsv(), importTemplateCsv(), listBestSellerProducts(), listLowStockProducts(), listProducts() (+27 more)
 
-### Community 2 - "Controllers Layer"
-Cohesion: 0.29
-Nodes (7): c2(), hdr(), mkprod(), note(), ok(), req(), simulate.sh script
+### Community 2 - "Simulation Script"
+Cohesion: 0.36
+Nodes (9): c2(), hdr(), mkprod(), note(), ok(), reg(), req(), simulate.sh script (+1 more)
 
-### Community 3 - "User Service & Errors"
+### Community 3 - "transaction.routes.js"
 Cohesion: 0.16
-Nodes (15): checkConnection(), app, memberRoute, productRoute, transactionRoute, userRoute, handleValidation(), createNewProductSchema (+7 more)
+Nodes (20): exportTransactionsCsv(), handleCreateTransaction(), transactionById(), transactionInvoice(), transactionsSummary(), penjualan, assertChannelAllowed(), channelForRole() (+12 more)
 
-### Community 4 - "Docs & Auth Design"
+### Community 4 - "Architecture & Auth Design"
 Cohesion: 0.16
-Nodes (15): Project Commands (bun/drizzle-kit workflow), parseDbError (Postgres error code mapping), JSON Response Envelope ({success, data} / {success, error}), Postgres db service (postgres:16-alpine), AppError (base error with .status), NotFoundError (AppError shortcut, 404), Controller status propagation (err.status ?? 400), Error-handling YAGNI deferrals (ConflictError 409, UUID param validation) (+7 more)
+Nodes (13): Project Commands (bun/drizzle-kit workflow), parseDbError (Postgres error code mapping), JSON Response Envelope ({success, data} / {success, error}), Postgres db service (postgres:16-alpine), AppError (base error with .status), NotFoundError (AppError shortcut, 404), Controller status propagation (err.status ?? 400), Auth Schema Implementation Plan (+5 more)
 
-### Community 5 - "Runtime Dependencies"
+### Community 5 - "package.json"
 Cohesion: 0.07
-Nodes (27): dotenv, drizzle-kit, drizzle-orm, drizzle-zod, hono, @hono/zod-validator, dependencies, dotenv (+19 more)
+Nodes (28): dependencies, dotenv, drizzle-orm, drizzle-zod, hono, @hono/zod-validator, pg, zod (+20 more)
 
-### Community 6 - "Build Scripts & Tooling"
-Cohesion: 0.24
-Nodes (14): handleRegisterMember(), listMembers(), memberById(), removeMember(), updateMember(), deleteMemberById(), editMemberById(), getAllMembers() (+6 more)
-
-### Community 7 - "User Validators"
-Cohesion: 0.27
-Nodes (6): db, usersTable, loginUser(), AppError, NotFoundError, findUserByEmail()
+### Community 6 - "error"
+Cohesion: 0.14
+Nodes (31): Permission matrix (rancangan), handleRegisterMember(), listMembers(), memberById(), removeMember(), updateMember(), updateProduct(), changeTransactionStatus() (+23 more)
 
 ### Community 8 - "Architecture Conventions"
 Cohesion: 0.67
 Nodes (3): Layered Architecture (routes -> controllers -> services -> db), New Resource Convention (schema -> validator -> service -> controller -> route), getAllTransactions (status filtering + pagination)
 
 ### Community 10 - "Role & Pembagian Kerja"
-Cohesion: 0.15
-Nodes (12): A. Role & permission — ✅ SELESAI, Aturan transisi status (sudah di kode), B. Alur pengemasan (packaging) — ✅ SELESAI, C. Stock Opname (gudang) — ✅ SELESAI, Keputusan yang sudah disepakati, Konteks, Permission matrix (rancangan), Role & Pembagian Kerja (+4 more)
+Cohesion: 0.16
+Nodes (13): A. Role & permission — ✅ SELESAI, Aturan transisi status (sudah di kode), B. Alur pengemasan (packaging) — ✅ SELESAI, C. Stock Opname (gudang) — ✅ SELESAI, Keputusan yang sudah disepakati, Konteks, Role & Pembagian Kerja, Soal SO: per-produk atau sesi? (+5 more)
 
-### Community 11 - "smoke-roles.sh"
-Cohesion: 0.47
-Nodes (3): chk(), code(), smoke-roles.sh script
+### Community 11 - "Role Smoke Tests"
+Cohesion: 0.53
+Nodes (4): body(), chk(), reg(), smoke-roles.sh script
 
-### Community 12 - "Update API: Role, Packaging, Stock Opname — untuk Tim FE"
+### Community 12 - "Frontend API Update Guide"
 Cohesion: 0.17
 Nodes (11): 1. Role & akses, 2. Transaksi: field baru & aturan cancel, 3. BARU: alur pengemasan (layar untuk role packaging), 4. BARU: penyesuaian stok (layar untuk role gudang), 5. Perubahan kecil tapi kelihatan di UI, Bikin transaksi, Cancel, Checklist implementasi FE (+3 more)
 
-### Community 13 - "transaction.service.js"
-Cohesion: 0.14
-Nodes (26): changeFulfillmentStatus(), changeTransactionStatus(), handleCreateTransaction(), listTransactions(), transactionById(), transactionInvoice(), transactionsSummary(), keduanya (+18 more)
+### Community 13 - "members.routes.js"
+Cohesion: 0.16
+Nodes (14): zod, checkConnection(), app, memberRoute, productRoute, transactionRoute, userRoute, handleValidation() (+6 more)
+
+### Community 14 - "compilerOptions"
+Cohesion: 0.33
+Nodes (5): compilerOptions, module, moduleResolution, target, include
 
 ## Knowledge Gaps
-- **50 isolated node(s):** `name`, `dev`, `db:push`, `db:generate`, `db:migrate` (+45 more)
-  These have ≤1 connection - possible missing edges or undocumented components.
+- **12 isolated node(s):** `drizzle-zod`, `pg`, `@types/bun`, `typescript`, `RFC-4180` (+7 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 64 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `error()` connect `Routing & App Wiring` to `Database Schema & Services`, `User Service & Errors`, `transaction.service.js`, `Build Scripts & Tooling`?**
-  _High betweenness centrality (0.063) - this node is a cross-community bridge._
-- **Why does `parseDbError()` connect `Routing & App Wiring` to `transaction.service.js`, `Build Scripts & Tooling`, `User Validators`?**
-  _High betweenness centrality (0.040) - this node is a cross-community bridge._
-- **Why does `success()` connect `Routing & App Wiring` to `transaction.service.js`, `Build Scripts & Tooling`?**
-  _High betweenness centrality (0.038) - this node is a cross-community bridge._
-- **What connects `name`, `dev`, `db:push` to the rest of the system?**
-  _50 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Database Schema & Services` be split into smaller, more focused modules?**
-  _Cohesion score 0.12681159420289856 - nodes in this community are weakly interconnected._
-- **Should `Routing & App Wiring` be split into smaller, more focused modules?**
-  _Cohesion score 0.14878048780487804 - nodes in this community are weakly interconnected._
-- **Should `Runtime Dependencies` be split into smaller, more focused modules?**
-  _Cohesion score 0.07142857142857142 - nodes in this community are weakly interconnected._
+- **Why does `error()` connect `error` to `parseDbError`, `product.controllers.js`, `transaction.routes.js`, `Role & Pembagian Kerja`, `members.routes.js`?**
+  _High betweenness centrality (0.075) - this node is a cross-community bridge._
+- **What connects `drizzle-zod`, `pg`, `@types/bun` to the rest of the system?**
+  _12 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `parseDbError` be split into smaller, more focused modules?**
+  _Cohesion score 0.12473572938689217 - nodes in this community are weakly interconnected._
+- **Why does `drizzle-orm` connect `parseDbError` to `product.controllers.js`, `package.json`?**
+  _High betweenness centrality (0.066) - this node is a cross-community bridge._
+- **Should `product.controllers.js` be split into smaller, more focused modules?**
+  _Cohesion score 0.10452961672473868 - nodes in this community are weakly interconnected._
+- **Should `package.json` be split into smaller, more focused modules?**
+  _Cohesion score 0.06896551724137931 - nodes in this community are weakly interconnected._
+- **Should `error` be split into smaller, more focused modules?**
+  _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._

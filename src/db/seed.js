@@ -10,7 +10,6 @@ const users = [
   { name: "Admin", email: "admin@example.com", role: "admin" },
   { name: "Kasir", email: "kasir@example.com", role: "kasir" },
   { name: "Admin Online", email: "online@example.com", role: "admin_online" },
-  { name: "Packaging", email: "packaging@example.com", role: "packaging" },
   { name: "Gudang", email: "gudang@example.com", role: "gudang" },
   { name: "User Biasa", email: "user@example.com", role: "user" },
 ].map((u) => ({ ...u, password, phone: "08123456789" }));
