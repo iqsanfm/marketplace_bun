@@ -5,6 +5,8 @@ import { sessionsTable, usersTable } from "../db/schema.database";
 import { resetDb, setupTestDb } from "../test/integration-db.js";
 import {
   changePassword,
+  editUserById,
+  editUserRole,
   getAllUsers,
   getUserById,
   loginUser,
@@ -80,4 +82,14 @@ test("getUserById & getAllUsers tidak mengembalikan password", async () => {
   expect(list.total).toBe(1);
   expect(list.users[0]).not.toHaveProperty("password");
   expect((await getUserById("3f2b8c1e-4a5d-4e6f-8a9b-0c1d2e3f4a5b").catch((e) => e)).status).toBe(404);
+});
+
+test("editUserRole & editUserById: ubah data, user tidak ada 404", async () => {
+  const [user] = await registerUser(data);
+  expect((await editUserRole(user.id, { role: "kasir" }))[0].role).toBe("kasir");
+  expect((await editUserById(user.id, { address: "Jl. Melati" }))[0].address).toBe("Jl. Melati");
+
+  const missing = "3f2b8c1e-4a5d-4e6f-8a9b-0c1d2e3f4a5b";
+  expect((await editUserRole(missing, { role: "kasir" }).catch((e) => e)).status).toBe(404);
+  expect((await editUserById(missing, { name: "X" }).catch((e) => e)).status).toBe(404);
 });

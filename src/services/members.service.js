@@ -129,8 +129,7 @@ export const deleteMemberById = async (id) => {
       .delete(membersTable)
       .where(eq(membersTable.id, id))
       .returning();
-    if (membersTable.length === 0)
-      throw new NotFoundError("Member tidak ditemukan");
+    if (member.length === 0) throw new NotFoundError("Member tidak ditemukan");
     return member;
   } catch (err) {
     throw parseDbError(err);
