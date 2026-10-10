@@ -1,14 +1,15 @@
-import { beforeEach, describe, expect, mock, test } from "bun:test";
+import { afterAll, beforeEach, describe, expect, spyOn, test } from "bun:test";
 import { Hono } from "hono";
+import { db } from "../db/database.connection";
 
 // DB palsu: query session di authMiddleware mengembalikan `sessionRows`.
 // Test di sini cuma lewat jalur yang berhenti sebelum service menyentuh DB.
+// spyOn, bukan mock.module: mock.module tidak bisa dibalikin dan bocor ke
+// integration test yang jalan di proses yang sama.
 let sessionRows = [];
 const query = { from: () => query, innerJoin: () => query, where: async () => sessionRows };
-mock.module("../db/database.connection", () => ({
-  db: { select: () => query },
-  checkConnection: async () => {},
-}));
+const selectSpy = spyOn(db, "select").mockImplementation(() => query);
+afterAll(() => selectSpy.mockRestore());
 
 const { default: userRoute } = await import("../routes/users.routes.js");
 const { default: productRoute } = await import("../routes/product.routes.js");
