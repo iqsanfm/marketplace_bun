@@ -88,15 +88,18 @@ export const importProductsCsv = async (c) => {
 
     // Semua baris divalidasi dulu; satu error = tidak ada yang masuk, biar
     // operator tidak perlu menebak sebagian mana yang sudah kesimpan.
+    // Nomor baris asli ikut disimpan: baris tidak valid tidak masuk `valid`,
+    // jadi index di `valid` bukan nomor baris di file.
     const valid = [];
     const errors = [];
     rows.forEach((row, i) => {
-      const parsed = importProductRowSchema.safeParse(row);
-      if (parsed.success) valid.push(parsed.data);
       // +2: baris 1 header, index mulai 0
+      const line = i + 2;
+      const parsed = importProductRowSchema.safeParse(row);
+      if (parsed.success) valid.push({ line, row: parsed.data });
       else
         errors.push({
-          line: i + 2,
+          line,
           message: parsed.error.issues
             .map((issue) => `${issue.path.join(".")}: ${issue.message}`)
             .join("; "),
@@ -105,14 +108,14 @@ export const importProductsCsv = async (c) => {
     // SKU kembar di dalam file yang sama bakal bentrok sendiri saat insert,
     // lebih enak ketahuan di sini daripada jadi error unique violation.
     const seen = new Map();
-    valid.forEach((row, i) => {
+    valid.forEach(({ line, row }) => {
       if (!row.sku) return;
       if (seen.has(row.sku))
         errors.push({
-          line: i + 2,
+          line,
           message: `SKU "${row.sku}" dobel dengan baris ${seen.get(row.sku)}`,
         });
-      else seen.set(row.sku, i + 2);
+      else seen.set(row.sku, line);
     });
 
     // SKU yang sudah jadi barcode tambahan produk lain: kalau masuk, satu scan
@@ -130,8 +133,8 @@ export const importProductsCsv = async (c) => {
 
     const existing = await findExistingSkus([...seen.keys()]);
     if (dryRun) {
-      const preview = valid.map((row, i) => ({
-        line: i + 2,
+      const preview = valid.map(({ line, row }) => ({
+        line,
         sku: row.sku ?? null,
         product_name: row.product_name,
         action: row.sku && existing.has(row.sku) ? "update" : "insert",
@@ -144,7 +147,7 @@ export const importProductsCsv = async (c) => {
       });
     }
 
-    const result = await upsertProducts(valid);
+    const result = await upsertProducts(valid.map(({ row }) => row));
     return success(c, result, 201);
   } catch (err) {
     return error(c, err.message);
