@@ -154,7 +154,7 @@ export const editUserRole = async (id, data) => {
         email: usersTable.email,
         role: usersTable.role,
       });
-    if (!user) throw new NotFoundError("User tidak ditemukan");
+    if (user.length === 0) throw new NotFoundError("User tidak ditemukan");
     return user;
   } catch (err) {
     throw parseDbError(err);
@@ -175,7 +175,7 @@ export const editUserById = async (id, data) => {
         phone: usersTable.phone,
         role: usersTable.role,
       });
-    if (!user) throw new NotFoundError("User tidak ditemukan");
+    if (user.length === 0) throw new NotFoundError("User tidak ditemukan");
     return user;
   } catch (err) {
     throw parseDbError(err);
