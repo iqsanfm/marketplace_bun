@@ -31,9 +31,10 @@ test("nomor HP dobel ditolak", async () => {
   expect(err.message).toBe("Data sudah ada (duplikat)");
 });
 
-test("member tidak ada: get & edit 404", async () => {
+test("member tidak ada: get, edit, hapus 404", async () => {
   expect((await getMemberById(MISSING_ID).catch((e) => e)).status).toBe(404);
   expect((await editMemberById(MISSING_ID, { name: "X" }).catch((e) => e)).status).toBe(404);
+  expect((await deleteMemberById(MISSING_ID).catch((e) => e)).status).toBe(404);
 });
 
 test("getAllMembers: search, urutan, pagination", async () => {
